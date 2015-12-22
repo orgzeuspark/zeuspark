@@ -1,0 +1,205 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="zeusparkModelStoreContainer" CdmEntityContainer="zeusparkEntities">
+    <EntitySetMapping Name="categories">
+      <EntityTypeMapping TypeName="zeusparkModel.category">
+        <MappingFragment StoreEntitySet="category">
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+          <ScalarProperty Name="ParentCategoryID" ColumnName="ParentCategoryID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="deliveryinfoes">
+      <EntityTypeMapping TypeName="zeusparkModel.deliveryinfo">
+        <MappingFragment StoreEntitySet="deliveryinfo">
+          <ScalarProperty Name="DeliveryInfoID" ColumnName="DeliveryInfoID" />
+          <ScalarProperty Name="DeliveryType" ColumnName="DeliveryType" />
+          <ScalarProperty Name="TemplateId" ColumnName="TemplateId" />
+          <ScalarProperty Name="ExpressNormalID" ColumnName="ExpressNormalID" />
+          <ScalarProperty Name="ExpressNormalPrice" ColumnName="ExpressNormalPrice" />
+          <ScalarProperty Name="ExpressFastID" ColumnName="ExpressFastID" />
+          <ScalarProperty Name="ExpressFastPrice" ColumnName="ExpressFastPrice" />
+          <ScalarProperty Name="ExpressEMSID" ColumnName="ExpressEMSID" />
+          <ScalarProperty Name="ExpressEMSPrice" ColumnName="ExpressEMSPrice" />
+          <ScalarProperty Name="Volume" ColumnName="Volume" />
+          <ScalarProperty Name="Weight" ColumnName="Weight" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="groupvalues">
+      <EntityTypeMapping TypeName="zeusparkModel.groupvalue">
+        <MappingFragment StoreEntitySet="groupvalue">
+          <ScalarProperty Name="GroupID" ColumnName="GroupID" />
+          <ScalarProperty Name="GroupName" ColumnName="GroupName" />
+          <ScalarProperty Name="ParentGroupID" ColumnName="ParentGroupID" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="locations">
+      <EntityTypeMapping TypeName="zeusparkModel.location">
+        <MappingFragment StoreEntitySet="location">
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="Province" ColumnName="Province" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="products">
+      <EntityTypeMapping TypeName="zeusparkModel.product">
+        <MappingFragment StoreEntitySet="product">
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="ProductUnique" ColumnName="ProductUnique" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="DetailHtml" ColumnName="DetailHtml" />
+          <ScalarProperty Name="MainImageUrl" ColumnName="MainImageUrl" />
+          <ScalarProperty Name="BuyLimit" ColumnName="BuyLimit" />
+          <ScalarProperty Name="DeliveryInfoID" ColumnName="DeliveryInfoID" />
+          <ScalarProperty Name="ExtentionAttributeID" ColumnName="ExtentionAttributeID" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="LastUpdateTime" ColumnName="LastUpdateTime" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="productcategories">
+      <EntityTypeMapping TypeName="zeusparkModel.productcategory">
+        <MappingFragment StoreEntitySet="productcategory">
+          <ScalarProperty Name="ProductCategoryID" ColumnName="ProductCategoryID" />
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="productextentionattributes">
+      <EntityTypeMapping TypeName="zeusparkModel.productextentionattribute">
+        <MappingFragment StoreEntitySet="productextentionattribute">
+          <ScalarProperty Name="ExtentionAttributeID" ColumnName="ExtentionAttributeID" />
+          <ScalarProperty Name="IsHasReceipt" ColumnName="IsHasReceipt" />
+          <ScalarProperty Name="IsPostFree" ColumnName="IsPostFree" />
+          <ScalarProperty Name="IsSupportReplace" ColumnName="IsSupportReplace" />
+          <ScalarProperty Name="IsUnderGuaranty" ColumnName="IsUnderGuaranty" />
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="productgroups">
+      <EntityTypeMapping TypeName="zeusparkModel.productgroup">
+        <MappingFragment StoreEntitySet="productgroup">
+          <ScalarProperty Name="ProductGroupID" ColumnName="ProductGroupID" />
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="GroupID" ColumnName="GroupID" />
+          <ScalarProperty Name="ProductUnique" ColumnName="ProductUnique" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="productimages">
+      <EntityTypeMapping TypeName="zeusparkModel.productimage">
+        <MappingFragment StoreEntitySet="productimage">
+          <ScalarProperty Name="ImageID" ColumnName="ImageID" />
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="ImageUrl" ColumnName="ImageUrl" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="productproperties">
+      <EntityTypeMapping TypeName="zeusparkModel.productproperty">
+        <MappingFragment StoreEntitySet="productproperty">
+          <ScalarProperty Name="ProductPropertyID" ColumnName="ProductPropertyID" />
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="PropertyID" ColumnName="PropertyID" />
+          <ScalarProperty Name="PropertyValue" ColumnName="PropertyValue" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="productsaleinfoes">
+      <EntityTypeMapping TypeName="zeusparkModel.productsaleinfo">
+        <MappingFragment StoreEntitySet="productsaleinfo">
+          <ScalarProperty Name="SaleInfoID" ColumnName="SaleInfoID" />
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="ProductUnique" ColumnName="ProductUnique" />
+          <ScalarProperty Name="TotalSale" ColumnName="TotalSale" />
+          <ScalarProperty Name="OnSaleDay" ColumnName="OnSaleDay" />
+          <ScalarProperty Name="PayImageUrl" ColumnName="PayImageUrl" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="productstatus">
+      <EntityTypeMapping TypeName="zeusparkModel.productstatu">
+        <MappingFragment StoreEntitySet="productstatus">
+          <ScalarProperty Name="StatusID" ColumnName="StatusID" />
+          <ScalarProperty Name="StatusName" ColumnName="StatusName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="skuinfoes">
+      <EntityTypeMapping TypeName="zeusparkModel.skuinfo">
+        <MappingFragment StoreEntitySet="skuinfo">
+          <ScalarProperty Name="InfoID" ColumnName="InfoID" />
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="SkuID" ColumnName="SkuID" />
+          <ScalarProperty Name="IconUrl" ColumnName="IconUrl" />
+          <ScalarProperty Name="OrgPrice" ColumnName="OrgPrice" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="ProductCode" ColumnName="ProductCode" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="useraccounts">
+      <EntityTypeMapping TypeName="zeusparkModel.useraccount">
+        <MappingFragment StoreEntitySet="useraccount">
+          <ScalarProperty Name="UnionId" ColumnName="UnionId" />
+          <ScalarProperty Name="HeadImgUrl" ColumnName="HeadImgUrl" />
+          <ScalarProperty Name="OpenID" ColumnName="OpenID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="AccountName" ColumnName="AccountName" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Mail" ColumnName="Mail" />
+          <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="RegisterTime" ColumnName="RegisterTime" />
+          <ScalarProperty Name="AccountType" ColumnName="AccountType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="uploadhistories">
+      <EntityTypeMapping TypeName="zeusparkModel.uploadhistory">
+        <MappingFragment StoreEntitySet="uploadhistory">
+          <ScalarProperty Name="GroupID" ColumnName="GroupID" />
+          <ScalarProperty Name="ProductUnique" ColumnName="ProductUnique" />
+          <ScalarProperty Name="UploadTime" ColumnName="UploadTime" />
+          <ScalarProperty Name="UploadUser" ColumnName="UploadUser" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="ProdImg" ColumnName="ProdImg" />
+          <ScalarProperty Name="MainImg" ColumnName="MainImg" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="publishers">
+      <EntityTypeMapping TypeName="zeusparkModel.publisher">
+        <MappingFragment StoreEntitySet="publisher">
+          <ScalarProperty Name="BankAccount" ColumnName="BankAccount" />
+          <ScalarProperty Name="BankName" ColumnName="BankName" />
+          <ScalarProperty Name="PostCode" ColumnName="PostCode" />
+          <ScalarProperty Name="DetailAddress" ColumnName="DetailAddress" />
+          <ScalarProperty Name="Area" ColumnName="Area" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="IdentityDueDate" ColumnName="IdentityDueDate" />
+          <ScalarProperty Name="IdentityFrontImage" ColumnName="IdentityFrontImage" />
+          <ScalarProperty Name="IdentityType" ColumnName="IdentityType" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="PublisherID" ColumnName="PublisherID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,293 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link rel="stylesheet" href="@Url.Content("~/assets/plugins/flexslider/flexslider.css")" type="text/css" media="screen" />
+<link rel="stylesheet" href="@Url.Content("~/assets/plugins/parallax-slider/css/parallax-slider.css")" type="text/css" />
+
+<!--=== Slider ===-->
+<div class="slider-inner">
+    <div id="da-slider" class="da-slider">
+        <div class="da-slide">
+            <h2><i>艺术 &amp; 生活</i> <br /> <i>ZeusPark</i> <br /> <i>设计</i></h2>
+            <p><i>Art</i> <br /> <i>Life</i> <br /> <i>Design</i></p>
+            <div class="da-img"><img src="/assets/plugins/parallax-slider/img/1.png" alt="" /></div>
+        </div>
+        <div class="da-slide">
+            <h2><i>场景</i> <br /> <i>品味</i> <br /> <i>高雅</i></h2>
+            <p><i>Taste</i> <br /> <i>Elegant</i></p>
+            <div class="da-img span6">
+                <div class="span6">
+                    <iframe src="" width="100%" height="320" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
+                </div>
+            </div>
+        </div>
+        <div class="da-slide">
+            <h2><i>贴心</i> <br /> <i>服务</i> <br /> <i>大众</i></h2>
+            <p><i>Close</i> <br /> <i>Service</i> <br /> <i>People </i></p>
+            <div class="da-img"><img src="assets/plugins/parallax-slider/img/html5andcss3.png" alt="image01" /></div>
+        </div>
+        <nav class="da-arrows">
+            <span class="da-arrows-prev"></span>
+            <span class="da-arrows-next"></span>
+        </nav>
+    </div><!--/da-slider-->
+</div><!--/slider-->
+<!--=== End Slider ===-->
+<!--=== Purchase Block ===-->
+<div class="row-fluid purchase margin-bottom-30">
+    <div class="container">
+        <div class="span9">
+            <span>ZuesPark 中国新一代艺术消费商</span>
+            <p>注册或使用微信登录成为会员,点击左上角按钮登录，即可点击“上传 作品” 按钮。</p>
+        </div>
+        @{
+            if (Session["UserID"] != null)
+            {
+                <a href="@Url.Action("UploadArticle","User")" class="btn-buy hover-effect">上传 作品</a>
+            }
+            else
+            {
+                <a class="btn-buy hover-effect">上传 作品</a>
+            }
+}
+    </div>
+</div><!--/row-fluid-->
+<!-- End Purchase Block -->
+<!--=== Content Part ===-->
+<div class="container">
+    <!-- Service Blocks -->
+    <div class="row-fluid">
+        <div class="span4">
+            <div class="service clearfix">
+                <i class="icon-resize-small"></i>
+                <div class="desc">
+                    <h4>艺术原创</h4>
+                    <p>我们提供最原创的作品</p>
+                </div>
+            </div>
+        </div>
+        <div class="span4">
+            <div class="service clearfix">
+                <i class="icon-cogs"></i>
+                <div class="desc">
+                    <h4>艺术衍生</h4>
+                    <p>把艺术与生活相互结合</p>
+                </div>
+            </div>
+        </div>
+        <div class="span4">
+            <div class="service clearfix">
+                <i class="icon-plane"></i>
+                <div class="desc">
+                    <h4>场景展示</h4>
+                    <p>把艺术品展示给你看</p>
+                </div>
+            </div>
+        </div>
+    </div><!--/row-fluid-->
+    <!-- //End Service Blokcs -->
+    <!-- Recent Works -->
+    <div class="headline"><h3>热销产品</h3></div>
+    <ul class="thumbnails">
+        <li class="span3">
+            <div class="thumbnail-style thumbnail-kenburn">
+                <div class="thumbnail-img">
+                    <div class="overflow-hidden"><img src="assets/img/carousel/z1.jpg" alt="" /></div>
+                    <a class="btn-more hover-effect" href="/productdetail/details/27">更多 +</a>
+                </div>
+                <h3><a class="hover-effect" href="#">花 时间</a></h3>
+                <p>永生花不仅仅是简单的永不凋谢，最重要的是代表着他们两个的爱情将一生一世，同时“一生一世，永不离去”这也是结婚的誓言。</p>
+            </div>
+        </li>
+        <li class="span3">
+            <div class="thumbnail-style thumbnail-kenburn">
+                <div class="thumbnail-img">
+                    <div class="overflow-hidden"><img src="assets/img/carousel/z2.jpg" alt="" /></div>
+                    <a class="btn-more hover-effect" href="#">更多 +</a>
+                </div>
+                <h3><a class="hover-effect" href="#">画</a></h3>
+                <p>使中国画作为艺术形式不再画地为牢而有更大的表现空间，全新创作以自然和人的关系为核心的中国式新工笔人物</p>
+            </div>
+        </li>
+        <li class="span3">
+            <div class="thumbnail-style thumbnail-kenburn">
+                <div class="thumbnail-img">
+                    <div class="overflow-hidden"><img src="assets/img/carousel/z3.jpg" alt="" /></div>
+                    <a class="btn-more hover-effect" href="#">更多 +</a>
+                </div>
+                <h3><a class="hover-effect" href="#">新月三章</a></h3>
+                <p>在网状的结构中探索神秘的空间是一种诱惑，以最简单的编织技术为起点，经纬织，在不断演绎的过程中创作现代意义上的新构架。</p>
+            </div>
+        </li>
+        <li class="span3">
+            <div class="thumbnail-style thumbnail-kenburn">
+                <div class="thumbnail-img">
+                    <div class="overflow-hidden"><img src="assets/img/carousel/z4.jpg" alt="" /></div>
+                    <a class="btn-more hover-effect" href="#">更多 +</a>
+                </div>
+                <h3><a class="hover-effect" href="#">和合</a></h3>
+                <p>作品《和合》以具象雕塑为自己的创作语言，表达自己当代的视觉。关注雕塑者的灵魂，塑造自己眼中的美丽世界。</p>
+            </div>
+        </li>
+    </ul><!--/thumbnails-->
+    <!-- //End Recent Works -->
+    <!-- Information Blokcs -->
+    <div class="row-fluid margin-bottom-20">
+        <!-- Who We Are -->
+        <div class="span8">
+            <div class="headline"><h3>名家 名作</h3></div>
+            <p><img class="pull-left lft-img-margin img-width-200" src="assets/img/carousel/z6.jpg" alt="" />主要获得奖项</p>
+            <ul class="unstyled">
+                <li><i class="icon-ok color-green"></i> 金奖</li>
+                <li><i class="icon-ok color-green"></i> 银奖</li>
+                <li><i class="icon-ok color-green"></i> 国际金奖</li>
+                <li><i class="icon-ok color-green"></i> 荣誉会员</li>
+            </ul><br />
+            <blockquote class="hero-unify">
+                <p>设计理念： </p>
+                <small>***</small>
+            </blockquote>
+        </div><!--/span8-->
+        <!-- Latest Shots -->
+        <div class="span4">
+            <div class="headline"><h3>代表作</h3></div>
+            <div id="myCarousel" class="carousel slide">
+                <div class="carousel-inner">
+                    <div class="item active">
+                        <img src="assets/img/carousel/z7.jpg" alt="" />
+                        <div class="carousel-caption">
+                            <p>代表作1</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="assets/img/carousel/z8.jpg" alt="" />
+                        <div class="carousel-caption">
+                            <p>代表作2</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="assets/img/carousel/z9.jpg" alt="" />
+                        <div class="carousel-caption">
+                            <p>代表作3</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-arrow">
+                    <a class="left carousel-control" href="#myCarousel" data-slide="prev"><i class="icon-angle-left"></i></a>
+                    <a class="right carousel-control" href="#myCarousel" data-slide="next"><i class="icon-angle-right"></i></a>
+                </div>
+            </div>
+        </div><!--/span4-->
+    </div><!--/row-fluid-->
+    <!-- //End Information Blokcs -->
+    <!-- Our Clients -->
+    <div id="clients-flexslider" class="flexslider home clients">
+        <div class="headline"><h3>新品上市</h3></div>
+        <ul class="slides">
+            <li>
+                <a href="#">
+                    <img src="assets/img/clients/1.png" alt="" />
+                    <img src="assets/img/clients/1h.png" class="color-img" alt="" />
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="assets/img/clients/2.png" alt="" />
+                    <img src="assets/img/clients/2h.png" class="color-img" alt="" />
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="assets/img/clients/3.png" alt="" />
+                    <img src="assets/img/clients/3h.png" class="color-img" alt="" />
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="assets/img/clients/4.png" alt="" />
+                    <img src="assets/img/clients/4h.png" class="color-img" alt="" />
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="assets/img/clients/5.png" alt="" />
+                    <img src="assets/img/clients/5h.png" class="color-img" alt="" />
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="assets/img/clients/6.png" alt="" />
+                    <img src="assets/img/clients/6h.png" class="color-img" alt="" />
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="assets/img/clients/7.png" alt="" />
+                    <img src="assets/img/clients/7h.png" class="color-img" alt="" />
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="assets/img/clients/8.png" alt="" />
+                    <img src="assets/img/clients/8h.png" class="color-img" alt="" />
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="assets/img/clients/9.png" alt="" />
+                    <img src="assets/img/clients/9h.png" class="color-img" alt="" />
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="assets/img/clients/10.png" alt="" />
+                    <img src="assets/img/clients/10h.png" class="color-img" alt="" />
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="assets/img/clients/11.png" alt="" />
+                    <img src="assets/img/clients/11h.png" class="color-img" alt="" />
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="assets/img/clients/1.png" alt="" />
+                    <img src="assets/img/clients/1h.png" class="color-img" alt="" />
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="assets/img/clients/2.png" alt="" />
+                    <img src="assets/img/clients/2h.png" class="color-img" alt="" />
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="assets/img/clients/3.png" alt="" />
+                    <img src="assets/img/clients/3h.png" class="color-img" alt="" />
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="assets/img/clients/4.png" alt="" />
+                    <img src="assets/img/clients/4h.png" class="color-img" alt="" />
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="assets/img/clients/5.png" alt="" />
+                    <img src="assets/img/clients/5h.png" class="color-img" alt="" />
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="assets/img/clients/6.png" alt="" />
+                    <img src="assets/img/clients/6h.png" class="color-img" alt="" />
+                </a>
+            </li>
+        </ul>
+    </div><!--/flexslider-->
+    <!-- //End Our Clients -->
+</div><!--/container-->

@@ -1,0 +1,403 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="zeusparkModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="zeusparkEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="categories" EntityType="zeusparkModel.category" />
+    <EntitySet Name="deliveryinfoes" EntityType="zeusparkModel.deliveryinfo" />
+    <EntitySet Name="groupvalues" EntityType="zeusparkModel.groupvalue" />
+    <EntitySet Name="locations" EntityType="zeusparkModel.location" />
+    <EntitySet Name="products" EntityType="zeusparkModel.product" />
+    <EntitySet Name="productcategories" EntityType="zeusparkModel.productcategory" />
+    <EntitySet Name="productextentionattributes" EntityType="zeusparkModel.productextentionattribute" />
+    <EntitySet Name="productgroups" EntityType="zeusparkModel.productgroup" />
+    <EntitySet Name="productimages" EntityType="zeusparkModel.productimage" />
+    <EntitySet Name="productproperties" EntityType="zeusparkModel.productproperty" />
+    <EntitySet Name="productsaleinfoes" EntityType="zeusparkModel.productsaleinfo" />
+    <EntitySet Name="productstatus" EntityType="zeusparkModel.productstatu" />
+    <EntitySet Name="skuinfoes" EntityType="zeusparkModel.skuinfo" />
+    <EntitySet Name="useraccounts" EntityType="zeusparkModel.useraccount" />
+    <AssociationSet Name="productimageproduct" Association="zeusparkModel.productimageproduct">
+      <End Role="productimage" EntitySet="productimages" />
+      <End Role="product" EntitySet="products" />
+    </AssociationSet>
+    <AssociationSet Name="productgroupproduct" Association="zeusparkModel.productgroupproduct">
+      <End Role="productgroup" EntitySet="productgroups" />
+      <End Role="product" EntitySet="products" />
+    </AssociationSet>
+    <AssociationSet Name="productgroupgroupvalue" Association="zeusparkModel.productgroupgroupvalue">
+      <End Role="productgroup" EntitySet="productgroups" />
+      <End Role="groupvalue" EntitySet="groupvalues" />
+    </AssociationSet>
+    <AssociationSet Name="deliveryinfoproduct" Association="zeusparkModel.deliveryinfoproduct">
+      <End Role="deliveryinfo" EntitySet="deliveryinfoes" />
+      <End Role="product" EntitySet="products" />
+    </AssociationSet>
+    <AssociationSet Name="productextentionattributeproduct" Association="zeusparkModel.productextentionattributeproduct">
+      <End Role="productextentionattribute" EntitySet="productextentionattributes" />
+      <End Role="product" EntitySet="products" />
+    </AssociationSet>
+    <AssociationSet Name="productpropertyproduct" Association="zeusparkModel.productpropertyproduct">
+      <End Role="productproperty" EntitySet="productproperties" />
+      <End Role="product" EntitySet="products" />
+    </AssociationSet>
+    <AssociationSet Name="productcategoryproduct" Association="zeusparkModel.productcategoryproduct">
+      <End Role="productcategory" EntitySet="productcategories" />
+      <End Role="product" EntitySet="products" />
+    </AssociationSet>
+    <AssociationSet Name="productcategorycategory" Association="zeusparkModel.productcategorycategory">
+      <End Role="productcategory" EntitySet="productcategories" />
+      <End Role="category" EntitySet="categories" />
+    </AssociationSet>
+    <AssociationSet Name="productsaleinfoproduct" Association="zeusparkModel.productsaleinfoproduct">
+      <End Role="productsaleinfo" EntitySet="productsaleinfoes" />
+      <End Role="product" EntitySet="products" />
+    </AssociationSet>
+    <AssociationSet Name="skuinfoproduct" Association="zeusparkModel.skuinfoproduct">
+      <End Role="skuinfo" EntitySet="skuinfoes" />
+      <End Role="product" EntitySet="products" />
+    </AssociationSet>
+    <AssociationSet Name="productextentionattributelocation" Association="zeusparkModel.productextentionattributelocation">
+      <End Role="productextentionattribute" EntitySet="productextentionattributes" />
+      <End Role="location" EntitySet="locations" />
+    </AssociationSet>
+    <EntitySet Name="uploadhistories" EntityType="zeusparkModel.uploadhistory" />
+    <EntitySet Name="publishers" EntityType="zeusparkModel.publisher" />
+  </EntityContainer>
+  <EntityType Name="category">
+    <Key>
+      <PropertyRef Name="CategoryID" />
+    </Key>
+    <Property Name="CategoryID" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="CategoryName" Type="String" Nullable="false" MaxLength="500" Unicode="false" FixedLength="false" />
+    <Property Name="ParentCategoryID" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="productcategories" Relationship="zeusparkModel.productcategorycategory" FromRole="category" ToRole="productcategory" />
+  </EntityType>
+  <EntityType Name="deliveryinfo">
+    <Key>
+      <PropertyRef Name="DeliveryInfoID" />
+    </Key>
+    <Property Name="DeliveryInfoID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DeliveryType" Type="Int32" />
+    <Property Name="TemplateId" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="ExpressNormalID" Type="Int32" />
+    <Property Name="ExpressNormalPrice" Type="Double" />
+    <Property Name="ExpressFastID" Type="Int32" />
+    <Property Name="ExpressFastPrice" Type="Double" />
+    <Property Name="ExpressEMSID" Type="Int32" />
+    <Property Name="ExpressEMSPrice" Type="Double" />
+    <Property Name="Volume" Type="Int32" />
+    <Property Name="Weight" Type="Int32" />
+    <NavigationProperty Name="products" Relationship="zeusparkModel.deliveryinfoproduct" FromRole="deliveryinfo" ToRole="product" />
+  </EntityType>
+  <EntityType Name="groupvalue">
+    <Key>
+      <PropertyRef Name="GroupID" />
+    </Key>
+    <Property Name="GroupID" Type="Int32" Nullable="false" />
+    <Property Name="GroupName" Type="String" Nullable="false" MaxLength="500" Unicode="false" FixedLength="false" />
+    <Property Name="ParentGroupID" Type="Int32" />
+    <Property Name="Deleted" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="productgroups" Relationship="zeusparkModel.productgroupgroupvalue" FromRole="groupvalue" ToRole="productgroup" />
+  </EntityType>
+  <EntityType Name="location">
+    <Key>
+      <PropertyRef Name="LocationID" />
+    </Key>
+    <Property Name="LocationID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Address" Type="String" MaxLength="65535" Unicode="false" FixedLength="false" />
+    <Property Name="City" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="Country" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="Province" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="productextentionattributes" Relationship="zeusparkModel.productextentionattributelocation" FromRole="location" ToRole="productextentionattribute" />
+  </EntityType>
+  <EntityType Name="product">
+    <Key>
+      <PropertyRef Name="ProductID" />
+    </Key>
+    <Property Name="ProductID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProductUnique" Type="String" Nullable="false" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="65535" Unicode="false" FixedLength="false" />
+    <Property Name="DetailHtml" Type="String" MaxLength="1073741823" Unicode="false" FixedLength="false" />
+    <Property Name="MainImageUrl" Type="String" MaxLength="2000" Unicode="false" FixedLength="false" />
+    <Property Name="BuyLimit" Type="Int32" />
+    <Property Name="DeliveryInfoID" Type="Int32" />
+    <Property Name="ExtentionAttributeID" Type="Int32" />
+    <Property Name="Status" Type="Int32" Nullable="false" />
+    <Property Name="CreateTime" Type="DateTime" />
+    <Property Name="LastUpdateTime" Type="DateTime" />
+    <Property Name="Deleted" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="productimages" Relationship="zeusparkModel.productimageproduct" FromRole="product" ToRole="productimage" />
+    <NavigationProperty Name="productgroups" Relationship="zeusparkModel.productgroupproduct" FromRole="product" ToRole="productgroup" />
+    <NavigationProperty Name="deliveryinfo" Relationship="zeusparkModel.deliveryinfoproduct" FromRole="product" ToRole="deliveryinfo" />
+    <NavigationProperty Name="productextentionattribute" Relationship="zeusparkModel.productextentionattributeproduct" FromRole="product" ToRole="productextentionattribute" />
+    <NavigationProperty Name="productproperties" Relationship="zeusparkModel.productpropertyproduct" FromRole="product" ToRole="productproperty" />
+    <NavigationProperty Name="productcategories" Relationship="zeusparkModel.productcategoryproduct" FromRole="product" ToRole="productcategory" />
+    <NavigationProperty Name="productsaleinfoes" Relationship="zeusparkModel.productsaleinfoproduct" FromRole="product" ToRole="productsaleinfo" />
+    <NavigationProperty Name="skuinfoes" Relationship="zeusparkModel.skuinfoproduct" FromRole="product" ToRole="skuinfo" />
+  </EntityType>
+  <EntityType Name="productcategory">
+    <Key>
+      <PropertyRef Name="ProductCategoryID" />
+    </Key>
+    <Property Name="ProductCategoryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProductID" Type="Int32" Nullable="false" />
+    <Property Name="CategoryID" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="product" Relationship="zeusparkModel.productcategoryproduct" FromRole="productcategory" ToRole="product" />
+    <NavigationProperty Name="category" Relationship="zeusparkModel.productcategorycategory" FromRole="productcategory" ToRole="category" />
+  </EntityType>
+  <EntityType Name="productextentionattribute">
+    <Key>
+      <PropertyRef Name="ExtentionAttributeID" />
+    </Key>
+    <Property Name="ExtentionAttributeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IsHasReceipt" Type="Boolean" Nullable="false" />
+    <Property Name="IsPostFree" Type="Boolean" Nullable="false" />
+    <Property Name="IsSupportReplace" Type="Boolean" Nullable="false" />
+    <Property Name="IsUnderGuaranty" Type="Boolean" Nullable="false" />
+    <Property Name="LocationID" Type="Int32" />
+    <NavigationProperty Name="products" Relationship="zeusparkModel.productextentionattributeproduct" FromRole="productextentionattribute" ToRole="product" />
+    <NavigationProperty Name="location" Relationship="zeusparkModel.productextentionattributelocation" FromRole="productextentionattribute" ToRole="location" />
+  </EntityType>
+  <EntityType Name="productgroup">
+    <Key>
+      <PropertyRef Name="ProductGroupID" />
+    </Key>
+    <Property Name="ProductGroupID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProductID" Type="Int32" Nullable="false" />
+    <Property Name="GroupID" Type="Int32" Nullable="false" />
+    <Property Name="ProductUnique" Type="String" Nullable="false" MaxLength="255" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="product" Relationship="zeusparkModel.productgroupproduct" FromRole="productgroup" ToRole="product" />
+    <NavigationProperty Name="groupvalue" Relationship="zeusparkModel.productgroupgroupvalue" FromRole="productgroup" ToRole="groupvalue" />
+  </EntityType>
+  <EntityType Name="productimage">
+    <Key>
+      <PropertyRef Name="ImageID" />
+    </Key>
+    <Property Name="ImageID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProductID" Type="Int32" Nullable="false" />
+    <Property Name="ImageUrl" Type="String" Nullable="false" MaxLength="2000" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="product" Relationship="zeusparkModel.productimageproduct" FromRole="productimage" ToRole="product" />
+  </EntityType>
+  <EntityType Name="productproperty">
+    <Key>
+      <PropertyRef Name="ProductPropertyID" />
+    </Key>
+    <Property Name="ProductPropertyID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProductID" Type="Int32" Nullable="false" />
+    <Property Name="PropertyID" Type="String" Nullable="false" MaxLength="1000" Unicode="false" FixedLength="false" />
+    <Property Name="PropertyValue" Type="String" Nullable="false" MaxLength="1000" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="product" Relationship="zeusparkModel.productpropertyproduct" FromRole="productproperty" ToRole="product" />
+  </EntityType>
+  <EntityType Name="productsaleinfo">
+    <Key>
+      <PropertyRef Name="SaleInfoID" />
+    </Key>
+    <Property Name="SaleInfoID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProductID" Type="Int32" Nullable="false" />
+    <Property Name="ProductUnique" Type="String" Nullable="false" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="TotalSale" Type="Int32" Nullable="false" />
+    <Property Name="OnSaleDay" Type="Int32" Nullable="false" />
+    <Property Name="PayImageUrl" Type="String" MaxLength="2000" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="product" Relationship="zeusparkModel.productsaleinfoproduct" FromRole="productsaleinfo" ToRole="product" />
+  </EntityType>
+  <EntityType Name="productstatu">
+    <Key>
+      <PropertyRef Name="StatusID" />
+    </Key>
+    <Property Name="StatusID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="StatusName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="skuinfo">
+    <Key>
+      <PropertyRef Name="InfoID" />
+    </Key>
+    <Property Name="InfoID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProductID" Type="Int32" Nullable="false" />
+    <Property Name="SkuID" Type="String" MaxLength="1000" Unicode="false" FixedLength="false" />
+    <Property Name="IconUrl" Type="String" MaxLength="2000" Unicode="false" FixedLength="false" />
+    <Property Name="OrgPrice" Type="Double" Nullable="false" />
+    <Property Name="Price" Type="Double" Nullable="false" />
+    <Property Name="ProductCode" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="Quantity" Type="Int32" />
+    <NavigationProperty Name="product" Relationship="zeusparkModel.skuinfoproduct" FromRole="skuinfo" ToRole="product" />
+  </EntityType>
+  <EntityType Name="useraccount">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AccountName" Type="String" Nullable="false" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="UserName" Type="String" Nullable="true" MaxLength="500" Unicode="false" FixedLength="false" />
+    <Property Name="Mail" Type="String" MaxLength="255" Unicode="false" FixedLength="false" Nullable="true" />
+    <Property Name="Telephone" Type="String" MaxLength="50" Unicode="false" FixedLength="false" Nullable="true" />
+    <Property Name="Password" Type="String" Nullable="true" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="RegisterTime" Type="DateTime" Nullable="false" />
+    <Property Name="AccountType" Type="Int32" Nullable="false" />
+    <Property Type="String" Name="OpenID" MaxLength="255" FixedLength="false" Unicode="false" Nullable="true" />
+    <Property Type="String" Name="HeadImgUrl" MaxLength="500" FixedLength="false" Unicode="false" Nullable="true" />
+    <Property Type="String" Name="UnionId" MaxLength="255" FixedLength="false" Unicode="false" Nullable="true" />
+  </EntityType>
+  <Association Name="productimageproduct">
+    <End Type="zeusparkModel.productimage" Role="productimage" Multiplicity="*" />
+    <End Type="zeusparkModel.product" Role="product" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="product">
+        <PropertyRef Name="ProductID" />
+      </Principal>
+      <Dependent Role="productimage">
+        <PropertyRef Name="ProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="productgroupproduct">
+    <End Type="zeusparkModel.productgroup" Role="productgroup" Multiplicity="*" />
+    <End Type="zeusparkModel.product" Role="product" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="product">
+        <PropertyRef Name="ProductID" />
+      </Principal>
+      <Dependent Role="productgroup">
+        <PropertyRef Name="ProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="productgroupgroupvalue">
+    <End Type="zeusparkModel.productgroup" Role="productgroup" Multiplicity="*" />
+    <End Type="zeusparkModel.groupvalue" Role="groupvalue" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="groupvalue">
+        <PropertyRef Name="GroupID" />
+      </Principal>
+      <Dependent Role="productgroup">
+        <PropertyRef Name="GroupID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="deliveryinfoproduct">
+    <End Type="zeusparkModel.deliveryinfo" Role="deliveryinfo" Multiplicity="0..1" />
+    <End Type="zeusparkModel.product" Role="product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="deliveryinfo">
+        <PropertyRef Name="DeliveryInfoID" />
+      </Principal>
+      <Dependent Role="product">
+        <PropertyRef Name="DeliveryInfoID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="productextentionattributeproduct">
+    <End Type="zeusparkModel.productextentionattribute" Role="productextentionattribute" Multiplicity="0..1" />
+    <End Type="zeusparkModel.product" Role="product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="productextentionattribute">
+        <PropertyRef Name="ExtentionAttributeID" />
+      </Principal>
+      <Dependent Role="product">
+        <PropertyRef Name="ExtentionAttributeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="productpropertyproduct">
+    <End Type="zeusparkModel.productproperty" Role="productproperty" Multiplicity="*" />
+    <End Type="zeusparkModel.product" Role="product" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="product">
+        <PropertyRef Name="ProductID" />
+      </Principal>
+      <Dependent Role="productproperty">
+        <PropertyRef Name="ProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="productcategoryproduct">
+    <End Type="zeusparkModel.productcategory" Role="productcategory" Multiplicity="*" />
+    <End Type="zeusparkModel.product" Role="product" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="product">
+        <PropertyRef Name="ProductID" />
+      </Principal>
+      <Dependent Role="productcategory">
+        <PropertyRef Name="ProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="productcategorycategory">
+    <End Type="zeusparkModel.productcategory" Role="productcategory" Multiplicity="*" />
+    <End Type="zeusparkModel.category" Role="category" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="category">
+        <PropertyRef Name="CategoryID" />
+      </Principal>
+      <Dependent Role="productcategory">
+        <PropertyRef Name="CategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="productsaleinfoproduct">
+    <End Type="zeusparkModel.productsaleinfo" Role="productsaleinfo" Multiplicity="*" />
+    <End Type="zeusparkModel.product" Role="product" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="product">
+        <PropertyRef Name="ProductID" />
+      </Principal>
+      <Dependent Role="productsaleinfo">
+        <PropertyRef Name="ProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="skuinfoproduct">
+    <End Type="zeusparkModel.skuinfo" Role="skuinfo" Multiplicity="*" />
+    <End Type="zeusparkModel.product" Role="product" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="product">
+        <PropertyRef Name="ProductID" />
+      </Principal>
+      <Dependent Role="skuinfo">
+        <PropertyRef Name="ProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="productextentionattributelocation">
+    <End Type="zeusparkModel.productextentionattribute" Role="productextentionattribute" Multiplicity="*" />
+    <End Type="zeusparkModel.location" Role="location" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="location">
+        <PropertyRef Name="LocationID" />
+      </Principal>
+      <Dependent Role="productextentionattribute">
+        <PropertyRef Name="LocationID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="uploadhistory">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Description" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="CategoryID" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="MainImg" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="ProdImg" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Type="Double" Name="Price" />
+    <Property Type="Int32" Name="UploadUser" Nullable="false" />
+    <Property Type="DateTime" Name="UploadTime" Nullable="false" />
+    <Property Type="String" Name="ProductUnique" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="GroupID" />
+  </EntityType>
+  <EntityType Name="publisher">
+    <Key>
+      <PropertyRef Name="PublisherID" />
+    </Key>
+    <Property Type="Int32" Name="PublisherID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="UserID" Nullable="false" />
+    <Property Type="Int32" Name="IdentityType" Nullable="false" />
+    <Property Type="Binary" Name="IdentityFrontImage" MaxLength="Max" FixedLength="false" />
+    <Property Type="Binary" Name="IdentityDueDate" MaxLength="Max" FixedLength="false" />
+    <Property Type="String" Name="City" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Area" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="DetailAddress" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="PostCode" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="BankName" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="BankAccount" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+</Schema>

@@ -1,0 +1,205 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="zeusparkModel.Store" Alias="Self" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.1" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="zeusparkModelStoreContainer">
+    <EntitySet Name="category" EntityType="zeusparkModel.Store.category" store:Type="Tables" Schema="zeuspark" />
+    <EntitySet Name="deliveryinfo" EntityType="zeusparkModel.Store.deliveryinfo" store:Type="Tables" Schema="zeuspark" />
+    <EntitySet Name="groupvalue" EntityType="zeusparkModel.Store.groupvalue" store:Type="Tables" Schema="zeuspark" />
+    <EntitySet Name="location" EntityType="zeusparkModel.Store.location" store:Type="Tables" Schema="zeuspark" />
+    <EntitySet Name="product" EntityType="zeusparkModel.Store.product" store:Type="Tables" Schema="zeuspark" />
+    <EntitySet Name="productcategory" EntityType="zeusparkModel.Store.productcategory" store:Type="Tables" Schema="zeuspark" />
+    <EntitySet Name="productextentionattribute" EntityType="zeusparkModel.Store.productextentionattribute" store:Type="Tables" Schema="zeuspark" />
+    <EntitySet Name="productgroup" EntityType="zeusparkModel.Store.productgroup" store:Type="Tables" Schema="zeuspark" />
+    <EntitySet Name="productimage" EntityType="zeusparkModel.Store.productimage" store:Type="Tables" Schema="zeuspark" />
+    <EntitySet Name="productproperty" EntityType="zeusparkModel.Store.productproperty" store:Type="Tables" Schema="zeuspark" />
+    <EntitySet Name="productsaleinfo" EntityType="zeusparkModel.Store.productsaleinfo" store:Type="Tables" Schema="zeuspark" />
+    <EntitySet Name="productstatus" EntityType="zeusparkModel.Store.productstatus" store:Type="Tables" Schema="zeuspark" />
+    <EntitySet Name="publisher" EntityType="zeusparkModel.Store.publisher" store:Type="Tables" Schema="zeuspark" />
+    <EntitySet Name="skuinfo" EntityType="zeusparkModel.Store.skuinfo" store:Type="Tables" Schema="zeuspark" />
+    <EntitySet Name="uploadhistory" EntityType="zeusparkModel.Store.uploadhistory" store:Type="Tables" Schema="zeuspark" />
+    <EntitySet Name="useraccount" EntityType="zeusparkModel.Store.useraccount" store:Type="Tables" Schema="zeuspark" />
+  </EntityContainer>
+  <EntityType Name="category">
+    <Key>
+      <PropertyRef Name="CategoryID" />
+    </Key>
+    <Property Name="CategoryID" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="CategoryName" Type="varchar" Nullable="false" MaxLength="500" />
+    <Property Name="ParentCategoryID" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="deliveryinfo">
+    <Key>
+      <PropertyRef Name="DeliveryInfoID" />
+    </Key>
+    <Property Name="DeliveryInfoID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="DeliveryType" Type="int" />
+    <Property Name="TemplateId" Type="varchar" MaxLength="100" />
+    <Property Name="ExpressNormalID" Type="int" />
+    <Property Name="ExpressNormalPrice" Type="double" />
+    <Property Name="ExpressFastID" Type="int" />
+    <Property Name="ExpressFastPrice" Type="double" />
+    <Property Name="ExpressEMSID" Type="int" />
+    <Property Name="ExpressEMSPrice" Type="double" />
+    <Property Name="Volume" Type="int" />
+    <Property Name="Weight" Type="int" />
+  </EntityType>
+  <EntityType Name="groupvalue">
+    <Key>
+      <PropertyRef Name="GroupID" />
+    </Key>
+    <Property Name="GroupID" Type="int" Nullable="false" />
+    <Property Name="GroupName" Type="varchar" Nullable="false" MaxLength="500" />
+    <Property Name="ParentGroupID" Type="int" />
+    <Property Name="Deleted" Type="bool" Nullable="false" />
+  </EntityType>
+  <EntityType Name="location">
+    <Key>
+      <PropertyRef Name="LocationID" />
+    </Key>
+    <Property Name="LocationID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Address" Type="text" />
+    <Property Name="City" Type="varchar" MaxLength="100" />
+    <Property Name="Country" Type="varchar" MaxLength="100" />
+    <Property Name="Province" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="product">
+    <Key>
+      <PropertyRef Name="ProductID" />
+    </Key>
+    <Property Name="ProductID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ProductUnique" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="Name" Type="text" Nullable="false" />
+    <Property Name="DetailHtml" Type="longtext" />
+    <Property Name="MainImageUrl" Type="varchar" MaxLength="2000" />
+    <Property Name="BuyLimit" Type="int" />
+    <Property Name="DeliveryInfoID" Type="int" />
+    <Property Name="ExtentionAttributeID" Type="int" />
+    <Property Name="Status" Type="int" Nullable="false" />
+    <Property Name="CreateTime" Type="timestamp" />
+    <Property Name="LastUpdateTime" Type="timestamp" />
+    <Property Name="Deleted" Type="bool" Nullable="false" />
+  </EntityType>
+  <EntityType Name="productcategory">
+    <Key>
+      <PropertyRef Name="ProductCategoryID" />
+    </Key>
+    <Property Name="ProductCategoryID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ProductID" Type="int" Nullable="false" />
+    <Property Name="CategoryID" Type="varchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="productextentionattribute">
+    <Key>
+      <PropertyRef Name="ExtentionAttributeID" />
+    </Key>
+    <Property Name="ExtentionAttributeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="IsHasReceipt" Type="bool" Nullable="false" />
+    <Property Name="IsPostFree" Type="bool" Nullable="false" />
+    <Property Name="IsSupportReplace" Type="bool" Nullable="false" />
+    <Property Name="IsUnderGuaranty" Type="bool" Nullable="false" />
+    <Property Name="LocationID" Type="int" />
+  </EntityType>
+  <EntityType Name="productgroup">
+    <Key>
+      <PropertyRef Name="ProductGroupID" />
+    </Key>
+    <Property Name="ProductGroupID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ProductID" Type="int" Nullable="false" />
+    <Property Name="GroupID" Type="int" Nullable="false" />
+    <Property Name="ProductUnique" Type="varchar" Nullable="false" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="productimage">
+    <Key>
+      <PropertyRef Name="ImageID" />
+    </Key>
+    <Property Name="ImageID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ProductID" Type="int" Nullable="false" />
+    <Property Name="ImageUrl" Type="varchar" Nullable="false" MaxLength="2000" />
+  </EntityType>
+  <EntityType Name="productproperty">
+    <Key>
+      <PropertyRef Name="ProductPropertyID" />
+    </Key>
+    <Property Name="ProductPropertyID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ProductID" Type="int" Nullable="false" />
+    <Property Name="PropertyID" Type="varchar" Nullable="false" />
+    <Property Name="PropertyValue" Type="varchar" Nullable="false" />
+  </EntityType>
+  <EntityType Name="productsaleinfo">
+    <Key>
+      <PropertyRef Name="SaleInfoID" />
+    </Key>
+    <Property Name="SaleInfoID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ProductID" Type="int" Nullable="false" />
+    <Property Name="ProductUnique" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="TotalSale" Type="int" Nullable="false" />
+    <Property Name="OnSaleDay" Type="int" Nullable="false" />
+    <Property Name="PayImageUrl" Type="varchar" MaxLength="2000" />
+  </EntityType>
+  <EntityType Name="productstatus">
+    <Key>
+      <PropertyRef Name="StatusID" />
+    </Key>
+    <Property Name="StatusID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="StatusName" Type="varchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="publisher">
+    <Key>
+      <PropertyRef Name="PublisherID" />
+    </Key>
+    <Property Name="PublisherID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="UserID" Type="int" Nullable="false" />
+    <Property Name="IdentityType" Type="int" Nullable="false" />
+    <Property Name="IdentityFrontImage" Type="blob" />
+    <Property Name="IdentityDueDate" Type="blob" />
+    <Property Name="City" Type="varchar" MaxLength="50" />
+    <Property Name="Area" Type="varchar" MaxLength="255" />
+    <Property Name="DetailAddress" Type="varchar" />
+    <Property Name="PostCode" Type="varchar" MaxLength="50" />
+    <Property Name="BankName" Type="varchar" MaxLength="255" />
+    <Property Name="BankAccount" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="skuinfo">
+    <Key>
+      <PropertyRef Name="InfoID" />
+    </Key>
+    <Property Name="InfoID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ProductID" Type="int" Nullable="false" />
+    <Property Name="SkuID" Type="varchar" />
+    <Property Name="IconUrl" Type="varchar" MaxLength="2000" />
+    <Property Name="OrgPrice" Type="double" Nullable="false" />
+    <Property Name="Price" Type="double" Nullable="false" />
+    <Property Name="ProductCode" Type="varchar" MaxLength="255" />
+    <Property Name="Quantity" Type="int" />
+  </EntityType>
+  <EntityType Name="uploadhistory">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="text" Nullable="false" />
+    <Property Name="Description" Type="longtext" />
+    <Property Name="CategoryID" Type="varchar" MaxLength="50" />
+    <Property Name="MainImg" Type="varchar" />
+    <Property Name="ProdImg" Type="varchar" />
+    <Property Name="Price" Type="double" />
+    <Property Name="UploadUser" Type="int" Nullable="false" />
+    <Property Name="UploadTime" Type="timestamp" Nullable="false" />
+    <Property Name="ProductUnique" Type="varchar" MaxLength="255" />
+    <Property Name="GroupID" Type="int" />
+  </EntityType>
+  <EntityType Name="useraccount">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="AccountName" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="UserName" Type="varchar" MaxLength="500" />
+    <Property Name="Mail" Type="varchar" MaxLength="255" />
+    <Property Name="Telephone" Type="varchar" MaxLength="50" />
+    <Property Name="Password" Type="varchar" MaxLength="50" />
+    <Property Name="RegisterTime" Type="datetime" Nullable="false" />
+    <Property Name="AccountType" Type="int" Nullable="false" />
+    <Property Name="OpenID" Type="varchar" MaxLength="255" />
+    <Property Name="HeadImgUrl" Type="varchar" MaxLength="500" />
+    <Property Name="UnionId" Type="varchar" MaxLength="255" />
+  </EntityType>
+</Schema>

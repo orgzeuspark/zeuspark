@@ -1,0 +1,67 @@
+﻿@{
+    ViewBag.Title = "登陆";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!--=== Breadcrumbs ===-->
+<div class="breadcrumbs margin-bottom-40">
+    <div class="container">
+        <h1 class="color-green pull-left">登陆</h1>
+        <ul class="pull-right breadcrumb">
+            <li><a href="index.html">主页</a> <span class="divider">/</span></li>
+            <li><a href="">注册</a> <span class="divider">/</span></li>
+            <li class="active">登陆</li>
+        </ul>
+    </div><!--/container-->
+</div><!--/breadcrumbs-->
+<!--=== End Breadcrumbs ===-->
+<!--=== Content Part ===-->
+<div class="container">
+    <div class="row-fluid">
+        <form class="log-page" method="post" action="/User/LoginSubmit" />
+        <h3>登陆你的账号</h3>
+        <div class="input-prepend">
+            <span class="add-on"><i class="icon-user"></i></span>
+            <input class="input-xlarge" type="text" placeholder="手机/邮箱" name="name" />
+        </div>
+        <div class="input-prepend">
+            <span class="add-on"><i class="icon-lock"></i></span>
+            <input class="input-xlarge" type="text" placeholder="密码" name="pass" />
+        </div>
+        <div class="controls form-inline">
+            <label>输入账号登陆，或扫一扫微信登陆</label>
+            <button class="btn-u pull-right" type="submit">登陆</button>
+            @{
+                if (!ViewBag.IsValid)
+                {
+                    <p>@ViewBag.LoginFail</p>
+                }
+            }
+            <p></p>
+        </div>
+        <hr />
+        <div id="wx-root"></div>
+        <h4>没有账号？</h4>
+        <p>没关系, <a class="color-green" href="#">点击</a> 注册.</p>
+        </form>
+    </div><!--/row-fluid-->
+</div><!--/container-->
+<!--=== End Content Part ===-->
+@section customjs
+{
+    <script src="http://res.wx.qq.com/connect/zh_CN/htmledition/js/wxLogin.js"></script>
+
+    <script type="text/javascript">
+
+        var obj = new WxLogin({
+            id: "wx-root",
+            appid: "wx7784b75803f93ee2",
+            scope: "snsapi_login",
+            redirect_uri: "http%3A%2F%2Fwww.zeuspark.com%2Fuser%2Floginwx",
+            state: "1234567890",
+            style: "white",
+            href: "http%3A%2F%2Fwww.zeuspark.com%2Fcontent%2Fwxcode.css"
+        });
+
+    </script>
+}

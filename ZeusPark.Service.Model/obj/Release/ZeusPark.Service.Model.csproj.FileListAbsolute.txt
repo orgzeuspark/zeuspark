@@ -1,0 +1,13 @@
+C:\Users\u587212\Documents\MyWork\ZeusPark\ZeusPark\ZeusPark.Service.Model\bin\Release\ZeusPark.Service.Model.dll
+C:\Users\u587212\Documents\MyWork\ZeusPark\ZeusPark\ZeusPark.Service.Model\bin\Release\ZeusPark.Service.Model.pdb
+C:\Users\u587212\Documents\MyWork\ZeusPark\ZeusPark\ZeusPark.Service.Model\obj\Release\ZeusPark.Service.Model.dll
+C:\Users\u587212\Documents\MyWork\ZeusPark\ZeusPark\ZeusPark.Service.Model\obj\Release\ZeusPark.Service.Model.pdb
+E:\MyWork\ZeusPark\ZeusPark\ZeusPark.Service.Model\bin\Release\ZeusPark.Service.Model.dll
+E:\MyWork\ZeusPark\ZeusPark\ZeusPark.Service.Model\bin\Release\ZeusPark.Service.Model.pdb
+E:\MyWork\ZeusPark\ZeusPark\ZeusPark.Service.Model\obj\Release\ZeusPark.Service.Model.dll
+E:\MyWork\ZeusPark\ZeusPark\ZeusPark.Service.Model\obj\Release\ZeusPark.Service.Model.pdb
+C:\MyWork\ZeusPark\ZeusPark\ZeusPark.Service.Model\bin\Release\ZeusPark.Service.Model.dll
+C:\MyWork\ZeusPark\ZeusPark\ZeusPark.Service.Model\bin\Release\ZeusPark.Service.Model.pdb
+C:\MyWork\ZeusPark\ZeusPark\ZeusPark.Service.Model\obj\Release\ZeusPark.Service.Model.dll
+C:\MyWork\ZeusPark\ZeusPark\ZeusPark.Service.Model\obj\Release\ZeusPark.Service.Model.pdb
+C:\MyWork\ZeusPark\ZeusPark\ZeusPark.Service.Model\obj\Release\ZeusPark.Service.Model.csprojResolveAssemblyReference.cache

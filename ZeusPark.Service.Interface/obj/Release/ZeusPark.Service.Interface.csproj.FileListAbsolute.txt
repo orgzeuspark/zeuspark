@@ -1,0 +1,15 @@
+C:\Users\u587212\Documents\MyWork\ZeusPark\ZeusPark\ZeusPark.Service.Interface\bin\Release\ZeusPark.Service.Interface.dll
+C:\Users\u587212\Documents\MyWork\ZeusPark\ZeusPark\ZeusPark.Service.Interface\bin\Release\ZeusPark.Service.Interface.pdb
+C:\Users\u587212\Documents\MyWork\ZeusPark\ZeusPark\ZeusPark.Service.Interface\obj\Release\ZeusPark.Service.Interface.csprojResolveAssemblyReference.cache
+C:\Users\u587212\Documents\MyWork\ZeusPark\ZeusPark\ZeusPark.Service.Interface\obj\Release\ZeusPark.Service.Interface.dll
+C:\Users\u587212\Documents\MyWork\ZeusPark\ZeusPark\ZeusPark.Service.Interface\obj\Release\ZeusPark.Service.Interface.pdb
+E:\MyWork\ZeusPark\ZeusPark\ZeusPark.Service.Interface\bin\Release\ZeusPark.Service.Interface.dll
+E:\MyWork\ZeusPark\ZeusPark\ZeusPark.Service.Interface\bin\Release\ZeusPark.Service.Interface.pdb
+E:\MyWork\ZeusPark\ZeusPark\ZeusPark.Service.Interface\obj\Release\ZeusPark.Service.Interface.csprojResolveAssemblyReference.cache
+E:\MyWork\ZeusPark\ZeusPark\ZeusPark.Service.Interface\obj\Release\ZeusPark.Service.Interface.dll
+E:\MyWork\ZeusPark\ZeusPark\ZeusPark.Service.Interface\obj\Release\ZeusPark.Service.Interface.pdb
+C:\MyWork\ZeusPark\ZeusPark\ZeusPark.Service.Interface\bin\Release\ZeusPark.Service.Interface.dll
+C:\MyWork\ZeusPark\ZeusPark\ZeusPark.Service.Interface\bin\Release\ZeusPark.Service.Interface.pdb
+C:\MyWork\ZeusPark\ZeusPark\ZeusPark.Service.Interface\obj\Release\ZeusPark.Service.Interface.csprojResolveAssemblyReference.cache
+C:\MyWork\ZeusPark\ZeusPark\ZeusPark.Service.Interface\obj\Release\ZeusPark.Service.Interface.dll
+C:\MyWork\ZeusPark\ZeusPark\ZeusPark.Service.Interface\obj\Release\ZeusPark.Service.Interface.pdb

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="800675d22ca54892bc80de3a2ffaefec" Name="Diagram1">
+        <EntityTypeShape EntityType="zeusparkModel.category" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="zeusparkModel.deliveryinfo" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="zeusparkModel.groupvalue" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="zeusparkModel.location" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="zeusparkModel.product" Width="1.5" PointX="2.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="zeusparkModel.productcategory" Width="1.5" PointX="4.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="zeusparkModel.productextentionattribute" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="zeusparkModel.productgroup" Width="1.5" PointX="6.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="zeusparkModel.productimage" Width="1.5" PointX="4.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="zeusparkModel.productproperty" Width="1.5" PointX="6.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="zeusparkModel.productsaleinfo" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="zeusparkModel.productstatu" Width="1.5" PointX="0.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="zeusparkModel.skuinfo" Width="1.5" PointX="8.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="zeusparkModel.useraccount" Width="1.5" PointX="8.75" PointY="6.75" IsExpanded="true" />
+        <AssociationConnector Association="zeusparkModel.productimageproduct" />
+        <AssociationConnector Association="zeusparkModel.productgroupproduct" />
+        <AssociationConnector Association="zeusparkModel.productgroupgroupvalue" />
+        <AssociationConnector Association="zeusparkModel.deliveryinfoproduct" />
+        <AssociationConnector Association="zeusparkModel.productextentionattributeproduct" />
+        <AssociationConnector Association="zeusparkModel.productpropertyproduct" />
+        <AssociationConnector Association="zeusparkModel.productcategoryproduct" />
+        <AssociationConnector Association="zeusparkModel.productcategorycategory" />
+        <AssociationConnector Association="zeusparkModel.productsaleinfoproduct" />
+        <AssociationConnector Association="zeusparkModel.skuinfoproduct" />
+        <AssociationConnector Association="zeusparkModel.productextentionattributelocation" />
+        <EntityTypeShape EntityType="zeusparkModel.uploadhistory" Width="1.5" PointX="8.9493800201217546" PointY="29.730470760599928" />
+        <EntityTypeShape EntityType="zeusparkModel.publisher" Width="1.5" PointX="3.4978048966721653" PointY="6.3995924323795332" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
