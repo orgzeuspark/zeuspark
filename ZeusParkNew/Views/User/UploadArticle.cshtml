@@ -11,12 +11,7 @@
 <link href="https://kendo.cdn.telerik.com/2015.2.902/styles/kendo.dataviz.min.css" rel="stylesheet" type="text/css" />
 <link href="https://kendo.cdn.telerik.com/2015.2.902/styles/kendo.bootstrap.min.css" rel="stylesheet" type="text/css" />
 <link href="https://kendo.cdn.telerik.com/2015.2.902/styles/kendo.dataviz.bootstrap.min.css" rel="stylesheet" type="text/css" />
-<script src="https://kendo.cdn.telerik.com/2015.2.902/js/jquery.min.js"></script>
-<script src="http://zeusparkweb.oss-cn-shanghai.aliyuncs.com/js/jquery-migrate-1.2.1.min.js"></script>
-<script src="https://kendo.cdn.telerik.com/2015.2.902/js/jszip.min.js"></script>
-<script src="https://kendo.cdn.telerik.com/2015.2.902/js/kendo.all.min.js"></script>
-<script src="https://kendo.cdn.telerik.com/2015.2.902/js/kendo.aspnetmvc.min.js"></script>
-<script src="https://kendo.cdn.telerik.com/2015.2.902/js/kendo.modernizr.custom.js"></script>
+
 }
 
 <!--=== Breadcrumbs ===-->
@@ -118,7 +113,7 @@
     <!-- Our Clients -->
     <div id="clients-flexslider" class="flexslider home clients">
         <div class="headline"><h3>新上传作品</h3></div>
-        <ul class="slides">
+        @*<ul class="slides">
             <li>
                 <a href="#">
                     <img src="/assets/img/clients/hp_grey.png" alt="" />
@@ -221,11 +216,18 @@
                     <img src="/assets/img/clients/spinworkx.png" class="color-img" alt="" />
                 </a>
             </li>
-        </ul>
+        </ul>*@
     </div><!--/flexslider-->
     <!-- //End Our Clients -->
 </div><!--/container-->
 <!--=== End Content Part ===-->
+
+@section customjs{
+<script src="http://zeusparkweb.oss-cn-shanghai.aliyuncs.com/js/jquery-migrate-1.2.1.min.js"></script>
+<script src="https://kendo.cdn.telerik.com/2015.2.902/js/jszip.min.js"></script>
+<script src="https://kendo.cdn.telerik.com/2015.2.902/js/kendo.all.min.js"></script>
+<script src="https://kendo.cdn.telerik.com/2015.2.902/js/kendo.aspnetmvc.min.js"></script>
+<script src="https://kendo.cdn.telerik.com/2015.2.902/js/kendo.modernizr.custom.js"></script>
 
 <script type="text/javascript">
 
@@ -239,3 +241,4 @@
     });
 
 </script>
+}
