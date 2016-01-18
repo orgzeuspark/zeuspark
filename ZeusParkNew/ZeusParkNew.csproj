@@ -24,6 +24,7 @@
     <SccLocalPath>SAK</SccLocalPath>
     <SccAuxPath>SAK</SccAuxPath>
     <SccProvider>SAK</SccProvider>
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -781,6 +782,7 @@
     <Content Include="Content\kendo\2015.2.902\Uniform\sprite_2x.png" />
     <Content Include="Content\kendo\2015.2.902\Uniform\sprite_kpi.png" />
     <Content Include="Content\kendo\2015.2.902\Uniform\sprite_kpi_2x.png" />
+    <Content Include="Content\site.css" />
     <Content Include="Content\wxcode.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
