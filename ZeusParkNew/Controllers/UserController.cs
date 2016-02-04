@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Web;
+using System.Web.Helpers;
 using System.Web.Mvc;
 using ZeusPark.Service.Admin;
 using ZeusPark.Service.Model;
@@ -39,12 +40,14 @@ namespace ZeusParkNew.Controllers
         {
             string name = collection["name"].ToString();
             string pass = collection["pass"].ToString();
+            string username = string.Empty;
             UserService ser = new UserService();
-            var result = ser.IsValidAccount(name, pass);
+            var result = ser.IsValidAccount(name, pass, out username);
 
-            if (null != result)
+            if (result > 0)
             {
-                Session["UserId"] = result;
+                Session["UserId"] = username;
+                Session["LoginUserId"] = result;
                 ViewBag.IsValid = true;
                 return RedirectToAction("Index", "Home");
             }
@@ -63,12 +66,14 @@ namespace ZeusParkNew.Controllers
             WeChatUserInfo info = proxy.GetUserInfoByTokenOpenId(accesstoken, openid);
 
             UserService service = new UserService();
-            if (!service.IsWeChatAccountExist(info.OpenId))
+            int userid = 0;
+            if (!service.IsWeChatAccountExist(info.OpenId, out userid))
             {
-                service.CreateWeChatAccount(info.Name, info.OpenId, info.HeadImgUrl, info.UnionId);
+                userid = service.CreateWeChatAccount(info.Name, info.OpenId, info.HeadImgUrl, info.UnionId);
             }
 
             Session["UserId"] = info.Name;
+            Session["LoginUserId"] = userid;
 
             return RedirectToAction("Index", "Home");
 
@@ -88,10 +93,6 @@ namespace ZeusParkNew.Controllers
             string otherImg = Path.GetFileName(otherImgPath);
 
             WeChatProxy proxy = new WeChatProxy();
-
-            //string mainImgId = proxy.UploadImage(savedFileName, mainImg);
-            //string otherImgId = proxy.UploadImage(Path.Combine(Server.MapPath("~/UploadedImages"), otherImg), otherImg);
-
 
             string mainImgId = proxy.UploadImage(mainImgPath, mainImg, file1.First());
             string otherImgId = proxy.UploadImage(otherImgPath, otherImg, file2.First());
@@ -127,12 +128,26 @@ namespace ZeusParkNew.Controllers
             history.ProdImg = otherImg;
             history.ProductUnique = uid;
             history.UploadTime = DateTime.Now;
-            history.UploadUser = 1;
+            history.UploadUser = int.Parse(Session["LoginUserID"] as string);
 
             service.AddUploadHistory(history);
 
-            return View("UploadArticle");
+            return View("AddSuccess");
         }
+
+        public ActionResult GetUploadHistory()
+        {
+            UserService service = new UserService();
+            var list = service.GetHistoryByUserId(1);
+
+            return new JsonResult() { Data = list, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
+        }
+
+        public ActionResult UploadHistory()
+        {
+            return View();
+        }
+
 
         public ActionResult Register()
         {
