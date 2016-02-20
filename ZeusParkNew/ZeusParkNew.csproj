@@ -24,6 +24,7 @@
     <SccLocalPath>SAK</SccLocalPath>
     <SccAuxPath>SAK</SccAuxPath>
     <SccProvider>SAK</SccProvider>
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -781,6 +782,7 @@
     <Content Include="Content\kendo\2015.2.902\Uniform\sprite_2x.png" />
     <Content Include="Content\kendo\2015.2.902\Uniform\sprite_kpi.png" />
     <Content Include="Content\kendo\2015.2.902\Uniform\sprite_kpi_2x.png" />
+    <Content Include="Content\site.css" />
     <Content Include="Content\wxcode.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -814,6 +816,10 @@
     <Content Include="Content\kendo\2015.2.902\images\kendoui.ttf" />
     <Content Include="Content\kendo\2015.2.902\images\kendoui.woff" />
     <Content Include="ProductImages\pyKYTt8Eljc67CMj9b4dvrr4zJYo.jpg.bak" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fontawesome-webfont_2d2816fe.eot" />
     <None Include="Properties\PublishProfiles\pub.pubxml" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="images\icons\zfavicon.ico" />
@@ -1516,6 +1522,9 @@
     <Content Include="Scripts\kendo\2015.2.902\kendo.web.min.js.map" />
     <Content Include="Scripts\kendo\2015.2.902\kendo.window.min.js.map" />
     <Content Include="Views\User\Register.cshtml" />
+    <Content Include="Views\Shared\_Processing.cshtml" />
+    <Content Include="Views\User\AddSuccess.cshtml" />
+    <Content Include="Views\User\UploadHistory.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\FilterConfig.cs" />

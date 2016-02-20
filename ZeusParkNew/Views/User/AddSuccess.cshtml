@@ -5,12 +5,6 @@
 
 @section customstyles{
         <!--This CSS entry was added by the Telerik VS Extensions for compatibility reasons-->
-<link href="http://zeusparkweb.oss-cn-shanghai.aliyuncs.com/css/kendo.compatibility.css" rel="stylesheet" type="text/css" />
-<link href="https://kendo.cdn.telerik.com/2015.2.902/styles/kendo.common-bootstrap.min.css" rel="stylesheet" type="text/css" />
-<link href="https://kendo.cdn.telerik.com/2015.2.902/styles/kendo.mobile.all.min.css" rel="stylesheet" type="text/css" />
-<link href="https://kendo.cdn.telerik.com/2015.2.902/styles/kendo.dataviz.min.css" rel="stylesheet" type="text/css" />
-<link href="https://kendo.cdn.telerik.com/2015.2.902/styles/kendo.bootstrap.min.css" rel="stylesheet" type="text/css" />
-<link href="https://kendo.cdn.telerik.com/2015.2.902/styles/kendo.dataviz.bootstrap.min.css" rel="stylesheet" type="text/css" />
 
 }
 
@@ -30,12 +24,6 @@
 <div class="container">
     <div class="row-fluid">
         <div class="span3">
-            <!-- Our Mission -->
-            <div class="margin-bottom-20">
-                <div class="headline"><h3>使用说明</h3></div>
-                <p>填写左边框中信息后点击上传按钮。</p>
-            </div>
-
             <!-- Posts -->
             <div class="posts margin-bottom-20">
                 <div class="headline"><h3>会员管理</h3></div>
@@ -64,48 +52,7 @@
         </div><!--/span3-->
 
         <div class="span9">
-            <form class="reg-page" id="publishform" method="post" action="/user/AddArt">
-            <h3>上传艺术品</h3>
-            <div class="controls">
-                <label>作品名称 <span class="color-red">*</span></label>
-                <input class="span12" type="text" name="title" value="" placeholder="请录入作品名称 （*必填)" required validationmessage="请输入作品名称" />
-                <label>作品简介 <span class="color-red">*</span></label>
-                <textarea class="span12" rows="10" cols="30" name="zpms" placeholder="作品简介（*必填）" required validationmessage="请输入作品简介"></textarea>
-                <label>作品类型</label>
-                <select name="pinlei" class="span12">
-                    <option value="">请选择作品类型</option>
-                    <option value="yh">油画</option>
-                    <option value="bx">丙烯</option>
-                    <option value="gh">国画</option>
-                    <option value="zhcl">综合材料</option>
-                    <option value="sy">摄影</option>
-                    <option value="ds">雕塑</option>
-                    <option value="zz">装置</option>
-                    <option value="sc">水彩</option>
-                    <option value="sm">素描</option>
-                    <option value="ch">插画</option>
-                    <option value="sf">书法</option>
-                    <option value="smht">数码绘图</option>
-                    <option value="qt">其他</option>
-                </select>
-                <label>作品价格 <span class="color-red">*</span></label>
-                <input class="span12" type="text" name="price" placeholder="请录入作品价格 （*必填） ￥/RMB" required validationmessage="请输入作品价格">
-                <label>作品主图片 （<span class="color-red">*</span>必填, 选择一张图片小于2MB）</label>
-
-                <input name="file1" id="file1" type="file" />
-
-                <label>作品其他图片 （<span class="color-red">*</span>必填，选择一张图片小于2MB）</label>
-                <input name="file2" id="file2" type="file" />
-            </div>
-            <div class="controls">
-                <label></label>
-            </div>
-            <div class="controls form-inline">
-                <label class="checkbox"><input type="checkbox" required validationmessage="请同意ZeusPark条款" />&nbsp; 我同意 <a href="">ZeusPark相关条款</a></label>
-                <button class="btn-u pull-right" type="submit" id="save">上   传</button>
-            </div>
-            <hr />
-            </form>
+            <i class="icon-ok-sign icon-3x" style="color:green"></i> 你的作品已经成功上传。后台服务人员会审核你的信息，如果审核通过，你的作品会发布到平台上。
         </div><!--/span9-->
     </div><!--/row-fluid-->
     <!-- Our Clients -->
@@ -219,30 +166,7 @@
     <!-- //End Our Clients -->
 </div><!--/container-->
 <!--=== End Content Part ===-->
-@Html.Partial("_Processing")
 
 @section customjs{
-<script src="http://zeusparkweb.oss-cn-shanghai.aliyuncs.com/js/jquery-migrate-1.2.1.min.js"></script>
-<script src="https://kendo.cdn.telerik.com/2015.2.902/js/jszip.min.js"></script>
-<script src="https://kendo.cdn.telerik.com/2015.2.902/js/kendo.all.min.js"></script>
-<script src="https://kendo.cdn.telerik.com/2015.2.902/js/kendo.modernizr.custom.js"></script>
 
-<script type="text/javascript">
-
-    var validator = $("#publishform").kendoValidator().data("kendoValidator");
-
-    $(document).ready(function () {
-        $("#file1").kendoUpload();
-        $("#file2").kendoUpload();
-    });
-
-    $("#save").on("click", function () {
-        if (validator.validate()) {
-            $("#divProcessing").show();
-            // If the form is valid, the Validator will return true
-            //save();
-        }
-    });
-
-</script>
 }

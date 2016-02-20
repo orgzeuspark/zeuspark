@@ -33,7 +33,7 @@ namespace ZeusPark.Service.Admin
             }
         }
 
-        public string IsValidAccount(string name, string password)
+        public int IsValidAccount(string name, string password, out string username)
         {
             using (zeusparkEntities entity = new zeusparkEntities())
             {
@@ -41,15 +41,21 @@ namespace ZeusPark.Service.Admin
 
                 if (null != acc)
                 {
-                    return acc.UserName;
+                    username = acc.UserName;
+                    return acc.UserID;
+                }
+                else
+                {
+                    username = string.Empty;
                 }
             }
 
-            return null;
+            return 0;
         }
 
-        public void CreateWeChatAccount(string name, string openId, string headImg, string unionId)
+        public int CreateWeChatAccount(string name, string openId, string headImg, string unionId)
         {
+            int userid = 0;
             using (zeusparkEntities entity = new zeusparkEntities())
             {
                 useraccount account = new useraccount();
@@ -67,17 +73,25 @@ namespace ZeusPark.Service.Admin
                     tran.Complete();
                 }
 
+                userid = account.UserID;
             }
+
+            return userid;
         }
 
-        public bool IsWeChatAccountExist(string openId)
+        public bool IsWeChatAccountExist(string openId, out int userid)
         {
             using (zeusparkEntities entity = new zeusparkEntities())
             {
                 var account = entity.useraccounts.FirstOrDefault(a => a.OpenID == openId);
                 if (null == account)
                 {
+                    userid = 0;
                     return false;
+                }
+                else
+                {
+                    userid = account.UserID;
                 }
             }
 
@@ -104,6 +118,27 @@ namespace ZeusPark.Service.Admin
 
                 entity.SaveChanges();
             }
+        }
+
+        public List<ProdUploadHistory> GetHistoryByUserId(int userid)
+        {
+            List<ProdUploadHistory> hisList = new List<ProdUploadHistory>();
+            using (zeusparkEntities entity = new zeusparkEntities())
+            {
+                var histories = entity.uploadhistories.Where(x => x.UploadUser == userid).ToList();
+
+                foreach(var his in histories)
+                {
+                    ProdUploadHistory prodhis = new ProdUploadHistory();
+                    prodhis.UploadTime = his.UploadTime;
+                    prodhis.Name = his.Name;
+                    prodhis.ProductUnique = his.ProductUnique;
+
+                    hisList.Add(prodhis);
+                }
+            }
+
+            return hisList;
         }
     }
 }
