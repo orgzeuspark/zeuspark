@@ -189,6 +189,34 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Alipay\app_code\AlipayConfig.cs" />
+    <Compile Include="Alipay\app_code\AlipayCore.cs" />
+    <Compile Include="Alipay\app_code\AlipayNotify.cs" />
+    <Compile Include="Alipay\app_code\AlipayOrder.cs" />
+    <Compile Include="Alipay\app_code\AlipayParamHelper.cs" />
+    <Compile Include="Alipay\app_code\AlipaySubmit.cs" />
+    <Compile Include="Alipay\app_code\AlipayMD5.cs" />
+    <Compile Include="Alipay\default.aspx.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Alipay\default.aspx.designer.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Alipay\notify_url.aspx.cs">
+      <DependentUpon>notify_url.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Alipay\notify_url.aspx.designer.cs">
+      <DependentUpon>notify_url.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Alipay\return_url.aspx.cs">
+      <DependentUpon>return_url.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Alipay\return_url.aspx.designer.cs">
+      <DependentUpon>return_url.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProductDetailController.cs" />
     <Compile Include="Controllers\TestsController.cs" />
@@ -203,6 +231,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Alipay\default.aspx" />
+    <Content Include="Alipay\notify_url.aspx" />
+    <Content Include="Alipay\return_url.aspx" />
     <Content Include="assets\css\effects.css" />
     <Content Include="assets\css\headers\header1.css" />
     <Content Include="assets\css\headers\header2.css" />
@@ -815,6 +846,7 @@
     <Content Include="Content\kendo\2015.2.902\fonts\DejaVu\DejaVuSerif.ttf" />
     <Content Include="Content\kendo\2015.2.902\images\kendoui.ttf" />
     <Content Include="Content\kendo\2015.2.902\images\kendoui.woff" />
+    <Content Include="images\alipaylogo.png" />
     <Content Include="ProductImages\pyKYTt8Eljc67CMj9b4dvrr4zJYo.jpg.bak" />
     <Content Include="fonts\fontawesome-webfont.eot" />
     <Content Include="fonts\fontawesome-webfont.ttf" />
@@ -1532,6 +1564,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Alipay\log\" />
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
