@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using ZeusPark.Service.Product;
+using ZeusParkNew;
 
 namespace ZeusPark.Web.Controllers
 {
@@ -112,6 +113,15 @@ namespace ZeusPark.Web.Controllers
             {
                 return View();
             }
+        }
+
+        //
+        // /ProductDetail/Buy
+
+        public void Buy(string subject, string totalFee)
+        {
+            var result = AlipayParamHelper.BuildParamters(subject, totalFee);
+            Response.Write(result);
         }
     }
 }

@@ -62,3 +62,16 @@ C:\Temp\ZeusPark\ZeusPark.Service.Product\bin\Debug\EntityFramework.xml
 C:\Temp\ZeusPark\ZeusPark.Service.Product\obj\Debug\ZeusPark.Service.Product.csprojResolveAssemblyReference.cache
 C:\Temp\ZeusPark\ZeusPark.Service.Product\obj\Debug\ZeusPark.Service.Product.dll
 C:\Temp\ZeusPark\ZeusPark.Service.Product\obj\Debug\ZeusPark.Service.Product.pdb
+C:\Users\michael.tan.USTER\Source\Repos\zeuspark\ZeusPark.Service.Product\bin\Debug\ZeusPark.Service.Product.dll
+C:\Users\michael.tan.USTER\Source\Repos\zeuspark\ZeusPark.Service.Product\bin\Debug\ZeusPark.Service.Product.pdb
+C:\Users\michael.tan.USTER\Source\Repos\zeuspark\ZeusPark.Service.Product\bin\Debug\EntityFramework.dll
+C:\Users\michael.tan.USTER\Source\Repos\zeuspark\ZeusPark.Service.Product\bin\Debug\ZeusPark.Data.MySql.dll
+C:\Users\michael.tan.USTER\Source\Repos\zeuspark\ZeusPark.Service.Product\bin\Debug\ZeusPark.Service.Interface.dll
+C:\Users\michael.tan.USTER\Source\Repos\zeuspark\ZeusPark.Service.Product\bin\Debug\ZeusPark.Service.Model.dll
+C:\Users\michael.tan.USTER\Source\Repos\zeuspark\ZeusPark.Service.Product\bin\Debug\ZeusPark.Data.MySql.pdb
+C:\Users\michael.tan.USTER\Source\Repos\zeuspark\ZeusPark.Service.Product\bin\Debug\ZeusPark.Service.Interface.pdb
+C:\Users\michael.tan.USTER\Source\Repos\zeuspark\ZeusPark.Service.Product\bin\Debug\ZeusPark.Service.Model.pdb
+C:\Users\michael.tan.USTER\Source\Repos\zeuspark\ZeusPark.Service.Product\bin\Debug\EntityFramework.xml
+C:\Users\michael.tan.USTER\Source\Repos\zeuspark\ZeusPark.Service.Product\obj\Debug\ZeusPark.Service.Product.csprojResolveAssemblyReference.cache
+C:\Users\michael.tan.USTER\Source\Repos\zeuspark\ZeusPark.Service.Product\obj\Debug\ZeusPark.Service.Product.dll
+C:\Users\michael.tan.USTER\Source\Repos\zeuspark\ZeusPark.Service.Product\obj\Debug\ZeusPark.Service.Product.pdb

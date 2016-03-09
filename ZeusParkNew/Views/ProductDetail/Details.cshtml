@@ -69,7 +69,7 @@
                 <li><i class="icon-calendar color-green"></i> 14,2003 February</li>
                 <li><i class="icon-tags color-green"></i> 库存： @Model.SkuInfoList[0].Quantity</li>
             </ul>
-            @*<p><a class="btn-u btn-u-large" href="#">购买</a></p>*@
+            <p><a class="btn-u btn-u-large" target="_blank" href="/ProductDetail/Buy?subject=@Model.Name&totalFee=@{ var priceBuy = Model.SkuInfoList[0].Price / 100; @priceBuy}">购买</a></p>
             <div class="pay-image">
                 <br />
                 <p>微信扫描支付</p>
