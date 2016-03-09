@@ -196,13 +196,6 @@
     <Compile Include="Alipay\app_code\AlipayParamHelper.cs" />
     <Compile Include="Alipay\app_code\AlipaySubmit.cs" />
     <Compile Include="Alipay\app_code\AlipayMD5.cs" />
-    <Compile Include="Alipay\default.aspx.cs">
-      <DependentUpon>default.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Alipay\default.aspx.designer.cs">
-      <DependentUpon>default.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Alipay\notify_url.aspx.cs">
       <DependentUpon>notify_url.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -231,7 +224,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Alipay\default.aspx" />
     <Content Include="Alipay\notify_url.aspx" />
     <Content Include="Alipay\return_url.aspx" />
     <Content Include="assets\css\effects.css" />

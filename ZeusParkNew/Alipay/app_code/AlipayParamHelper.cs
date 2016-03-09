@@ -22,16 +22,16 @@ namespace ZeusParkNew
             string payment_type = "1";
 
             //服务器异步通知页面路径
-            string notify_url = "http://www.zeusparkstore.com/Alipay/notify_url.aspx";
+            string notify_url = "http://www.zeuspark.com/Alipay/notify_url.aspx";
             //需http://格式的完整路径，不能加?id=123这类自定义参数
 
             //页面跳转同步通知页面路径
-            string return_url = "http://www.zeusparkstore.com/Alipay/return_url.aspx";
+            string return_url = "http://www.zeuspark.com/Alipay/return_url.aspx";
             //需http://格式的完整路径，不能加?id=123这类自定义参数，不能写成http://localhost/
 
             //商品展示地址
-            string show_url = "http://www.zeusparkstore.com";
-            //需以http://开头的完整路径，例如：http://www.zeusparkstore.com/myorder.html
+            string show_url = "http://www.zeuspark.com";
+            //需以http://开头的完整路径，例如：http://www.zeuspark.com/myorder.html
 
 
             //把请求参数打包成数组

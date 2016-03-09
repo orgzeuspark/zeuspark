@@ -18,3 +18,8 @@ C:\Temp\ZeusPark\ZeusPark.Service.Interface\bin\Debug\ZeusPark.Service.Interface
 C:\Temp\ZeusPark\ZeusPark.Service.Interface\obj\Debug\ZeusPark.Service.Interface.csprojResolveAssemblyReference.cache
 C:\Temp\ZeusPark\ZeusPark.Service.Interface\obj\Debug\ZeusPark.Service.Interface.dll
 C:\Temp\ZeusPark\ZeusPark.Service.Interface\obj\Debug\ZeusPark.Service.Interface.pdb
+C:\GitHub\zeuspark\ZeusPark.Service.Interface\bin\Debug\ZeusPark.Service.Interface.dll
+C:\GitHub\zeuspark\ZeusPark.Service.Interface\bin\Debug\ZeusPark.Service.Interface.pdb
+C:\GitHub\zeuspark\ZeusPark.Service.Interface\obj\Debug\ZeusPark.Service.Interface.csprojResolveAssemblyReference.cache
+C:\GitHub\zeuspark\ZeusPark.Service.Interface\obj\Debug\ZeusPark.Service.Interface.dll
+C:\GitHub\zeuspark\ZeusPark.Service.Interface\obj\Debug\ZeusPark.Service.Interface.pdb

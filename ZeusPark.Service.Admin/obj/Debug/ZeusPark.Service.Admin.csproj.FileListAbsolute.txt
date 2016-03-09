@@ -42,3 +42,14 @@ C:\Temp\ZeusPark\ZeusPark.Service.Admin\bin\Debug\EntityFramework.xml
 C:\Temp\ZeusPark\ZeusPark.Service.Admin\obj\Debug\ZeusPark.Service.Admin.csprojResolveAssemblyReference.cache
 C:\Temp\ZeusPark\ZeusPark.Service.Admin\obj\Debug\ZeusPark.Service.Admin.dll
 C:\Temp\ZeusPark\ZeusPark.Service.Admin\obj\Debug\ZeusPark.Service.Admin.pdb
+C:\GitHub\zeuspark\ZeusPark.Service.Admin\bin\Debug\ZeusPark.Service.Admin.dll
+C:\GitHub\zeuspark\ZeusPark.Service.Admin\bin\Debug\ZeusPark.Service.Admin.pdb
+C:\GitHub\zeuspark\ZeusPark.Service.Admin\bin\Debug\EntityFramework.dll
+C:\GitHub\zeuspark\ZeusPark.Service.Admin\bin\Debug\ZeusPark.Data.MySql.dll
+C:\GitHub\zeuspark\ZeusPark.Service.Admin\bin\Debug\ZeusPark.Service.Model.dll
+C:\GitHub\zeuspark\ZeusPark.Service.Admin\bin\Debug\ZeusPark.Data.MySql.pdb
+C:\GitHub\zeuspark\ZeusPark.Service.Admin\bin\Debug\ZeusPark.Service.Model.pdb
+C:\GitHub\zeuspark\ZeusPark.Service.Admin\bin\Debug\EntityFramework.xml
+C:\GitHub\zeuspark\ZeusPark.Service.Admin\obj\Debug\ZeusPark.Service.Admin.csprojResolveAssemblyReference.cache
+C:\GitHub\zeuspark\ZeusPark.Service.Admin\obj\Debug\ZeusPark.Service.Admin.dll
+C:\GitHub\zeuspark\ZeusPark.Service.Admin\obj\Debug\ZeusPark.Service.Admin.pdb

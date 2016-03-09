@@ -75,3 +75,16 @@ C:\Users\michael.tan.USTER\Source\Repos\zeuspark\ZeusPark.Service.Product\bin\De
 C:\Users\michael.tan.USTER\Source\Repos\zeuspark\ZeusPark.Service.Product\obj\Debug\ZeusPark.Service.Product.csprojResolveAssemblyReference.cache
 C:\Users\michael.tan.USTER\Source\Repos\zeuspark\ZeusPark.Service.Product\obj\Debug\ZeusPark.Service.Product.dll
 C:\Users\michael.tan.USTER\Source\Repos\zeuspark\ZeusPark.Service.Product\obj\Debug\ZeusPark.Service.Product.pdb
+C:\GitHub\zeuspark\ZeusPark.Service.Product\bin\Debug\ZeusPark.Service.Product.dll
+C:\GitHub\zeuspark\ZeusPark.Service.Product\bin\Debug\ZeusPark.Service.Product.pdb
+C:\GitHub\zeuspark\ZeusPark.Service.Product\bin\Debug\EntityFramework.dll
+C:\GitHub\zeuspark\ZeusPark.Service.Product\bin\Debug\ZeusPark.Data.MySql.dll
+C:\GitHub\zeuspark\ZeusPark.Service.Product\bin\Debug\ZeusPark.Service.Interface.dll
+C:\GitHub\zeuspark\ZeusPark.Service.Product\bin\Debug\ZeusPark.Service.Model.dll
+C:\GitHub\zeuspark\ZeusPark.Service.Product\bin\Debug\ZeusPark.Data.MySql.pdb
+C:\GitHub\zeuspark\ZeusPark.Service.Product\bin\Debug\ZeusPark.Service.Interface.pdb
+C:\GitHub\zeuspark\ZeusPark.Service.Product\bin\Debug\ZeusPark.Service.Model.pdb
+C:\GitHub\zeuspark\ZeusPark.Service.Product\bin\Debug\EntityFramework.xml
+C:\GitHub\zeuspark\ZeusPark.Service.Product\obj\Debug\ZeusPark.Service.Product.csprojResolveAssemblyReference.cache
+C:\GitHub\zeuspark\ZeusPark.Service.Product\obj\Debug\ZeusPark.Service.Product.dll
+C:\GitHub\zeuspark\ZeusPark.Service.Product\obj\Debug\ZeusPark.Service.Product.pdb
