@@ -128,8 +128,12 @@ namespace ZeusParkNew.Controllers
             history.ProdImg = otherImg;
             history.ProductUnique = uid;
             history.UploadTime = DateTime.Now;
-            history.UploadUser = int.Parse(Session["LoginUserID"] as string);
-
+            history.UploadUser = 1;
+            //if (!string.IsNullOrEmpty(Session["LoginUserID"] as string))
+            //{
+            //    history.UploadUser = int.Parse(Session["LoginUserID"] as string);
+            //}
+            
             service.AddUploadHistory(history);
 
             return View("AddSuccess");
