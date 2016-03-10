@@ -670,7 +670,8 @@ blockquote:hover {
 	border:solid 3px #eee;
 }
 .posts .dl-horizontal dd { 
-	margin-left:66px;
+	margin-left:80px;
+    margin-top:21px;
 }
 .posts .dl-horizontal dd p { 
 	margin:0;

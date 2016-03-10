@@ -839,6 +839,7 @@
     <Content Include="Content\kendo\2015.2.902\images\kendoui.ttf" />
     <Content Include="Content\kendo\2015.2.902\images\kendoui.woff" />
     <Content Include="images\alipaylogo.png" />
+    <Content Include="images\upload.jpg" />
     <Content Include="ProductImages\pyKYTt8Eljc67CMj9b4dvrr4zJYo.jpg.bak" />
     <Content Include="fonts\fontawesome-webfont.eot" />
     <Content Include="fonts\fontawesome-webfont.ttf" />
