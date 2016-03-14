@@ -1550,6 +1550,7 @@
     <Content Include="Views\Shared\_Processing.cshtml" />
     <Content Include="Views\User\AddSuccess.cshtml" />
     <Content Include="Views\User\UploadHistory.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\FilterConfig.cs" />
