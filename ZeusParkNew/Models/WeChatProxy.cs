@@ -10,6 +10,7 @@ using Newtonsoft.Json;
 using ZeusPark.Service.Admin;
 using ZeusPark.Service.Model;
 using System.IO;
+using System.Collections.Specialized;
 
 namespace ZeusPark.Web.Models
 {
@@ -107,6 +108,53 @@ namespace ZeusPark.Web.Models
             }
 
             return productIdList;
+        }
+
+        public void GetMaterailList(int begin, ref string mediaId, ref string urlvalue)
+        {
+            string url = string.Format("https://api.weixin.qq.com/cgi-bin/material/batchget_material?access_token={0}", AccessToken);
+            string postData = "{\"type\": \"image\",\"offset\":" + begin + ",\"count\":" + 1 + "}";
+            dynamic result = PostHttpData(url, postData);
+            var totalcount = result["total_count"];
+            var itemcount = result["item_count"];
+            var items = result["item"];
+            foreach (var item in items)
+            {
+                if(item.Count == 4)
+                {
+                    mediaId = item["media_id"];
+                    var name = item["name"];
+                    urlvalue = item["url"];
+                }
+                else
+                {
+                    mediaId = string.Empty;
+                    urlvalue = string.Empty;
+                    return;
+                }
+
+            }
+        }
+
+        public byte[] GetMaterial(string id)
+        {
+            string url = string.Format("https://api.weixin.qq.com/cgi-bin/material/get_material?access_token={0}", AccessToken);
+            string postData = "{\"media_id\":\"" + id + "\"}";
+
+            Uri uri = new Uri(url, UriKind.Absolute);
+
+            using (WebClient client = new WebClient())
+            {
+                //client.Encoding = System.Text.Encoding.UTF8;
+                //NameValueCollection form = new NameValueCollection();
+                //form.Add("media_id", id);
+                Byte[] request = System.Text.Encoding.Default.GetBytes(postData);
+                Byte[] responseData = client.UploadData(url, request);
+                //var data = client.UploadString(uri, postData);
+                return responseData;
+                //return System.Text.Encoding.Default.GetBytes(data);
+            }
+
         }
 
         public ProductVM GetProductByID(string productId)

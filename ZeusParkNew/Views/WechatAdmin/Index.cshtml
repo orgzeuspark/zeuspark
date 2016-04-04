@@ -1,0 +1,30 @@
+﻿@{
+    ViewBag.Title = "Index";
+    //Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = null; 
+}
+
+<h2>Index</h2>
+
+@Html.ActionLink("submit","RefreshGroups")
+
+@Html.ActionLink("GetProductByGorupID", "ImportProductByGroup")
+
+@Html.ActionLink("DownloadImage", "DownloadPayImage")
+
+@Html.ActionLink("UploadImage", "UploadImage")
+
+@Html.ActionLink("UploadArticle", "UploadArticle", "user")
+
+<!-- JiaThis Button BEGIN -->
+<div class="jiathis_style_32x32">
+    <a class="jiathis_button_tsina"></a>
+    <a class="jiathis_button_weixin"></a>
+    <a class="jiathis_button_renren"></a>
+    <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript">
+    var jiathis_config = { data_track_clickback: 'true' };
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1365819293506257" charset="utf-8"></script>
+<!-- JiaThis Button END -->

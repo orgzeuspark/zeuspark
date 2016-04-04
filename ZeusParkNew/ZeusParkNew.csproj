@@ -214,6 +214,7 @@
     <Compile Include="Controllers\ProductDetailController.cs" />
     <Compile Include="Controllers\TestsController.cs" />
     <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Controllers\WechatAdminController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -1551,6 +1552,8 @@
     <Content Include="Views\User\AddSuccess.cshtml" />
     <Content Include="Views\User\UploadHistory.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\WechatAdmin\Index.cshtml" />
+    <Content Include="Views\WechatAdmin\WechatAdmin.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\FilterConfig.cs" />
