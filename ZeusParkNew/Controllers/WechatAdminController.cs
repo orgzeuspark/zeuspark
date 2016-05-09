@@ -72,7 +72,8 @@ namespace ZeusPark.Web.Controllers
         public ActionResult ImportProductByGroup()
         {
             //List<int> groups = new List<int>() { 200512651, 200512652 };
-            List<int> groups = new List<int>() {                    200707046                    
+            List<int> groups = new List<int>() {                    200596251
+
             };
             foreach (var gid in groups)
             {
