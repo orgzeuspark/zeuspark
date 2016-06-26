@@ -53,3 +53,6 @@ C:\GitHub\zeuspark\ZeusPark.Service.Admin\bin\Debug\EntityFramework.xml
 C:\GitHub\zeuspark\ZeusPark.Service.Admin\obj\Debug\ZeusPark.Service.Admin.csprojResolveAssemblyReference.cache
 C:\GitHub\zeuspark\ZeusPark.Service.Admin\obj\Debug\ZeusPark.Service.Admin.dll
 C:\GitHub\zeuspark\ZeusPark.Service.Admin\obj\Debug\ZeusPark.Service.Admin.pdb
+C:\GitHub\zeuspark\ZeusPark.Service.Admin\bin\Debug\Aliyun.OSS.dll
+C:\GitHub\zeuspark\ZeusPark.Service.Admin\bin\Debug\LitJson.dll
+C:\GitHub\zeuspark\ZeusPark.Service.Admin\bin\Debug\ThoughtWorks.QRCode.dll

@@ -72,7 +72,8 @@ namespace ZeusPark.Web.Controllers
         public ActionResult ImportProductByGroup()
         {
             //List<int> groups = new List<int>() { 200512651, 200512652 };
-            List<int> groups = new List<int>() {                    200596251
+            List<int> groups = new List<int>() {
+                    200707059
 
             };
             foreach (var gid in groups)
@@ -128,16 +129,17 @@ namespace ZeusPark.Web.Controllers
             WeChatProxy proxy = new WeChatProxy();
             AliService service = new AliService();
 
-            int count = 1830;
-            for(int i = 988; i < count; i++)
+            int count = 105;
+            for(int i = 0; i < count; i++)
             {
                 string mediaId = string.Empty;
                 string url = string.Empty;
                 proxy.GetMaterailList(i, ref mediaId, ref url);
                 if (!string.IsNullOrEmpty(url))
                 {
-                    url = url.Replace("https://mmbiz.qlogo.cn/mmbiz/", "");
+                    url = url.Replace("http://mmbiz.qpic.cn/mmbiz/", "");
                     url = url.Replace("?wx_fmt=jpeg", "");
+                    url = url.Replace("?wx_fmt=png", "");
 
                     var data = proxy.GetMaterial(mediaId);
 
@@ -149,7 +151,7 @@ namespace ZeusPark.Web.Controllers
             }
 
 
-            return null;
+           return null;
         }
 
         

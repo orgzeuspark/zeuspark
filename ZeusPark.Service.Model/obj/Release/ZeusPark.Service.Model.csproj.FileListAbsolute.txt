@@ -11,3 +11,8 @@ C:\MyWork\ZeusPark\ZeusPark\ZeusPark.Service.Model\bin\Release\ZeusPark.Service.
 C:\MyWork\ZeusPark\ZeusPark\ZeusPark.Service.Model\obj\Release\ZeusPark.Service.Model.dll
 C:\MyWork\ZeusPark\ZeusPark\ZeusPark.Service.Model\obj\Release\ZeusPark.Service.Model.pdb
 C:\MyWork\ZeusPark\ZeusPark\ZeusPark.Service.Model\obj\Release\ZeusPark.Service.Model.csprojResolveAssemblyReference.cache
+C:\GitHub\zeuspark\ZeusPark.Service.Model\bin\Release\ZeusPark.Service.Model.dll
+C:\GitHub\zeuspark\ZeusPark.Service.Model\bin\Release\ZeusPark.Service.Model.pdb
+C:\GitHub\zeuspark\ZeusPark.Service.Model\obj\Release\ZeusPark.Service.Model.csprojResolveAssemblyReference.cache
+C:\GitHub\zeuspark\ZeusPark.Service.Model\obj\Release\ZeusPark.Service.Model.dll
+C:\GitHub\zeuspark\ZeusPark.Service.Model\obj\Release\ZeusPark.Service.Model.pdb

@@ -41,20 +41,37 @@
     <Reference Include="EntityFramework">
       <HintPath>..\packages\EntityFramework.6.0.0\lib\net40\EntityFramework.dll</HintPath>
     </Reference>
+    <Reference Include="LitJson">
+      <HintPath>..\lib\LitJson.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="ThoughtWorks.QRCode">
+      <HintPath>..\lib\ThoughtWorks.QRCode.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AliService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserService.cs" />
     <Compile Include="WechatDataImport.cs" />
+    <Compile Include="wxpay\JsApiPay.cs" />
+    <Compile Include="wxpay\lib\Config.cs" />
+    <Compile Include="wxpay\lib\Data.cs" />
+    <Compile Include="wxpay\lib\Exception.cs" />
+    <Compile Include="wxpay\lib\HttpService.cs" />
+    <Compile Include="wxpay\lib\Log.cs" />
+    <Compile Include="wxpay\lib\Notify.cs" />
+    <Compile Include="wxpay\lib\WxPayApi.cs" />
+    <Compile Include="wxpay\NativeNotify.cs" />
+    <Compile Include="wxpay\NativePay.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ZeusPark.Data.MySql\ZeusPark.Data.MySql.csproj">

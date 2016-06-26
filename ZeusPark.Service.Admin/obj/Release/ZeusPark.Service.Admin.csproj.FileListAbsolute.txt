@@ -31,3 +31,15 @@ C:\MyWork\ZeusPark\ZeusPark\ZeusPark.Service.Admin\bin\Release\EntityFramework.x
 C:\MyWork\ZeusPark\ZeusPark\ZeusPark.Service.Admin\obj\Release\ZeusPark.Service.Admin.csprojResolveAssemblyReference.cache
 C:\MyWork\ZeusPark\ZeusPark\ZeusPark.Service.Admin\obj\Release\ZeusPark.Service.Admin.dll
 C:\MyWork\ZeusPark\ZeusPark\ZeusPark.Service.Admin\obj\Release\ZeusPark.Service.Admin.pdb
+C:\GitHub\zeuspark\ZeusPark.Service.Admin\bin\Release\ZeusPark.Service.Admin.dll
+C:\GitHub\zeuspark\ZeusPark.Service.Admin\bin\Release\ZeusPark.Service.Admin.pdb
+C:\GitHub\zeuspark\ZeusPark.Service.Admin\bin\Release\EntityFramework.dll
+C:\GitHub\zeuspark\ZeusPark.Service.Admin\bin\Release\ZeusPark.Data.MySql.dll
+C:\GitHub\zeuspark\ZeusPark.Service.Admin\bin\Release\ZeusPark.Service.Model.dll
+C:\GitHub\zeuspark\ZeusPark.Service.Admin\bin\Release\ZeusPark.Data.MySql.pdb
+C:\GitHub\zeuspark\ZeusPark.Service.Admin\bin\Release\ZeusPark.Service.Model.pdb
+C:\GitHub\zeuspark\ZeusPark.Service.Admin\bin\Release\EntityFramework.xml
+C:\GitHub\zeuspark\ZeusPark.Service.Admin\obj\Release\ZeusPark.Service.Admin.dll
+C:\GitHub\zeuspark\ZeusPark.Service.Admin\obj\Release\ZeusPark.Service.Admin.pdb
+C:\GitHub\zeuspark\ZeusPark.Service.Admin\obj\Release\ZeusPark.Service.Admin.csprojResolveAssemblyReference.cache
+C:\GitHub\zeuspark\ZeusPark.Service.Admin\bin\Release\Aliyun.OSS.dll

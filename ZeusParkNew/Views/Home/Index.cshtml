@@ -2,25 +2,33 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<link rel="stylesheet" href="http://asset.zeuspark.com/style/plugins/flexslider/flexslider.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="http://asset.zeuspark.com/style/plugins/flexslider/flexslider.css" type="text/css"
+      media="screen" />
 <link rel="stylesheet" href="http://asset.zeuspark.com/style/plugins/parallax-slider/css/parallax-slider.css" type="text/css" />
 
 <!--=== Slider ===-->
 <div class="slider-inner">
     <div id="da-slider" class="da-slider">
         <div class="da-slide">
+            <h2>
+                <font color="red"><b> FLEXA </b></font> <font size="3" color="red">&reg;</font> <br /> <a href="http://www.zeuspark.com/productdetail/prodlist/200707059" style="color:white">
+                    <i>芙莱莎 </i> <br />
+
+                    <i>欧洲进口</i> <br /> <i>高端儿童家具</i>
+                </a>
+            </h2>
+            <!---<p><i></i> <br /> <i></i></p>-->
+            <div class="da-img span6">
+                <div class="span6">
+                    <iframe src="http://v.qq.com/iframe/player.html?vid=k0194pcja3o&auto=0" width="470" height="310"
+                            frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
+                </div>
+            </div>
+        </div>
+        <div class="da-slide">
             <h2><i>精选</i> <br /> <i>艺术</i> <br /> <i>ARTIST</i></h2>
             <p><i>心猿</i> <br /> <i>Design</i></p>
             <div class="da-img"><img src="http://asset.zeuspark.com/home/s11.png" alt="" /></div>
-        </div>
-        <div class="da-slide">
-            <h2><i>场景</i> <br /> <i>品味</i> <br /> <i>高雅</i></h2>
-            <p><i>Taste</i> <br /> <i>Elegant</i></p>
-            <div class="da-img span6">
-                <div class="span6">
-                    <iframe src="http://player.youku.com/embed/XMTM3NzE3MDg3Mg==" width="470" height="310" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
-                </div>
-            </div>
         </div>
         <div class="da-slide">
             <h2><i>贴心</i> <br /> <i>服务</i> <br /> <i>大众</i></h2>
@@ -38,17 +46,17 @@
 <div class="row-fluid purchase margin-bottom-30">
     <div class="container">
         <div class="span9">
-            <span>ZEUSPARK (粹園) 属于您の精致生活</span>
-            <p>注册或使用微信登录成为会员,点击左上角按钮登录，即可点击“上传 作品” 按钮。</p>
+            <span style="font-size:25px">ZEUSPARK (粹園) 属于您の精致生活</span>
+            <p>注册或使用微信登录成为会员,点击左上角按钮登录，即可点击“UPLOAD” 按钮。</p>
         </div>
         @{
             if (Session["UserID"] != null)
             {
-                <a href="@Url.Action("UploadArticle","User")" class="btn-buy hover-effect">上传 作品</a>
+                <a href="@Url.Action("UploadArticle","User")" class="btn-buy hover-effect">UPLOAD</a>
             }
             else
             {
-                <a href="@Url.Action("Login","User")" class="btn-buy hover-effect">上传 作品</a>
+                <a href="@Url.Action("Login","User")" class="btn-buy hover-effect">UPLOAD</a>
             }
         }
     </div>
@@ -60,11 +68,15 @@
     <div class="row-fluid">
         <div class="span4">
             <div class="service clearfix">
-                <i class="icon-resize-small"></i>
-                <div class="desc">
-                    <h4>ART & LIFE 私享生活</h4>
-                    <p>我们努力用极富创意与美感的艺术衍生品来点缀生活，赋予居家生活极富色彩的意义</p>
-                </div>
+                <a href="http://www.zeuspark.com/productdetail/prodlist/200707059" style="color:#555">
+                    <i class="icon-resize-small"></i>
+                    <div class="desc">
+
+                        <h4>ART & LIFE 私享生活</h4>
+
+                        <p>我们努力用极富创意与美感的艺术衍生品来点缀生活，赋予居家生活极富色彩的意义</p>
+                    </div>
+                </a>
             </div>
         </div>
         <div class="span4">
@@ -97,7 +109,11 @@
                     <a class="btn-more hover-effect" href="/productdetail/details/425">More +</a>
                 </div>
                 <h3><a class="hover-effect" href="#">花 时间</a></h3>
-                <p>繁忙的生活没有时间可以浪费，但可以花时间做梦；梦时心灵收获滋润，身心放松、远离喧嚣、游历于花的世界，豁然明白人世如此美好；花时间，还有什么不能抛开？</p>
+                <p>
+                    繁忙的生活没有时间可以浪费，但可以花时间做梦；梦时心灵收获滋润，身心放松、远离喧嚣、游历于花的世界，豁然明
+
+                    白人世如此美好；花时间，还有什么不能抛开？
+                </p>
             </div>
         </li>
         <li class="span3">
@@ -113,21 +129,23 @@
         <li class="span3">
             <div class="thumbnail-style thumbnail-kenburn">
                 <div class="thumbnail-img">
-                    <div class="overflow-hidden"><img src="http://asset.zeuspark.com/home/hot511.jpg" alt="" /></div>
-                    <a class="btn-more hover-effect" href="/productdetail/details/419">More +</a>
+                    <div class="overflow-hidden"><img src="http://asset.zeuspark.com/home/hot9.jpg" alt="" /></div>
+                    <a class="btn-more hover-effect" href="/productdetail/details/483">More +</a>
                 </div>
-                <h3><a class="hover-effect" href="#">完美新娘</a></h3>
-                <p>是不是觉得自己即将举办的婚礼上还差点什么？是不是总为朋友大婚礼物头痛？时光花事蜜蜜系列之完美新娘空降现场，绝对为浪漫锦上添花。闺蜜、战斗或是藏在梦境里的那些秘密？完美新娘系列礼裙由进口顶级永生花全手工匠心打造，甜蜜无与伦比。</p>
+                <h3><a class="hover-effect" href="#">芙莱莎儿童直梯床</a></h3>
+                <p>
+                    ZeusPark商城在专柜价的基础上，每套现金补贴2200元（限100套，售完即止）。不到7000元即可获得欧洲全进口儿童床套装，并提供免费送货安装服务，质保五年。
+                </p>
             </div>
         </li>
         <li class="span3">
             <div class="thumbnail-style thumbnail-kenburn">
                 <div class="thumbnail-img">
-                    <div class="overflow-hidden"><img src="http://asset.zeuspark.com/home/hot411.jpg" alt="" /></div>
-                    <a class="btn-more hover-effect" href="/productdetail/details/291">More +</a>
+                    <div class="overflow-hidden"><img src="http://asset.zeuspark.com/home/hot8.jpg" alt="" /></div>
+                    <a class="btn-more hover-effect" href="/productdetail/details/451">More +</a>
                 </div>
-                <h3><a class="hover-effect" href="#">和合</a></h3>
-                <p>作品《和合》以具象雕塑为自己的创作语言，表达自己当代的视觉。关注雕塑者的灵魂，塑造自己眼中的美丽世界。</p>
+                <h3><a class="hover-effect" href="#">芙莱莎婴儿椅</a></h3>
+                <p>芙莱莎婴儿椅有着独一无二的设计。你可以调节婴童椅的高度，移除餐板，添加小桌板，根据孩子的需要做出调整。</p>
             </div>
         </li>
     </ul><!--/thumbnails-->
@@ -178,7 +196,11 @@
                 </div>
                 <div class="carousel-arrow">
                     <a class="left carousel-control" href="#myCarousel" data-slide="prev"><i class="icon-angle-left"></i></a>
-                    <a class="right carousel-control" href="#myCarousel" data-slide="next"><i class="icon-angle-right"></i></a>
+                    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                        <i class="icon-angle-
+
+right"></i>
+                    </a>
                 </div>
             </div>
         </div><!--/span4-->

@@ -65,7 +65,8 @@ namespace ZeusPark.Service.Product
             {
                 var query = from p1 in entity.products
                             join g1 in entity.productgroups on p1.ProductID equals g1.ProductID
-                            where g1.GroupID == groupId
+                            where g1.GroupID == groupId && p1.Deleted == false
+                            orderby p1.CreateTime descending
                             select p1;
 
                 foreach (var prod in query)

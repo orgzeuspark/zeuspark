@@ -599,3 +599,6 @@ C:\GitHub\zeuspark\ZeusParkNew\bin\zh-Hant\System.Spatial.resources.dll
 C:\GitHub\zeuspark\ZeusParkNew\obj\Debug\ZeusParkNew.csprojResolveAssemblyReference.cache
 C:\GitHub\zeuspark\ZeusParkNew\obj\Debug\ZeusParkNew.dll
 C:\GitHub\zeuspark\ZeusParkNew\obj\Debug\ZeusParkNew.pdb
+C:\GitHub\zeuspark\ZeusParkNew\bin\Aliyun.OSS.dll
+C:\GitHub\zeuspark\ZeusParkNew\bin\LitJson.dll
+C:\GitHub\zeuspark\ZeusParkNew\bin\ThoughtWorks.QRCode.dll

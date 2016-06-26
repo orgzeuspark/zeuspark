@@ -200,7 +200,15 @@ namespace ZeusPark.Web.Models
                 }
 
                 productVM.DetailHtml = prodBase["detail_html"];
+                productVM.DetailHtml = productVM.DetailHtml.Replace("http://mmbiz.qpic.cn/mmbiz/", "http://asset.zeuspark.com/prodpic/");
+                productVM.DetailHtml = productVM.DetailHtml.Replace("/0\"", "/0.jpg\"");
+                productVM.DetailHtml = productVM.DetailHtml.Replace("/0?wx_fmt=jpeg\"", "/0.jpg\"");
+                productVM.DetailHtml = productVM.DetailHtml.Replace("/0?wx_fmt=png\"", "/0.jpg\"");
                 productVM.MainImageUrl = prodBase["main_img"];
+                productVM.MainImageUrl = productVM.MainImageUrl.Replace(@"http://mmbiz.qpic.cn/mmbiz/", "http://asset.zeuspark.com/prodpic/") + ".jpg";
+                productVM.MainImageUrl = productVM.MainImageUrl.Replace("?wx_fmt=jpeg", "");
+                productVM.MainImageUrl = productVM.MainImageUrl.Replace("?wx_fmt=png", "");
+
                 productVM.BuyLimit = prodBase["buy_limit"];
                 productVM.Status = prodInfo["status"];
 

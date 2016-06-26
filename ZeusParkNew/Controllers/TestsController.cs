@@ -16,5 +16,10 @@ namespace ZeusParkNew.Controllers
             return View();
         }
 
+        public ActionResult ShopCar()
+        {
+            return View();
+        }
+
     }
 }

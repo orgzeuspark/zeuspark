@@ -176,6 +176,9 @@
     <Reference Include="System.Transactions" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
+    <Reference Include="ThoughtWorks.QRCode">
+      <HintPath>..\lib\ThoughtWorks.QRCode.dll</HintPath>
+    </Reference>
     <Reference Include="WebGrease">
       <HintPath>..\packages\WebGrease.1.3.0\lib\WebGrease.dll</HintPath>
     </Reference>
@@ -210,11 +213,14 @@
     <Compile Include="Alipay\return_url.aspx.designer.cs">
       <DependentUpon>return_url.aspx</DependentUpon>
     </Compile>
+    <Compile Include="App_Start\ImageResult.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProductDetailController.cs" />
     <Compile Include="Controllers\TestsController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Controllers\WechatAdminController.cs" />
+    <Compile Include="Controllers\wxpaymentController.cs" />
+    <Compile Include="Controllers\wxpaytestController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -850,6 +856,7 @@
     <Content Include="Content\kendo\2015.2.902\Uniform\sprite_kpi.png" />
     <Content Include="Content\kendo\2015.2.902\Uniform\sprite_kpi_2x.png" />
     <Content Include="Content\site.css" />
+    <Content Include="Content\style.css" />
     <Content Include="Content\wxcode.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -1491,6 +1498,7 @@
     <Content Include="Scripts\knockout-2.2.0.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\npm.js" />
+    <Content Include="Scripts\shop.min.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -1634,6 +1642,10 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\WechatAdmin\Index.cshtml" />
     <Content Include="Views\WechatAdmin\WechatAdmin.cshtml" />
+    <Content Include="wxpaytest\Index.cshtml" />
+    <Content Include="Views\wxpaytest\Product.cshtml" />
+    <Content Include="Views\Tests\ShopCar.cshtml" />
+    <Content Include="Views\wxpayment\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\FilterConfig.cs" />

@@ -13,3 +13,8 @@ C:\MyWork\ZeusPark\ZeusPark\ZeusPark.Service.Interface\bin\Release\ZeusPark.Serv
 C:\MyWork\ZeusPark\ZeusPark\ZeusPark.Service.Interface\obj\Release\ZeusPark.Service.Interface.csprojResolveAssemblyReference.cache
 C:\MyWork\ZeusPark\ZeusPark\ZeusPark.Service.Interface\obj\Release\ZeusPark.Service.Interface.dll
 C:\MyWork\ZeusPark\ZeusPark\ZeusPark.Service.Interface\obj\Release\ZeusPark.Service.Interface.pdb
+C:\GitHub\zeuspark\ZeusPark.Service.Interface\bin\Release\ZeusPark.Service.Interface.dll
+C:\GitHub\zeuspark\ZeusPark.Service.Interface\bin\Release\ZeusPark.Service.Interface.pdb
+C:\GitHub\zeuspark\ZeusPark.Service.Interface\obj\Release\ZeusPark.Service.Interface.csprojResolveAssemblyReference.cache
+C:\GitHub\zeuspark\ZeusPark.Service.Interface\obj\Release\ZeusPark.Service.Interface.dll
+C:\GitHub\zeuspark\ZeusPark.Service.Interface\obj\Release\ZeusPark.Service.Interface.pdb

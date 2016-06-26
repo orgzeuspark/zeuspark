@@ -49,3 +49,16 @@ C:\MyWork\ZeusPark\ZeusPark\ZeusPark.Service.Product\bin\Release\EntityFramework
 C:\MyWork\ZeusPark\ZeusPark\ZeusPark.Service.Product\obj\Release\ZeusPark.Service.Product.csprojResolveAssemblyReference.cache
 C:\MyWork\ZeusPark\ZeusPark\ZeusPark.Service.Product\obj\Release\ZeusPark.Service.Product.dll
 C:\MyWork\ZeusPark\ZeusPark\ZeusPark.Service.Product\obj\Release\ZeusPark.Service.Product.pdb
+C:\GitHub\zeuspark\ZeusPark.Service.Product\bin\Release\ZeusPark.Service.Product.dll
+C:\GitHub\zeuspark\ZeusPark.Service.Product\bin\Release\ZeusPark.Service.Product.pdb
+C:\GitHub\zeuspark\ZeusPark.Service.Product\bin\Release\EntityFramework.dll
+C:\GitHub\zeuspark\ZeusPark.Service.Product\bin\Release\ZeusPark.Data.MySql.dll
+C:\GitHub\zeuspark\ZeusPark.Service.Product\bin\Release\ZeusPark.Service.Interface.dll
+C:\GitHub\zeuspark\ZeusPark.Service.Product\bin\Release\ZeusPark.Service.Model.dll
+C:\GitHub\zeuspark\ZeusPark.Service.Product\bin\Release\ZeusPark.Data.MySql.pdb
+C:\GitHub\zeuspark\ZeusPark.Service.Product\bin\Release\ZeusPark.Service.Interface.pdb
+C:\GitHub\zeuspark\ZeusPark.Service.Product\bin\Release\ZeusPark.Service.Model.pdb
+C:\GitHub\zeuspark\ZeusPark.Service.Product\bin\Release\EntityFramework.xml
+C:\GitHub\zeuspark\ZeusPark.Service.Product\obj\Release\ZeusPark.Service.Product.csprojResolveAssemblyReference.cache
+C:\GitHub\zeuspark\ZeusPark.Service.Product\obj\Release\ZeusPark.Service.Product.dll
+C:\GitHub\zeuspark\ZeusPark.Service.Product\obj\Release\ZeusPark.Service.Product.pdb

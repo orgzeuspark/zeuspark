@@ -6,6 +6,7 @@
 }
 
 <link rel="stylesheet" href="/assets/css/img-hover-effect.css" />    
+<link rel="stylesheet" href="/assets/plugins/portfolioSorting/css/sorting.css" />    
 
 <!--=== Breadcrumbs ===-->
 <div class="breadcrumbs margin-bottom-40">
@@ -22,22 +23,22 @@
 <!--=== Content Part ===-->
 <div class="container portfolio-columns portfolio-responsive">
     <div class="row-fluid">
-        @{
-            foreach (var item in Model.Products)
-            {
-                <div class="view view-tenth span3" style="margin-left:0;">
-                    <img src="@item.MainImageUrl" alt="" style="height: 300px; width:300px;" />
-                    <div class="mask">
-                        <h2>@item.Name  <br />¥@item.DisplaySinglePrice</h2>
-                        <a href="/productdetail/details/@item.ProductID" class="info">产品详情</a>
-                    </div>
-                    <div>
-                        <span class="name">@item.Name</span>
-                        <span class="price">¥@item.DisplaySinglePrice</span>
-                    </div>
-                </div>
+        <ul class="portfolio recent-work clearfix">
+            @{
+                foreach (var item in Model.Products)
+                {
+                    <li data-id="id-1" class="ios">
+                        <a href="/productdetail/details/@item.ProductID">
+                            <em class="overflow-hidden"><img src="@item.MainImageUrl" alt="" style="height: 250px; width:250px;" /></em>
+                            <span>
+                                <strong>@item.Name </strong>
+                                <i>¥@item.DisplaySinglePrice</i>
+                            </span>
+                        </a>
+                    </li>
+                }
             }
-        }
-    </div><!--/row-fluid-->
+        </ul>
+</div><!--/row-fluid-->
 </div><!--/container-->
 <!--=== End Content Part ===-->

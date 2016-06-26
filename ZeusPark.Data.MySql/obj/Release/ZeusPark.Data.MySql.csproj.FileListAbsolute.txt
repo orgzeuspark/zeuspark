@@ -34,3 +34,15 @@ C:\MyWork\ZeusPark\ZeusPark\ZeusPark.Data.MySql\bin\Release\EntityFramework.SqlS
 C:\MyWork\ZeusPark\ZeusPark\ZeusPark.Data.MySql\obj\Release\ZeusPark.Data.MySql.csprojResolveAssemblyReference.cache
 C:\MyWork\ZeusPark\ZeusPark\ZeusPark.Data.MySql\obj\Release\ZeusPark.Data.MySql.dll
 C:\MyWork\ZeusPark\ZeusPark\ZeusPark.Data.MySql\obj\Release\ZeusPark.Data.MySql.pdb
+C:\GitHub\zeuspark\ZeusPark.Data.MySql\bin\Release\ZeusPark.Data.MySql.dll.config
+C:\GitHub\zeuspark\ZeusPark.Data.MySql\bin\Release\ZeusPark.Data.MySql.dll
+C:\GitHub\zeuspark\ZeusPark.Data.MySql\bin\Release\ZeusPark.Data.MySql.pdb
+C:\GitHub\zeuspark\ZeusPark.Data.MySql\bin\Release\EntityFramework.dll
+C:\GitHub\zeuspark\ZeusPark.Data.MySql\bin\Release\EntityFramework.SqlServer.dll
+C:\GitHub\zeuspark\ZeusPark.Data.MySql\bin\Release\MySql.Data.dll
+C:\GitHub\zeuspark\ZeusPark.Data.MySql\bin\Release\MySql.Data.Entity.EF6.dll
+C:\GitHub\zeuspark\ZeusPark.Data.MySql\bin\Release\EntityFramework.xml
+C:\GitHub\zeuspark\ZeusPark.Data.MySql\bin\Release\EntityFramework.SqlServer.xml
+C:\GitHub\zeuspark\ZeusPark.Data.MySql\obj\Release\ZeusPark.Data.MySql.csprojResolveAssemblyReference.cache
+C:\GitHub\zeuspark\ZeusPark.Data.MySql\obj\Release\ZeusPark.Data.MySql.dll
+C:\GitHub\zeuspark\ZeusPark.Data.MySql\obj\Release\ZeusPark.Data.MySql.pdb

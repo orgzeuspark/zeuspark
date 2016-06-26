@@ -26,6 +26,7 @@
     <!-- CSS Theme -->
     <link rel="stylesheet" href="http://asset.zeuspark.com/style/css/themes/default.css" id="style_color" />
     <link rel="stylesheet" href="@Url.Content("~/Content/site.css")" id="style_color" />
+    <link href="~/Content/style.css" rel="stylesheet" />
 
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 </head>
@@ -82,8 +83,8 @@
                                 <ul class="dropdown-menu">
                                     <li><a href="/productdetail/details/425">花 时间</a></li>
                                     <li><a href="/productdetail/details/419">版画</a></li>
-                                    <li><a href="/productdetail/details/419">新月三章</a></li>
-                                    <li><a href="/productdetail/details/291">和合</a></li>
+                                    <li><a href="/productdetail/details/483">芙莱莎儿童直梯床 特惠套装 <font color="red">new!</font></a></li>
+                                    <li><a href="/productdetail/details/451">芙莱莎婴儿椅 <font color="red">new!</font></a></li>
                                 </ul>
                                 <b class="caret-out"></b>
                             </li>
@@ -98,7 +99,7 @@
                                     <li><a href="/productdetail/prodlist/201592342">原作版画</a></li>
                                     <li><a href="/productdetail/prodlist/201058503">创意家居</a></li>
                                     <li><a href="/productdetail/prodlist/200707046">艺术配饰</a></li>
-                                    <li><a href="/productdetail/prodlist/200707059">婴童专属</a></li>
+                                    <li><a href="/productdetail/prodlist/200707059">婴童专属 <font color="red">new!</font></a></li>
                                     <li><a href="/productdetail/prodlist/200707073">创意杂货</a></li>
                                 </ul>
                                 <b class="caret-out"></b>
@@ -165,14 +166,16 @@
                                 </ul>
                                 <b class="caret-out"></b>
                             </li>
-                            <li><a class="search"><i class="icon-search search-btn"></i></a></li>
+                            <li><a class="search"><i class="icon-shopping-cart search-btn"></i></a></li>
                         </ul>
-                        <div class="search-open">
+                        <div class="search-open" style="width:40%">
                             <div class="input-append">
-                                <form />
-                                <input type="text" class="span3" placeholder="Search" />
-                                <button type="submit" class="btn-u">查找</button>
-                                </form>
+                                <main style="padding:0">
+                                    <div class="widget" style="width:100%;">
+                                        <h2 class="widget-header">购物车</h2>
+                                        <div class="ct-cart"></div>
+                                    </div>
+                                </main>
                             </div>
                         </div>
                     </div><!-- /nav-collapse -->
@@ -244,11 +247,22 @@
     <!-- JS Page Level -->
     <script type="text/javascript" src="http://asset.zeuspark.com/js/app.js"></script>
     <script type="text/javascript" src="http://asset.zeuspark.com/js/index.js "></script>
+
+    <script src="~/Scripts/shop.min.js"></script>
+
     <script type="text/javascript">
         jQuery(document).ready(function () {
             App.init();
             App.initSliders();
             Index.initParallaxSlider();
+        });
+        jQuery('body').ctshop({
+            currency: '¥',
+            paypal: {
+                currency_code: 'RMB'
+            },
+            empty_text: '你的购物车是空的！',
+
         });
     </script>
 

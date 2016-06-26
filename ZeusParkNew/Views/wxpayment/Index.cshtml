@@ -1,0 +1,22 @@
+﻿@{
+    ViewBag.Title = "支付";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!--=== Breadcrumbs ===-->
+<div class="breadcrumbs margin-bottom-40">
+    <div class="container">
+        <h1 class="color-green pull-left">支付</h1>
+        <ul class="pull-right breadcrumb">
+            <li><a href="#">主页</a> <span class="divider">/</span></li>
+            <li class="active">支付</li>
+        </ul>
+    </div><!--/container-->
+</div><!--/breadcrumbs-->
+<!--=== End Breadcrumbs ===-->
+<div class="container">
+    <div style="text-align: center">
+        <h2>微信扫描二维码支付</h2>
+        <img src="@ViewBag.Url" alt="" />
+    </div>
+</div>
