@@ -13,6 +13,7 @@ namespace ZeusPark.Service.Admin
         const string accessKeySecret = "znBiBfOnChVrO3bxIouqm8KWZl0lyf";
         const string endpoint = "http://oss-cn-shanghai.aliyuncs.com";
         OssClient client;
+        const string bucketName = "zeusparkweb";
 
         public AliService()
         {
@@ -20,24 +21,26 @@ namespace ZeusPark.Service.Admin
         }
 
 
-        public void UploadImage(byte[] data, string name)
+        public void UploadTempImage(byte[] data, string key)
         {
+            using (MemoryStream requestContent = new MemoryStream(data))
+            {
+                client.PutObject(bucketName, "tempprodpic/" + key + ".jpg", requestContent);
+            }
             
-            //try
-            //{
-                //string str = "a line of simple text";
-                //byte[] binaryData = Encoding.ASCII.GetBytes(str);
-                MemoryStream requestContent = new MemoryStream(data);
-                //var metadata = new ObjectMetadata();
-                //metadata.ContentType = "image/jpeg";
-                client.PutObject("zeusparkweb", "prodpic/" + name + ".jpg", requestContent);
-                //Console.WriteLine("Put object succeeded");
-            //}
-            //catch (Exception ex)
-            //{
-            //    //Console.WriteLine("Put object failed, {0}", ex.Message);
-            //}
         }
+
+        public void MoveImageFromTemp(string key)
+        {
+            string sourcekey = "tempprodpic/" + key + ".jpg";
+            string destkey = "newprodpic/" + key + ".jpg";
+
+            client.CopyObject(new CopyObjectRequest(bucketName, sourcekey, bucketName,destkey));
+            client.DeleteObject(bucketName, sourcekey);
+        }
+
+
+
 
     }
 }

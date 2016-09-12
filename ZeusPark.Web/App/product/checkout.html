@@ -1,0 +1,133 @@
+<!--=== Breadcrumbs v4 ===-->
+		<div class="breadcrumbs-v4">
+			<div class="container">
+				<span class="page-name">Check Out</span>
+				<h1>属于<span class="shop-green">您の</span>精致生活</h1>
+				<ul class="breadcrumb-v4-in">
+					<li><a href="index.html">主页</a></li>
+					<li><a href="">产品</a></li>
+					<li class="active">购物车</li>
+				</ul>
+			</div><!--/end container-->
+		</div>
+		<!--=== End Breadcrumbs v4 ===-->
+
+		<!--=== Content Medium Part ===-->
+		<div class="content-md margin-bottom-30">
+			<div class="container">
+            <form novalidate name="form" class="shopping-cart" wizard step-changing="stepChanging" finished="finished" body-tag="section">
+                    <div class="header-tags">
+							<div class="overflow-h">
+								<h2>购物车</h2>
+								<p>查看/修改 你选购的产品</p>
+								<i class="rounded-x fa fa-check"></i>
+							</div>
+                    </div>
+                    <section>
+                        <ngcart-cart></ngcart-cart>
+                    </section>
+                    <div class="header-tags">
+							<div class="overflow-h">
+								<h2>买家信息</h2>
+								<p>账单及送货地址</p>
+								<i class="rounded-x fa fa-home"></i>
+							</div>
+                    </div>
+                    <section>
+                        <div class="col-md-12">
+									<h2 class="title-type">收货地址</h2>
+									<div class="billing-info-inputs checkbox-list">
+										<div class="row">
+											<div class="col-sm-6">
+												<input id="contactor" type="text" placeholder="联系人 (必填*)" name="contactor" class="form-control required" ng-model="contactor">
+												<input id="email" type="text" placeholder="邮箱 (必填*)" name="email" class="form-control email required" ng-model="email">
+											</div>
+											<div class="col-sm-6">
+												<input id="telephone" type="text" placeholder="联系电话 - 手机 (必填*)" name="telephone" class="form-control required" ng-model="telephone">
+												<input id="phone" type="tel" placeholder="固定电话" name="phone" class="form-control" ng-model="mobile">
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-sm-6">
+												<input id="city" type="text" placeholder="城市 (必填*)" name="city" class="form-control required" ng-model="city">
+											</div>
+											<div class="col-sm-6">
+												<input id="zip" type="text" placeholder="邮编" name="zip" class="form-control" ng-model="postcode">
+											</div>
+										</div>
+										<input id="address" type="text" placeholder="地址详情 (必填*)" name="address" class="form-control required" ng-model="address">
+										<input id="note" type="text" placeholder="留言" name="note" class="form-control" ng-model="note">
+
+									</div>
+						</div>
+                    </section>
+                    <div class="header-tags">
+							<div class="overflow-h">
+								<h2>付款</h2>
+								<p>选择付款方式并付款</p>
+								<i class="rounded-x fa fa-credit-card"></i>
+							</div>
+						</div>
+                    <section>
+						<div class="row">
+							<div class="col-sm-6">
+							<img src="http://asset.zeuspark.com/newsitepic/wxpay1.jpg" alt="ALT">
+							<p>点击“微信支付二维码”，使用微信扫码并支付，付款完成点击“完成订单”。</p>
+							<!--<ngcart-checkout service="http" settings="{ url:'/checkout' }"></ngcart-checkout>-->
+						    <button type="button" class="btn btn-primary btn-u btn-u-sea-shop" ng-click="paywx()" ng-disabled="!ngCart.getTotalItems()" >
+							确认订单,生成微信支付二维码
+							</button><br/>
+							<img data-ng-src="data:image/JPEG;base64,{{image}}" class="wxpaypic">
+							<p ng-show="displaywxorder">已确认ZEUSPARK订单：{{orderid}}，请付款</p>
+							</div>
+							<div class="col-sm-6">
+								<img src="http://asset.zeuspark.com/newsitepic/alipay1.jpg" alt="ALT">
+								<p>点击“支付宝付款”，付款完成点击“完成订单”。</p>
+								<p>
+								<a class="btn btn-primary btn-u btn-u-sea-shop" target="_blank" ng-click="payali()" ng-disabled="!ngCart.getTotalItems()" ng-href="/api/AliPay?subject=ZEUSPARK订单-{{orderid}}&totalFee={{ngCart.totalCost() - discount}}">
+								确认订单,支付宝付款</a>
+								</p>
+								<p ng-show="displayaliorder"><br/>已确认ZEUSPARK订单：{{orderid}}，请付款</p>
+							</div>
+						</div>
+
+                    </section>
+                    <div class="coupon-code">
+							<div class="row">
+								<div class="col-sm-4 sm-margin-bottom-30">
+									<h3>优惠券</h3>
+									<p>输入10位，12位或16位 '优惠券码', 然后点击‘使用优惠券’</p>
+									<input class="form-control margin-bottom-10" name="code" type="text" ng-model="code">
+									<button type="button" class="btn-u btn-u-sea-shop" ng-click="verifyDiscount()">使用优惠券</button>
+									<p>{{discountTitle}}</p>
+								</div>
+								<div class="col-sm-3 col-sm-offset-5">
+									<ul class="list-inline total-result">
+										<li>
+											<h4>订单总价:</h4>
+											<div class="total-result-in">
+												<span>{{ ngCart.totalCost() | currency:'￥' }}</span>
+											</div>
+										</li>
+										<li>
+											<h4>优惠:</h4>
+											<div class="total-result-in">
+												<span class="text-right">- {{discount | currency:'￥'}}</span>
+											</div>
+										</li>
+										<li class="divider"></li>
+										<li class="total-price">
+											<h4>实付款:</h4>
+											<div class="total-result-in">
+												<span>{{ ngCart.totalCost() - discount | currency:'￥' }}</span>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+            </form>
+                    
+			</div><!--/end container-->
+		</div>
+		<!--=== End Content Medium Part ===-->

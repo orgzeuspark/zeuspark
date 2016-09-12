@@ -22,6 +22,10 @@
           <EntitySet Name="skuinfo" EntityType="zeusparkModel.Store.skuinfo" store:Type="Tables" Schema="zeuspark" />
           <EntitySet Name="uploadhistory" EntityType="zeusparkModel.Store.uploadhistory" store:Type="Tables" Schema="zeuspark" />
           <EntitySet Name="useraccount" EntityType="zeusparkModel.Store.useraccount" store:Type="Tables" Schema="zeuspark" />
+          <EntitySet Name="discount" EntityType="zeusparkModel.Store.discount" store:Type="Tables" Schema="zeuspark" />
+          <EntitySet Name="order" EntityType="zeusparkModel.Store.order" store:Type="Tables" Schema="zeuspark" />
+          <EntitySet Name="question" EntityType="zeusparkModel.Store.question" store:Type="Tables" Schema="zeuspark" />
+          <EntitySet Name="comment" EntityType="zeusparkModel.Store.comment" store:Type="Tables" Schema="zeuspark" />
         </EntityContainer>
         <EntityType Name="category">
           <Key>
@@ -75,6 +79,10 @@
           <Property Name="Name" Type="text" Nullable="false" />
           <Property Name="DetailHtml" Type="longtext" />
           <Property Name="MainImageUrl" Type="varchar" MaxLength="2000" />
+          <Property Name="MainImageUrl2" Type="varchar" MaxLength="2000" />
+          <Property Name="MainImageUrl3" Type="varchar" MaxLength="2000" />
+          <Property Name="Description" Type="varchar" MaxLength="200" />
+          <Property Name="Label" Type="text" Nullable="true" />
           <Property Name="BuyLimit" Type="int" />
           <Property Name="DeliveryInfoID" Type="int" />
           <Property Name="ExtentionAttributeID" Type="int" />
@@ -174,6 +182,8 @@
           <Property Name="Price" Type="double" Nullable="false" />
           <Property Name="ProductCode" Type="varchar" MaxLength="255" />
           <Property Name="Quantity" Type="int" />
+          <Property Name="Color" Type="varchar" />
+          <Property Name="Size" Type="varchar" />
         </EntityType>
         <EntityType Name="uploadhistory">
           <Key>
@@ -191,6 +201,51 @@
           <Property Name="ProductUnique" Type="varchar" MaxLength="255" />
           <Property Name="GroupID" Type="int" />
         </EntityType>
+      <EntityType Name="discount">
+        <Key>
+          <PropertyRef Name="DiscountID" />
+        </Key>
+        <Property Name="DiscountID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+        <Property Name="BeginDate" Type="datetime" Nullable="true" />
+        <Property Name="EndDate" Type="datetime" Nullable="true" />
+        <Property Name="CodeID" Type="varchar" MaxLength="100" Nullable="false" />
+        <Property Name="Title" Type="varchar" MaxLength="200" Nullable="true" />
+        <Property Name="CodeType" Type="int" Nullable="false" />
+        <Property Name="Brand" Type="varchar" MaxLength="100" Nullable="true" />
+        <Property Name="Notice" Type="varchar" MaxLength="500" Nullable="true" />
+        <Property Name="Quantity" Type="int" Nullable="false" />
+        <Property Name="TotalQuantity" Type="int" Nullable="false" />
+        <Property Name="DiscountNum" Type="decimal" Nullable="true" />
+        <Property Name="ConditionNum" Type="decimal" Nullable="false" />
+        <Property Name="Percentage" Type="double" Nullable="true" />
+        <Property Name="Status" Type="int" Nullable="false" />
+        <Property Name="CanShare" Type="bool" Nullable="true" />
+      </EntityType>
+      <EntityType Name="order">
+        <Key>
+          <PropertyRef Name="OrderId" />
+        </Key>
+        <Property Name="OrderId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+        <Property Name="OrderUnique" Type="varchar" MaxLength="200" Nullable="false" />
+        <Property Name="OrderUserId" Type="int" Nullable="false" />
+        <Property Name="OrderAmount" Type="decimal" Nullable="false" />
+        <Property Name="DiscountAmount" Type="decimal" Nullable="true" />
+        <Property Name="DiscountCode" Type="varchar" Nullable="true" />
+        <Property Name="OrderImg" Type="varchar" Nullable="true" />
+        <Property Name="ProdIds" Type="varchar" Nullable="true" />
+        <Property Name="OrderDetail" Type="varchar" MaxLength="2000" Nullable="false" />
+        <Property Name="Status" Type="int" Nullable="false" />
+        <Property Name="Contactor" Type="varchar" MaxLength="50" Nullable="false" />
+        <Property Name="Mobile" Type="varchar" MaxLength="50" Nullable="false" />
+        <Property Name="Email" Type="varchar" MaxLength="50" Nullable="false" />
+        <Property Name="Telephone" Type="varchar" MaxLength="50" Nullable="true" />
+        <Property Name="City" Type="varchar" MaxLength="50" Nullable="false" />
+        <Property Name="PostCode" Type="varchar" MaxLength="50" Nullable="true" />
+        <Property Name="Address" Type="varchar" MaxLength="500" Nullable="false" />
+        <Property Name="Note" Type="varchar" MaxLength="200" Nullable="true" />
+        <Property Name="CreateTime" Type="datetime" Nullable="false" />
+        <Property Name="LastUpdateTime" Type="datetime" Nullable="false" />
+      </EntityType>
         <EntityType Name="useraccount">
           <Key>
             <PropertyRef Name="UserID" />
@@ -207,6 +262,30 @@
           <Property Name="HeadImgUrl" Type="varchar" MaxLength="500" />
           <Property Name="UnionId" Type="varchar" MaxLength="255" />
         </EntityType>
+      <EntityType Name="question">
+        <Key>
+          <PropertyRef Name="QuestionId" />
+        </Key>
+        <Property Name="QuestionId" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+        <Property Name="ProductID" Type="int" Nullable="false" />
+        <Property Name="Question" Type="varchar" MaxLength="1000" Nullable="false" />
+        <Property Name="Answer" Type="varchar" MaxLength="1000" Nullable="true" />
+        <Property Name="SubmitTime" Type="datetime" Nullable="false" />
+        <Property Name="SubmitBy" Type="varchar" MaxLength="50" Nullable="true" />
+        <Property Name="AnswerTime" Type="datetime" Nullable="true" />
+      </EntityType>
+      <EntityType Name="comment">
+        <Key>
+          <PropertyRef Name="CommentID" />
+        </Key>
+        <Property Name="CommentID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+        <Property Name="ProductID" Type="int" Nullable="false" />
+        <Property Name="Content" Type="varchar" MaxLength="2000" Nullable="false" />
+        <Property Name="SubmitTime" Type="datetime" Nullable="false" />
+        <Property Name="SubmitBy" Type="varchar" MaxLength="50" Nullable="false" />
+        <Property Name="Reply" Type="varchar" MaxLength="1000" Nullable="true" />
+        <Property Name="Star" Type="int" Nullable="true" />
+      </EntityType>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
@@ -272,6 +351,10 @@
           </AssociationSet>
           <EntitySet Name="uploadhistories" EntityType="zeusparkModel.uploadhistory" />
           <EntitySet Name="publishers" EntityType="zeusparkModel.publisher" />
+          <EntitySet Name="discounts" EntityType="zeusparkModel.discount" />
+          <EntitySet Name="orders" EntityType="zeusparkModel.order" />
+          <EntitySet Name="questions" EntityType="zeusparkModel.question" />
+          <EntitySet Name="comments" EntityType="zeusparkModel.comment" />
         </EntityContainer>
         <EntityType Name="category">
           <Key>
@@ -344,6 +427,10 @@
           <NavigationProperty Name="productcategories" Relationship="zeusparkModel.productcategoryproduct" FromRole="product" ToRole="productcategory" />
           <NavigationProperty Name="productsaleinfoes" Relationship="zeusparkModel.productsaleinfoproduct" FromRole="product" ToRole="productsaleinfo" />
           <NavigationProperty Name="skuinfoes" Relationship="zeusparkModel.skuinfoproduct" FromRole="product" ToRole="skuinfo" />
+          <Property Name="MainImageUrl2" Type="String" Nullable="true" MaxLength="2000" />
+          <Property Name="MainImageUrl3" Type="String" Nullable="true" MaxLength="2000" />
+          <Property Name="Label" Type="String" Nullable="true" MaxLength="65535" />
+          <Property Name="Description" Type="String" Nullable="true" MaxLength="200" Unicode="true" />
         </EntityType>
         <EntityType Name="productcategory">
           <Key>
@@ -430,6 +517,8 @@
           <Property Name="ProductCode" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
           <Property Name="Quantity" Type="Int32" />
           <NavigationProperty Name="product" Relationship="zeusparkModel.skuinfoproduct" FromRole="skuinfo" ToRole="product" />
+          <Property Name="Color" Type="String" Nullable="true" Unicode="true" />
+          <Property Name="Size" Type="String" Nullable="true" Unicode="true" />
         </EntityType>
         <EntityType Name="useraccount">
           <Key>
@@ -611,6 +700,75 @@
           <Property Type="String" Name="BankName" MaxLength="255" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="BankAccount" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
+        <EntityType Name="discount">
+          <Key>
+            <PropertyRef Name="DiscountID" />
+          </Key>
+          <Property Name="DiscountID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BeginDate" Type="DateTime" Nullable="true" />
+          <Property Name="EndDate" Type="DateTime" Nullable="true" />
+          <Property Name="CodeID" Type="String" Nullable="false" />
+          <Property Name="Title" Type="String" Nullable="true" />
+          <Property Name="CodeType" Type="Int32" Nullable="false" />
+          <Property Name="Brand" Type="String" Nullable="true" />
+          <Property Name="Notice" Type="String" Nullable="true" />
+          <Property Name="Quantity" Type="Int32" Nullable="false" />
+          <Property Name="TotalQuantity" Type="Int32" Nullable="false" />
+          <Property Name="DiscountNum" Type="Decimal" Nullable="true" Precision="2" />
+          <Property Name="ConditionNum" Type="Decimal" Nullable="false" Precision="2" />
+          <Property Name="Percentage" Type="Double" Nullable="true" />
+          <Property Name="Status" Type="Int32" Nullable="false" />
+          <Property Name="CanShare" Type="Boolean" Nullable="true" />
+        </EntityType>
+        <EntityType Name="order">
+          <Key>
+            <PropertyRef Name="OrderId" />
+          </Key>
+          <Property Name="OrderId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="OrderUnique" Type="String" Nullable="false" MaxLength="200" />
+          <Property Name="OrderUserId" Type="Int32" Nullable="false" />
+          <Property Name="OrderAmount" Type="Decimal" Nullable="false" />
+          <Property Name="DiscountAmount" Type="Decimal" Nullable="true" />
+          <Property Name="OrderImg" Type="String" Nullable="true" />
+          <Property Name="ProdIds" Type="String" Nullable="true" MaxLength="200" />
+          <Property Name="OrderDetail" Type="String" Nullable="false" />
+          <Property Name="Status" Type="Int32" Nullable="false" />
+          <Property Name="Contactor" Type="String" Nullable="false" MaxLength="50" />
+          <Property Name="Mobile" Type="String" Nullable="false" MaxLength="50" />
+          <Property Name="Email" Type="String" Nullable="false" MaxLength="50" />
+          <Property Name="Telephone" Type="String" Nullable="true" MaxLength="50" />
+          <Property Name="City" Type="String" Nullable="false" MaxLength="50" />
+          <Property Name="PostCode" Type="String" Nullable="true" MaxLength="50" />
+          <Property Name="Address" Type="String" Nullable="false" MaxLength="500" />
+          <Property Name="Note" Type="String" Nullable="true" MaxLength="200" />
+          <Property Name="CreateTime" Type="DateTime" Nullable="false" />
+          <Property Name="LastUpdateTime" Type="DateTime" Nullable="false" />
+          <Property Name="DiscountCode" Type="String" Nullable="true" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="question">
+          <Key>
+            <PropertyRef Name="QuestionId" />
+          </Key>
+          <Property Name="QuestionId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProductID" Type="Int32" Nullable="false" />
+          <Property Name="Question" Type="String" Nullable="false" />
+          <Property Name="Answer" Type="String" Nullable="true" />
+          <Property Name="SubmitTime" Type="DateTime" Nullable="false" />
+          <Property Name="SubmitBy" Type="String" Nullable="true" MaxLength="50" />
+          <Property Name="AnswerTime" Type="DateTime" Nullable="true" />
+        </EntityType>
+        <EntityType Name="comment">
+          <Key>
+            <PropertyRef Name="CommentID" />
+          </Key>
+          <Property Name="CommentID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProductID" Type="Int32" Nullable="false" />
+          <Property Name="Content" Type="String" Nullable="false" />
+          <Property Name="Reply" Type="String" Nullable="true" />
+          <Property Name="SubmitTime" Type="DateTime" Nullable="false" />
+          <Property Name="SubmitBy" Type="String" Nullable="false" MaxLength="50" />
+          <Property Name="Star" Type="Int32" Nullable="true" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -672,6 +830,10 @@
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="DetailHtml" ColumnName="DetailHtml" />
                 <ScalarProperty Name="MainImageUrl" ColumnName="MainImageUrl" />
+                <ScalarProperty Name="MainImageUrl2" ColumnName="MainImageUrl2" />
+                <ScalarProperty Name="MainImageUrl3" ColumnName="MainImageUrl3" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Label" ColumnName="Label" />
                 <ScalarProperty Name="BuyLimit" ColumnName="BuyLimit" />
                 <ScalarProperty Name="DeliveryInfoID" ColumnName="DeliveryInfoID" />
                 <ScalarProperty Name="ExtentionAttributeID" ColumnName="ExtentionAttributeID" />
@@ -763,6 +925,8 @@
                 <ScalarProperty Name="Price" ColumnName="Price" />
                 <ScalarProperty Name="ProductCode" ColumnName="ProductCode" />
                 <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="Color" ColumnName="Color" />
+                <ScalarProperty Name="Size" ColumnName="Size" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -800,6 +964,27 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="discounts">
+            <EntityTypeMapping TypeName="zeusparkModel.discount">
+              <MappingFragment StoreEntitySet="discount">
+                <ScalarProperty Name="DiscountID" ColumnName="DiscountID" />
+                <ScalarProperty Name="BeginDate" ColumnName="BeginDate" />
+                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+                <ScalarProperty Name="CodeID" ColumnName="CodeID" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="CodeType" ColumnName="CodeType" />
+                <ScalarProperty Name="Brand" ColumnName="Brand" />
+                <ScalarProperty Name="Notice" ColumnName="Notice" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="TotalQuantity" ColumnName="TotalQuantity" />
+                <ScalarProperty Name="DiscountNum" ColumnName="DiscountNum" />
+                <ScalarProperty Name="ConditionNum" ColumnName="ConditionNum" />
+                <ScalarProperty Name="Percentage" ColumnName="Percentage" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="CanShare" ColumnName="CanShare" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="publishers">
             <EntityTypeMapping TypeName="zeusparkModel.publisher">
               <MappingFragment StoreEntitySet="publisher">
@@ -814,6 +999,58 @@
                 <ScalarProperty Name="IdentityType" ColumnName="IdentityType" />
                 <ScalarProperty Name="UserID" ColumnName="UserID" />
                 <ScalarProperty Name="PublisherID" ColumnName="PublisherID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="orders">
+            <EntityTypeMapping TypeName="zeusparkModel.order">
+              <MappingFragment StoreEntitySet="order">
+                <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+                <ScalarProperty Name="OrderUnique" ColumnName="OrderUnique" />
+                <ScalarProperty Name="OrderUserId" ColumnName="OrderUserId" />
+                <ScalarProperty Name="OrderAmount" ColumnName="OrderAmount" />
+                <ScalarProperty Name="DiscountAmount" ColumnName="DiscountAmount" />
+                <ScalarProperty Name="OrderImg" ColumnName="OrderImg" />
+                <ScalarProperty Name="ProdIds" ColumnName="ProdIds" />
+                <ScalarProperty Name="DiscountCode" ColumnName="DiscountCode" />
+                <ScalarProperty Name="OrderDetail" ColumnName="OrderDetail" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Contactor" ColumnName="Contactor" />
+                <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="PostCode" ColumnName="PostCode" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Note" ColumnName="Note" />
+                <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+                <ScalarProperty Name="LastUpdateTime" ColumnName="LastUpdateTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="questions">
+            <EntityTypeMapping TypeName="zeusparkModel.question">
+              <MappingFragment StoreEntitySet="question">
+                <ScalarProperty Name="QuestionId" ColumnName="QuestionId" />
+                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+                <ScalarProperty Name="Question" ColumnName="Question" />
+                <ScalarProperty Name="Answer" ColumnName="Answer" />
+                <ScalarProperty Name="SubmitTime" ColumnName="SubmitTime" />
+                <ScalarProperty Name="SubmitBy" ColumnName="SubmitBy" />
+                <ScalarProperty Name="AnswerTime" ColumnName="AnswerTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="comments">
+            <EntityTypeMapping TypeName="zeusparkModel.comment">
+              <MappingFragment StoreEntitySet="comment">
+                <ScalarProperty Name="CommentID" ColumnName="CommentID" />
+                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+                <ScalarProperty Name="Content" ColumnName="Content" />
+                <ScalarProperty Name="Reply" ColumnName="Reply" />
+                <ScalarProperty Name="SubmitTime" ColumnName="SubmitTime" />
+                <ScalarProperty Name="SubmitBy" ColumnName="SubmitBy" />
+                <ScalarProperty Name="Star" ColumnName="Star" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

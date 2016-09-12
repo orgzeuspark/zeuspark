@@ -1,0 +1,91 @@
+<!--=== Breadcrumbs v4 ===-->
+		<div class="breadcrumbs-v4">
+			<div class="container">
+				<span class="page-name">注册</span>
+				<h1>属于<span class="shop-green">您の</span>精致生活</h1>
+				<ul class="breadcrumb-v4-in">
+					<li><a href="index.html">Home</a></li>
+					<li><a href="">会员管理</a></li>
+					<li class="active">注册</li>
+				</ul>
+			</div><!--/end container-->
+		</div>
+		<!--=== End Breadcrumbs v4 ===-->
+
+		<!--=== Registre ===-->
+		<div class="log-reg-v3 content-md margin-bottom-30">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-7 md-margin-bottom-50 hidden-xs hidden-sm">
+						<h2 class="welcome-title">Welcome to ZEUSPARK</h2>
+						<p>填写*字段，注册新账号</p><br>
+						<div class="members-number">
+							<h3>Join more than <span class="shop-green">1,000</span> members worldwide</h3>
+							<img class="img-responsive" src="assets/img/map.png" alt="">
+						</div>
+					</div>
+
+					<div class="col-md-5">
+						<form id="sky-form4" class="log-reg-block sky-form" style="padding:10px" novalidate kendo-validator="validator" ng-submit="submitForm($event)">
+							<h2>注册新账号</h2>
+
+							<div class="login-input reg-input">
+								<section>
+									<label class="input">
+										<input type="text" name="accountname" ng-model="data.accountname" placeholder="用户名 (*必填 可以包含字母和数字 并应少于20个字符)" class="form-control" required maxlength="20" validationmessage="请输入用户名,可以包含字母和数字，并应少于20个字符" />
+										<span class="k-invalid-msg" data-for="accountname"></span>
+									</label>
+								</section>
+								<section>
+									<label class="input">
+										<input type="email" name="mail" ng-model="data.mail" placeholder="邮箱 (*必填)" class="form-control" required validationmessage="请输入注册邮箱"/>
+										<span class="k-invalid-msg" data-for="mail"></span>
+									</label>
+								</section>
+								<section>
+									<label class="input">
+										<input type="text" name="telephone" ng-model="data.telephone" placeholder="手机号码 (*必填)" pattern="[0-9]*" class="form-control" required validationmessage="请输入正确的手机号码" minlength="10" maxlength="12" />
+										<span class="k-invalid-msg" data-for="telephone"></span>
+									</label>
+								</section>
+								<section>
+									<label class="input">
+										<input type="text" name="username" ng-model="data.username" placeholder="姓名 (*必填)" class="form-control" required validationmessage="请输入姓名" maxlength="20">
+										<span class="k-invalid-msg" data-for="username"></span>
+									</label>
+								</section>
+								<section>
+									<label class="input">
+										<input type="password" name="passwordvalue" ng-model="data.passwordvalue" placeholder="密码 (*必填 只包含字母和数字 多于6位字符)" id="passwordvalue" class="form-control" required validationmessage="请输入密码">
+										<span class="k-invalid-msg" data-for="passwordvalue"></span>
+									</label>
+								</section>
+								<section>
+									<label class="input">
+										<input type="password" name="passwordconfirm" ng-model="data.passwordconfirm" id="passwordconfirm" placeholder="重复密码 (*必填)" class="form-control" required validationmessage="请重复输入密码">
+										<span class="k-invalid-msg" data-for="passwordconfirm"></span>
+									</label>
+								</section>
+							</div>
+
+							<label class="checkbox margin-bottom-10">
+								<input type="checkbox" name="checkbox" checked required validationmessage="请勾选同意ZEUSPARK条款"/>
+								<i></i>
+								我同意 <a href="/">ZEUSPARK用户条款与协议</a>
+							</label>
+							<button class="btn-u btn-u-sea-shop btn-block margin-bottom-20" type="submit">注册账号</button>
+							<div class="alert alert-danger" role="alert" ng-show="duplicate">用户名，邮箱，手机号已经被注册，请重新输入！</div>
+						</form>
+
+						<div class="margin-bottom-20"></div>
+						<p class="text-center">已经有账号? <a ui-sref="login">登陆</a></p>
+					</div>
+				</div><!--/end row-->
+			</div><!--/end container-->
+		</div>
+		<!--=== End Registre ===-->
+
+		<script id="notificationTemplate" type="text/x-kendo-template">
+       		<p style="width: 25em; padding:1em;white-space:nowrap"> 账号注册成功，请用注册账号密码进行登录。 </p>
+        </script>
+		<span kendo-notification="notf1" k-options="notf1Options"></span>

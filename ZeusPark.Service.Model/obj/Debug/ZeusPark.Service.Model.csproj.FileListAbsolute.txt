@@ -20,3 +20,10 @@ C:\GitHub\zeuspark\ZeusPark.Service.Model\bin\Debug\ZeusPark.Service.Model.dll
 C:\GitHub\zeuspark\ZeusPark.Service.Model\bin\Debug\ZeusPark.Service.Model.pdb
 C:\GitHub\zeuspark\ZeusPark.Service.Model\obj\Debug\ZeusPark.Service.Model.dll
 C:\GitHub\zeuspark\ZeusPark.Service.Model\obj\Debug\ZeusPark.Service.Model.pdb
+C:\MyWork\ZeusParkSite\ZeusPark.Service.Model\bin\Debug\ZeusPark.Service.Model.dll
+C:\MyWork\ZeusParkSite\ZeusPark.Service.Model\bin\Debug\ZeusPark.Service.Model.pdb
+C:\MyWork\ZeusParkSite\ZeusPark.Service.Model\bin\Debug\Newtonsoft.Json.dll
+C:\MyWork\ZeusParkSite\ZeusPark.Service.Model\bin\Debug\Newtonsoft.Json.xml
+C:\MyWork\ZeusParkSite\ZeusPark.Service.Model\obj\Debug\ZeusPark.Service.Model.dll
+C:\MyWork\ZeusParkSite\ZeusPark.Service.Model\obj\Debug\ZeusPark.Service.Model.pdb
+C:\MyWork\ZeusParkSite\ZeusPark.Service.Model\obj\Debug\ZeusPark.Service.Model.csprojResolveAssemblyReference.cache

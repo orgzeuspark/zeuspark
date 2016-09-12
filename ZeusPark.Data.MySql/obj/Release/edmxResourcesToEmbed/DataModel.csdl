@@ -61,6 +61,10 @@
     </AssociationSet>
     <EntitySet Name="uploadhistories" EntityType="zeusparkModel.uploadhistory" />
     <EntitySet Name="publishers" EntityType="zeusparkModel.publisher" />
+    <EntitySet Name="discounts" EntityType="zeusparkModel.discount" />
+    <EntitySet Name="orders" EntityType="zeusparkModel.order" />
+    <EntitySet Name="questions" EntityType="zeusparkModel.question" />
+    <EntitySet Name="comments" EntityType="zeusparkModel.comment" />
   </EntityContainer>
   <EntityType Name="category">
     <Key>
@@ -133,6 +137,10 @@
     <NavigationProperty Name="productcategories" Relationship="zeusparkModel.productcategoryproduct" FromRole="product" ToRole="productcategory" />
     <NavigationProperty Name="productsaleinfoes" Relationship="zeusparkModel.productsaleinfoproduct" FromRole="product" ToRole="productsaleinfo" />
     <NavigationProperty Name="skuinfoes" Relationship="zeusparkModel.skuinfoproduct" FromRole="product" ToRole="skuinfo" />
+    <Property Name="MainImageUrl2" Type="String" Nullable="true" MaxLength="2000" />
+    <Property Name="MainImageUrl3" Type="String" Nullable="true" MaxLength="2000" />
+    <Property Name="Label" Type="String" Nullable="true" MaxLength="65535" />
+    <Property Name="Description" Type="String" Nullable="true" MaxLength="200" Unicode="true" />
   </EntityType>
   <EntityType Name="productcategory">
     <Key>
@@ -219,6 +227,8 @@
     <Property Name="ProductCode" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
     <Property Name="Quantity" Type="Int32" />
     <NavigationProperty Name="product" Relationship="zeusparkModel.skuinfoproduct" FromRole="skuinfo" ToRole="product" />
+    <Property Name="Color" Type="String" Nullable="true" Unicode="true" />
+    <Property Name="Size" Type="String" Nullable="true" Unicode="true" />
   </EntityType>
   <EntityType Name="useraccount">
     <Key>
@@ -399,5 +409,74 @@
     <Property Type="String" Name="PostCode" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Type="String" Name="BankName" MaxLength="255" FixedLength="false" Unicode="false" />
     <Property Type="String" Name="BankAccount" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="discount">
+    <Key>
+      <PropertyRef Name="DiscountID" />
+    </Key>
+    <Property Name="DiscountID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BeginDate" Type="DateTime" Nullable="true" />
+    <Property Name="EndDate" Type="DateTime" Nullable="true" />
+    <Property Name="CodeID" Type="String" Nullable="false" />
+    <Property Name="Title" Type="String" Nullable="true" />
+    <Property Name="CodeType" Type="Int32" Nullable="false" />
+    <Property Name="Brand" Type="String" Nullable="true" />
+    <Property Name="Notice" Type="String" Nullable="true" />
+    <Property Name="Quantity" Type="Int32" Nullable="false" />
+    <Property Name="TotalQuantity" Type="Int32" Nullable="false" />
+    <Property Name="DiscountNum" Type="Decimal" Nullable="true" Precision="2" />
+    <Property Name="ConditionNum" Type="Decimal" Nullable="false" Precision="2" />
+    <Property Name="Percentage" Type="Double" Nullable="true" />
+    <Property Name="Status" Type="Int32" Nullable="false" />
+    <Property Name="CanShare" Type="Boolean" Nullable="true" />
+  </EntityType>
+  <EntityType Name="order">
+    <Key>
+      <PropertyRef Name="OrderId" />
+    </Key>
+    <Property Name="OrderId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="OrderUnique" Type="String" Nullable="false" MaxLength="200" />
+    <Property Name="OrderUserId" Type="Int32" Nullable="false" />
+    <Property Name="OrderAmount" Type="Decimal" Nullable="false" />
+    <Property Name="DiscountAmount" Type="Decimal" Nullable="true" />
+    <Property Name="OrderImg" Type="String" Nullable="true" />
+    <Property Name="ProdIds" Type="String" Nullable="true" MaxLength="200" />
+    <Property Name="OrderDetail" Type="String" Nullable="false" />
+    <Property Name="Status" Type="Int32" Nullable="false" />
+    <Property Name="Contactor" Type="String" Nullable="false" MaxLength="50" />
+    <Property Name="Mobile" Type="String" Nullable="false" MaxLength="50" />
+    <Property Name="Email" Type="String" Nullable="false" MaxLength="50" />
+    <Property Name="Telephone" Type="String" Nullable="true" MaxLength="50" />
+    <Property Name="City" Type="String" Nullable="false" MaxLength="50" />
+    <Property Name="PostCode" Type="String" Nullable="true" MaxLength="50" />
+    <Property Name="Address" Type="String" Nullable="false" MaxLength="500" />
+    <Property Name="Note" Type="String" Nullable="true" MaxLength="200" />
+    <Property Name="CreateTime" Type="DateTime" Nullable="false" />
+    <Property Name="LastUpdateTime" Type="DateTime" Nullable="false" />
+    <Property Name="DiscountCode" Type="String" Nullable="true" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="question">
+    <Key>
+      <PropertyRef Name="QuestionId" />
+    </Key>
+    <Property Name="QuestionId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProductID" Type="Int32" Nullable="false" />
+    <Property Name="Question" Type="String" Nullable="false" />
+    <Property Name="Answer" Type="String" Nullable="true" />
+    <Property Name="SubmitTime" Type="DateTime" Nullable="false" />
+    <Property Name="SubmitBy" Type="String" Nullable="true" MaxLength="50" />
+    <Property Name="AnswerTime" Type="DateTime" Nullable="true" />
+  </EntityType>
+  <EntityType Name="comment">
+    <Key>
+      <PropertyRef Name="CommentID" />
+    </Key>
+    <Property Name="CommentID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProductID" Type="Int32" Nullable="false" />
+    <Property Name="Content" Type="String" Nullable="false" />
+    <Property Name="Reply" Type="String" Nullable="true" />
+    <Property Name="SubmitTime" Type="DateTime" Nullable="false" />
+    <Property Name="SubmitBy" Type="String" Nullable="false" MaxLength="50" />
+    <Property Name="Star" Type="Int32" Nullable="true" />
   </EntityType>
 </Schema>

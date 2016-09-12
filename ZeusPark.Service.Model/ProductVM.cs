@@ -42,7 +42,19 @@ namespace ZeusPark.Service.Model
 
         public int Status { get; set; }
 
+        public string DisplayStatus { get; set; }
+
         public string DisplaySinglePrice { get; set; }
+
+        public string DisplaySingleOrgPrice { get; set; }
+
+        public string Label { get; set; }
+
+        public string MainImageUrl2 { get; set; }
+
+        public string MainImageUrl3 { get; set; }
+
+        public string Description { get; set; }
 
         public DeliveryInfoVM DeliveryInfo { get; set; }
 

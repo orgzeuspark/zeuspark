@@ -31,7 +31,9 @@
         <AssociationConnector Association="zeusparkModel.skuinfoproduct" />
         <AssociationConnector Association="zeusparkModel.productextentionattributelocation" />
         <EntityTypeShape EntityType="zeusparkModel.uploadhistory" Width="1.5" PointX="8.9493800201217546" PointY="29.730470760599928" />
-        <EntityTypeShape EntityType="zeusparkModel.publisher" Width="1.5" PointX="3.4978048966721653" PointY="6.3995924323795332" />
+        <EntityTypeShape EntityType="zeusparkModel.publisher" Width="1.5" PointX="6.5" PointY="9.25" />
+        <EntityTypeShape EntityType="zeusparkModel.discount" Width="1.5" PointX="11.625" PointY="2.375" />
+        <EntityTypeShape EntityType="zeusparkModel.order" Width="1.5" PointX="14.25" PointY="1.875" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

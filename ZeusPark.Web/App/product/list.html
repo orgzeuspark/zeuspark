@@ -1,0 +1,134 @@
+<!--=== Breadcrumbs v4 ===-->
+ 		<div class="breadcrumbs-v4">
+ 			<div class="container">
+ 				<span class="page-name">{{::prodData.data.GroupName}}</span>
+ 				<h1>属于<span class="shop-green">您の</span>精致生活</h1>
+ 				<ul class="breadcrumb-v4-in">
+ 					<li><a href="">主页</a></li>
+ 					<li><a href="">产品列表</a></li>
+ 					<li class="active">{{::prodData.data.GroupName}}</li>
+ 				</ul>
+ 			</div><!--/end container-->
+ 		</div>
+ 		<!--=== End Breadcrumbs v4 ===-->
+
+ 		<!--=== Content Part ===-->
+ 		<div class="content container">
+ 			<div class="row">
+ 				<div class="col-md-3 filter-by-block md-margin-bottom-60">
+ 					<h1>筛选</h1>
+ 					<div class="panel-group" id="accordion">
+ 						<div class="panel panel-default">
+ 							<div class="panel-heading">
+ 								<h2 class="panel-title">
+ 									<a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+ 										品牌
+ 										<i class="fa fa-angle-down"></i>
+ 									</a>
+ 								</h2>
+ 							</div>
+ 							<div id="collapseOne" class="panel-collapse collapse in">
+ 								<div class="panel-body">
+ 									<ul class="list-unstyled checkbox-list">
+ 										<li ng-repeat="filter in filterlist">
+ 											<label class="checkbox">
+ 												<input type="checkbox" name="checkbox" ng-model="filter.checked" ng-change="updateFilter(filter.value)"/>
+ 												<i></i>
+ 												{{filter.value}}
+ 											</label>
+ 										</li>
+ 									</ul>
+ 								</div>
+ 							</div>
+ 						</div>
+ 					</div><!--/end panel group-->
+
+ 					<button type="button" class="btn-u btn-brd btn-brd-hover btn-u-lg btn-u-sea-shop btn-block" ng-click="clearFilter()">清除筛选</button>
+ 				</div>
+
+ 				<div class="col-md-9">
+ 					<div class="row margin-bottom-5">
+ 						<div class="col-sm-4 result-category">
+ 							<h2>{{::prodData.data.GroupName}}</h2>
+ 							<small class="shop-bg-red badge-results">{{prodData.data.Products.length}} 个结果</small>
+ 						</div>
+ 						<div class="col-sm-8">
+ 							<ul class="list-inline clear-both">
+ 								<li class="grid-list-icons">
+ 									<a href="shop-ui-filter-list.html"><i class="fa fa-th-list"></i></a>
+ 									<a href="shop-ui-filter-grid.html"><i class="fa fa-th"></i></a>
+ 								</li>
+ 								<li class="sort-list-btn">
+ 									<h3>排序 :</h3>
+ 									<div class="btn-group">
+ 										<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+ 											选择排序 <span class="caret"></span>
+ 										</button>
+ 										<ul class="dropdown-menu" role="menu">
+ 											<li><a href="#">默认</a></li>
+ 											<li><a href="#">价格</a></li>
+ 											<li><a href="#">销量</a></li>
+ 											<li><a href="#">评价</a></li>
+ 										</ul>
+ 									</div>
+ 								</li>
+ 								<li class="sort-list-btn">
+ 									<h3>显示 :</h3>
+ 									<div class="btn-group">
+ 										<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+ 											20 <span class="caret"></span>
+ 										</button>
+ 										<ul class="dropdown-menu" role="menu">
+ 											<li><a href="#">所有</a></li>
+ 											<li><a href="#">10</a></li>
+ 											<li><a href="#">5</a></li>
+ 											<li><a href="#">3</a></li>
+ 										</ul>
+ 									</div>
+ 								</li>
+ 							</ul>
+ 						</div>
+ 					</div><!--/end result category-->
+
+ 					<div class="filter-results">
+ 						<div class="row illustration-v2 margin-bottom-30">
+ 							<div class="col-md-4 ct-product" ng-repeat="prod in prodData.data.Products | filter: {'Label' : query}">
+ 								<div class="product-img product-img-brd">
+ 									<a ng-href="/#/proddetail/{{::prod.ProductID}}"><img class="full-width img-responsive" ng-src="{{prod.MainImageUrl}}" style="height: 255px;"></a>
+ 									<a class="product-review" ng-href="/#/proddetail/{{::prod.ProductID}}">详细信息</a>
+ 									<a href="" class="add-to-cart ct-product-button" ><i class="fa fa-shopping-cart"></i>加入购物车</a>
+ 								</div>
+ 								<div class="product-description product-description-brd margin-bottom-30">
+ 									<div class="overflow-h margin-bottom-5">
+ 										<div class="pull-left">
+ 											<h4 class="title-price ct-product-title" style="font-size:15px"><a ng-href="/#/proddetail/{{::prod.ProductID}}">{{prod.Name | limitTo: 12}}</a></h4>
+											<h4 class="title-price ct-product-title" style="font-size:15px"><a ng-href="/#/proddetail/{{::prod.ProductID}}">{{prod.Name | limitTo: 10 : 12 }}&nbsp;</a></h4>
+ 										</div>
+ 										<div class="product-price">
+ 											<span class="title-price ct-product-price" ng-show="prod.DisplaySinglePrice>0">¥{{::prod.DisplaySinglePrice}}</span>
+ 										</div>
+ 									</div>
+ 									<ul class="list-inline product-ratings">
+ 										<li><i class="rating-selected fa fa-star"></i></li>
+ 										<li><i class="rating-selected fa fa-star"></i></li>
+ 										<li><i class="rating-selected fa fa-star"></i></li>
+ 										<li><i class="rating fa fa-star"></i></li>
+ 										<li><i class="rating fa fa-star"></i></li>
+ 										<li class="like-icon"><a data-original-title="Add to wishlist" data-toggle="tooltip" data-placement="left" class="tooltips" href="#">{{prod.Label}}</li>
+ 									</ul>
+ 								</div>
+ 							</div>
+ 						</div>
+ 					</div><!--/end filter resilts-->
+
+ 					<div class="text-center">
+ 						<ul class="pagination pagination-v2">
+ 							<li><a href="#"><i class="fa fa-angle-left"></i></a></li>
+ 							<li class="active"><a href="#">1</a></li>
+ 							<li><a href="#"><i class="fa fa-angle-right"></i></a></li>
+ 						</ul>
+ 					</div><!--/end pagination-->
+ 				</div>
+ 			</div><!--/end row-->
+ 		</div><!--/end container-->
+ 		<!--=== End Content Part ===-->

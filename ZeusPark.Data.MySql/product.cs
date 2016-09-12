@@ -36,6 +36,10 @@ namespace ZeusPark.Data.MySql
         public Nullable<System.DateTime> CreateTime { get; set; }
         public Nullable<System.DateTime> LastUpdateTime { get; set; }
         public bool Deleted { get; set; }
+        public string MainImageUrl2 { get; set; }
+        public string MainImageUrl3 { get; set; }
+        public string Label { get; set; }
+        public string Description { get; set; }
     
         public virtual ICollection<productimage> productimages { get; set; }
         public virtual ICollection<productgroup> productgroups { get; set; }

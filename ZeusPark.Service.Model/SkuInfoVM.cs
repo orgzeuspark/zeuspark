@@ -20,5 +20,9 @@ namespace ZeusPark.Service.Model
         public int Quantity { get; set; }
 
         public string skuId { get; set; }
+
+        public string Color { get; set; }
+
+        public string Size { get; set; }
     }
 }

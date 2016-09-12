@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZeusPark.Web", "ZeusPark.Web\ZeusPark.Web.csproj", "{A26B381A-7ABE-4957-8871-5685B410A4E9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZeusPark.Service.Product", "ZeusPark.Service.Product\ZeusPark.Service.Product.csproj", "{E8B737E6-46F0-40B0-B668-999150183A02}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZeusPark.Service.Model", "ZeusPark.Service.Model\ZeusPark.Service.Model.csproj", "{CF64CA39-3CBB-4E53-865C-3C0677454BAB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZeusPark.Service.Interface", "ZeusPark.Service.Interface\ZeusPark.Service.Interface.csproj", "{D0AF0B66-0A38-4EF3-B483-14480BCCB254}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZeusPark.Service.Admin", "ZeusPark.Service.Admin\ZeusPark.Service.Admin.csproj", "{A29F78D7-1611-4B76-9D0D-9BC748DDDD78}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZeusPark.Data.MySql", "ZeusPark.Data.MySql\ZeusPark.Data.MySql.csproj", "{F41E6F4A-3843-4F8A-AE15-EA9451BF852F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A26B381A-7ABE-4957-8871-5685B410A4E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A26B381A-7ABE-4957-8871-5685B410A4E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A26B381A-7ABE-4957-8871-5685B410A4E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A26B381A-7ABE-4957-8871-5685B410A4E9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E8B737E6-46F0-40B0-B668-999150183A02}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E8B737E6-46F0-40B0-B668-999150183A02}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E8B737E6-46F0-40B0-B668-999150183A02}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E8B737E6-46F0-40B0-B668-999150183A02}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF64CA39-3CBB-4E53-865C-3C0677454BAB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF64CA39-3CBB-4E53-865C-3C0677454BAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF64CA39-3CBB-4E53-865C-3C0677454BAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF64CA39-3CBB-4E53-865C-3C0677454BAB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D0AF0B66-0A38-4EF3-B483-14480BCCB254}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0AF0B66-0A38-4EF3-B483-14480BCCB254}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0AF0B66-0A38-4EF3-B483-14480BCCB254}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0AF0B66-0A38-4EF3-B483-14480BCCB254}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A29F78D7-1611-4B76-9D0D-9BC748DDDD78}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A29F78D7-1611-4B76-9D0D-9BC748DDDD78}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A29F78D7-1611-4B76-9D0D-9BC748DDDD78}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A29F78D7-1611-4B76-9D0D-9BC748DDDD78}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F41E6F4A-3843-4F8A-AE15-EA9451BF852F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F41E6F4A-3843-4F8A-AE15-EA9451BF852F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F41E6F4A-3843-4F8A-AE15-EA9451BF852F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F41E6F4A-3843-4F8A-AE15-EA9451BF852F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,435 @@
+﻿<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+ <!--<![endif]-->
+<head>
+    <title>ZEUSPARK</title>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ZEUSPARK">
+    <meta name="author" content="wangzhijiong">
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="http://asset.zeuspark.com/home/zfavicon.ico">
+    <!-- CSS Global Compulsory -->
+    <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">
+    <link href="bower_components/kendo-ui/styles/kendo.common.min.css" rel="stylesheet" />
+    <link href="bower_components/kendo-ui/styles/kendo.bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/shop.style.css">
+    <!-- CSS Header and Footer -->
+    <link rel="stylesheet" href="assets/css/headers/header-v5.css">
+    <link rel="stylesheet" href="assets/css/footers/footer-v4.css">
+    <!-- CSS Implementing Plugins -->
+    <link rel="stylesheet" href="assets/plugins/animate.css">
+    <link rel="stylesheet" href="assets/plugins/line-icons/line-icons.css">
+    <link rel="stylesheet" href="assets/plugins/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/plugins/scrollbar/css/jquery.mCustomScrollbar.css">
+    <link rel="stylesheet" href="assets/plugins/owl-carousel/owl-carousel/owl.carousel.css">
+    <link rel="stylesheet" href="assets/plugins/revolution-slider/rs-plugin/css/settings.css">
+    <link rel="stylesheet" href="assets/plugins/sky-forms-pro/skyforms/css/sky-forms.css">
+	<link rel="stylesheet" href="assets/plugins/sky-forms-pro/skyforms/custom/custom-sky-forms.css">
+    <link rel="stylesheet" href="assets/plugins/jquery-steps/css/custom-jquery.steps.css">
+	<link rel="stylesheet" href="assets/plugins/master-slider/masterslider/style/masterslider.css">
+	<link rel='stylesheet' href="assets/plugins/master-slider/masterslider/skins/default/style.css">
+    <!-- CSS Theme -->
+    <link rel="stylesheet" href="assets/css/theme-colors/red.css" id="style_color">
+    <!-- CSS Customization -->
+    <link rel="stylesheet" href="assets/css/custom.css">
+    <link rel="stylesheet" href="content/css/style.css">
+</head>
+<body class="header-fixed" ng-app="zeusApp">
+    <div class="wrapper" ng-controller="LayoutCtrl">
+        <!--=== Header v5 ===-->
+        <div class="header-v5 header-static">
+            <!-- Topbar v3 -->
+            <div class="topbar-v3">
+                <div class="search-open">
+                    <div class="container">
+                        <input type="text" class="form-control" placeholder="产品搜索">
+                        <div class="search-close"><i class="icon-close"></i></div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <!-- Topbar Navigation -->
+                            <ul class="left-topbar">
+                                <li>
+                                    <a>语言 （中文）</a>
+                                    <ul class="language">
+                                        <li class="active">
+                                            <a href="#">语言 （中文）<i class="fa fa-check"></i></a>
+                                        </li>
+                                        <li><a href="#">English (EN)</a></li>
+                                    </ul>
+                                </li>
+                            </ul><!--/end left-topbar-->
+                        </div>
+                        <div class="col-sm-6">
+                            <ul class="list-inline right-topbar pull-right">
+                                <li><a href="#">账号</a></li>
+                                <li><a href="shop-ui-add-to-cart.html">收藏夹</a></li>
+                                <li ng-hide="$root.LoginUser.Isvalid"><a ui-sref="login">登录</a> | <a ui-sref="register">注册</a></li>
+                                <li ng-show="$root.LoginUser.Isvalid" ng-cloak>Welcome! {{$root.LoginUser.Name}} <a ui-sref="login">退出</a></li>
+                                <li><i class="search fa fa-search search-button"></i></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div><!--/container-->
+            </div>
+            <!-- End Topbar v3 -->
+            <!-- Navbar -->
+            <div class="navbar navbar-default mega-menu" role="navigation">
+                <div class="container">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand visible-xs visible-sm" href="#">
+                            <img id="logo-header" src="http://asset.zeuspark.com/site/zlogo2.png" alt="Logo">
+                        </a>
+                        <a class="navbar-brand hidden-xs hidden-sm" href="#">
+                            <img id="logo-header" src="http://asset.zeuspark.com/site/zlogo.png" alt="Logo">
+                        </a>
+                    </div>
+                    <!-- Shopping Cart -->
+					<div class="shop-badge badge-icons pull-right">
+                        <a ui-sref="checkout" style="width:150px">
+						<ngcart-summary></ngcart-summary>
+                        </a>
+					</div>
+					<!-- End Shopping Cart -->
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse navbar-responsive-collapse">
+                        <!-- Nav Menu -->
+                        <ul class="nav navbar-nav">
+                            <!-- 热卖产品 -->
+                            <li class="dropdown active mega-menu-fullwidth">
+                                <a href="javascript:void(0);" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">
+                                    热卖产品
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <div class="mega-menu-content">
+                                            <div class="container">
+                                                <div class="row">
+                                                    <div class="col-md-3 col-sm-12 col-xs-12 md-margin-bottom-30">
+                                                        <h3 class="mega-menu-heading">BAGHERA</h3>
+                                                        <p>As a child, I used to walk past the magnificent windows of the famous Parisian store «Le Nain Blue». I used to dream of these white tin cars, picture myself as an unrivaled driver, traveling the world and winning legendary races: Le Mans, Monaco, Monterey, Riverside...</p>
+                                                        <a class="btn-u btn-u-dark" href="/#/prodlist/200707059">更多信息</a>
+                                                    </div>
+                                                    <div class="col-md-3 col-sm-4 col-xs-4 md-margin-bottom-30">
+                                                        <a href="/#/proddetail/534"><img class="product-offers img-responsive" src="http://asset.zeuspark.com/newhome/hot1.jpg" alt=""></a>
+                                                    </div>
+                                                    <div class="col-md-3 col-sm-4 col-xs-4 sm-margin-bottom-30">
+                                                        <a href="/#/proddetail/533"><img class="product-offers img-responsive" src="http://asset.zeuspark.com/newhome/hot2.jpg" alt=""></a>
+                                                    </div>
+                                                    <div class="col-md-3 col-sm-4 col-xs-4">
+                                                        <a href="/#/proddetail/532"><img class="product-offers img-responsive" src="http://asset.zeuspark.com/newhome/hot3.jpg" alt=""></a>
+                                                    </div>
+                                                </div><!--/end row-->
+                                            </div><!--/end container-->
+                                        </div><!--/end mega menu content-->
+                                    </li>
+                                </ul><!--/end dropdown-menu-->
+                            </li>
+                            <!-- End 热卖产品 -->
+                            <!-- 私享生活 -->
+                            <li class="dropdown">
+                                <a href="javascript:void(0);" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">
+                                    私享生活
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="/#/prodlist/200707038">居家装饰</a></li>
+                                    <li><a href="/#/prodlist/200707059">婴童专属</a></li>                                  
+                                    <li><a href="/#/prodlist/201058503">轻奢家具</a></li>
+                                    <li><a href="/#/prodlist/210000005">时尚厨房</a></li>
+                                    <li><a href="/#/prodlist/210000007">智能家电</a></li>
+                                    <li><a href="/#/prodlist/200707046">精选杂货</a></li>
+                                    <li><a href="/#/prodlist/210000008">进口食品</a></li>
+                                </ul>
+                            </li>
+                            <!-- End 私享生活 -->
+                            <!-- 艺术精选 -->
+                            <li class="dropdown">
+								<a href="javascript:void(0);" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">
+									艺术精选
+								</a>
+								<ul class="dropdown-menu">
+									<li class="dropdown-submenu">
+										<a href="javascript:void(0);">架上绘画</a>
+										<ul class="dropdown-menu">
+											<li><a href="/#/prodlist/200594229">油画</a></li>
+											<li><a href="/#/prodlist/200596195">丙烯</a></li>
+											<li><a href="/#/prodlist/200642398">水墨</a></li>
+                                            <li><a href="/#/prodlist/200641975">水彩</a></li>
+                                            <li><a href="/#/prodlist/200613598">粉笔</a></li>
+                                            <li><a href="/#/prodlist/200594230">铅笔画</a></li>
+										</ul>
+									</li>
+									<li class="dropdown-submenu">
+										<a href="javascript:void(0);">综合艺术</a>
+										<ul class="dropdown-menu">
+											<li><a href="/#/prodlist/200601451">雕塑</a></li>
+											<li><a href="/#/prodlist/200596251">陶瓷</a></li>
+                                            <li><a href="/#/prodlist/200659093">综合材料</a></li>
+										</ul>
+									</li>
+                                    <li class="dropdown-submenu">
+										<a href="javascript:void(0);">艺术衍生</a>
+										<ul class="dropdown-menu">
+											<li><a href="/#/prodlist/201592342">原作版画</a></li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+                            <!-- End 艺术精选 -->
+                            <!-- 定制服务 -->
+                            <li class="dropdown">
+                                <a href="javascript:void(0);" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">
+                                    定制服务
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li class="dropdown-submenu">
+										<a href="javascript:void(0);">空间设计</a>
+										<ul class="dropdown-menu">
+											<li><a href="/#/prodlist/210000001">商业空间</a></li>
+											<li><a href="/#/prodlist/210000006">居住空间</a></li>
+										</ul>
+									</li>
+                                    <li><a href="/#/prodlist/210000002">影像服务</a></li>
+                                    <li><a href="/#/prodlist/210000003">活动策划</a></li>
+                                </ul>
+                            </li>
+                            <!-- End 定制服务 -->
+                            <!-- 会员管理 -->
+                            <li class="dropdown" ng-show="$root.LoginUser.Isvalid">
+                                <a href="javascript:void(0);" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">
+                                    我的ZEUS
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">我的信息</a></li>
+                                    <li><a ui-sref="checkout">我的购物车</a></li>
+                                    <li><a ui-sref="myorder">我的订单</a></li>
+                                    <li><a ui-sref="prodUpload">上传产品</a></li>
+                                </ul>
+                            </li>
+                            <!-- End 会员管理 -->
+                             <!-- 管理员 -->
+                            <li class="dropdown" ng-show="$root.LoginUser.Isvalid && $root.LoginUser.Type == 3">
+                                <a href="javascript:void(0);" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">
+                                    管理员
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a ui-sref="uploadshelf">产品上下架</a></li>
+                                </ul>
+                            </li>
+                            <!-- End 管理员 -->
+                        </ul>
+                        <!-- End Nav Menu -->
+                    </div>
+                </div>
+            </div>
+            <!-- End Navbar -->
+        </div>
+        <!--=== End Header v5 ===-->
+        
+        <div ui-view></div>
+        
+        <!--=== Footer v4 ===-->
+        <div class="footer-v4">
+            <div class="footer">
+                <div class="container">
+                    <div class="row">
+                        <!-- About -->
+                        <div class="col-md-4 md-margin-bottom-40">
+                            <a href="/"><img class="footer-logo" src="http://asset.zeuspark.com/newhome/logowhite.png" style="margin-bottom:0px"></a>
+                            <p style="font-size:21px">属于<span class="shop-green">您の</span>精致生活</p>
+                            <br>
+                            <ul class="list-unstyled address-list margin-bottom-20">
+                                <li><i class="fa fa-envelope"></i>服务邮箱: service@zeuspark.com</li>
+                                <!--<li><i class="fa fa-phone"></i>服务电话: </li>-->
+                                <li><i class="fa fa-weixin"></i>微信公众号: ZEUSTORE</li>
+                            </ul>
+                        </div>
+                        <!-- End About -->
+                        <!-- Simple List -->
+                        <div class="col-md-2 col-sm-3">
+                            <div class="row">
+                                <div class="col-sm-12 col-xs-6">
+                                    <h2 class="thumb-headline">ZEUS VIP</h2>
+                                    <ul class="list-unstyled simple-list margin-bottom-20">
+                                        <li><a href="#">会员政策</a></li>
+                                        <li><a href="#">常见问题</a></li>
+                                        <li><a href="#">集团采购</a></li>
+                                    </ul>
+                                </div>
+                                <div class="col-sm-12 col-xs-6">
+                                    <h2 class="thumb-headline">配送方式</h2>
+                                    <ul class="list-unstyled simple-list">
+                                        <li><a href="#">配送时间</a></li>
+                                        <li><a href="#">配送范围</a></li>
+                                        <li><a href="#">收费标准</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-3">
+                            <div class="row">
+                                <div class="col-sm-12 col-xs-6">
+                                    <h2 class="thumb-headline">支付方式</h2>
+                                    <ul class="list-unstyled simple-list margin-bottom-20">
+                                        <li><a href="#">支付宝</a></li>
+                                        <li><a href="#">微信支付</a></li>
+                                        <li><a href="#">优惠券使用</a></li>
+                                    </ul>
+                                </div>
+                                <div class="col-sm-12 col-xs-6">
+                                    <h2 class="thumb-headline">售后服务</h2>
+                                    <ul class="list-unstyled simple-list">
+                                        <li><a href="#">退换货政策</a></li>
+                                        <li><a href="#">退换货流程</a></li>
+                                        <li><a href="#">退款流程</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-3">
+                            <div class="row">
+                                <div class="col-sm-12 col-xs-6" style="text-align:center">
+                                    <h2 class="thumb-headline">微信商店及在线客服</h2>
+                                    <img src="http://asset.zeuspark.com/newhome/qrcode150.jpg">
+                                </div>                              
+                            </div>
+                        </div>
+                        <!-- End Simple List -->
+                    </div><!--/end row-->
+                </div><!--/end continer-->
+            </div><!--/footer-->
+            <div class="copyright">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p>
+                                Copyright ©ZEUSPARK 2011-2020
+                                <a href="#">隐私权声明</a> | <a href="#">沪ICP备14014110号-3</a>
+                            </p>
+                        </div>
+                        <div class="col-md-6">
+                            <ul class="list-inline sponsors-icons pull-right">
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div><!--/copyright-->
+        </div>
+        <!--=== End Footer v4 ===-->
+    </div><!--/wrapper-->
+    <!-- Wait Block -->
+    <div class="g-popup-wrapper">
+        <div class="g-popup g-popup--discount2">
+            <div class="g-popup--discount2-message">
+                <h3>Want 20% Off?</h3>
+                <h4>You Are Fabulous!</h4>
+                <p>Get 20% Off Your Next Purchase!</p>
+                <form action="#" class="sky-form">
+                    <label class="input">
+                        <input type="email" placeholder="Email" class="form-control">
+                    </label>
+                    <label class="input">
+                        <button class="btn btn-default" type="button">Subscribe</button>
+                    </label>
+                </form>
+            </div>
+            <img src="http://asset.zeuspark.com/newhome/popup.jpg" alt="ALT" width="270">
+            <a href="javascript:void(0);" class="g-popup__close g-popup--discount2__close"><span class="icon-close" aria-hidden="true"></span></a>
+        </div>
+    </div>
+    <!-- End Wait Block -->
+    <!-- JS Global Compulsory -->
+    <script src="assets/plugins/jquery/jquery.min.js"></script>
+    <script src="assets/plugins/jquery/jquery-migrate.min.js"></script>
+    <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- JS Angular Lib -->
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.min.js"></script>
+    <script src="bower_components/angular-route/angular-route.min.js"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.min.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.min.js"></script>
+
+    <!-- Kendo UI -->
+    <script src="bower_components/kendo-ui/js/kendo.all.min.js"></script>
+
+    <!-- JS Angular-->
+    <script src="App/app.module.js"></script>
+    <script src="App/app.config.js"></script>
+    <script src="App/layout/layout.controller.js"></script>
+    <script src="App/layout/home.controller.js"></script>
+    <script src="App/user/login.controller.js"></script>
+    <script src="App/user/register.controller.js"></script>
+    <script src="App/user/myorder.controller.js"></script>
+    <script src="App/product/list.controller.js"></script>
+    <script src="App/product/list.service.js"></script>
+    <script src="App/product/detail.controller.js"></script>
+    <script src="App/product/detail.service.js"></script>
+    <script src="App/product/upload.controller.js"></script>
+    <script src="App/product/checkout.controller.js"></script>
+    <script src="App/product/upload-shelf.controller.js"></script>
+    
+    <!-- JS Implementing Plugins -->
+    <script src="assets/plugins/back-to-top.js"></script>
+    
+    <script src="assets/plugins/jquery.parallax.js"></script>
+    <script src="assets/plugins/owl-carousel/owl-carousel/owl.carousel.js"></script>
+    <script src="assets/plugins/scrollbar/js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="assets/plugins/revolution-slider/rs-plugin/js/jquery.themepunch.tools.min.js"></script>
+    <script src="assets/plugins/revolution-slider/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
+    <script src="assets/plugins/jquery-steps/build/jquery.steps.js"></script>
+    <script src="assets/plugins/sky-forms-pro/skyforms/js/jquery.validate.min.js"></script>
+    <!-- Master Slider -->
+	<script src="assets/plugins/master-slider/masterslider/masterslider.js"></script>
+	<script src="assets/plugins/master-slider/masterslider/jquery.easing.min.js"></script>
+    <!-- JS Customization -->
+    <script src="assets/js/custom.js"></script>
+    <script src="bower_components/ngCart/dist/ngCart.js"></script>
+    <!-- JS Page Level -->
+    <script src="assets/js/shop.app.js"></script>
+    <script src="assets/js/plugins/owl-carousel.js"></script>
+    <script src="assets/js/plugins/revolution-slider.js"></script>
+    <script src="assets/js/plugins/master-slider.js"></script>
+	<script src="assets/js/forms/product-quantity.js"></script>
+    <script src="assets/js/plugins/style-switcher.js"></script>
+    <script src="assets/js/plugins/stepWizard.js"></script>
+
+    <script src="http://res.wx.qq.com/connect/zh_CN/htmledition/js/wxLogin.js"></script>
+
+
+    <script>
+        jQuery(document).ready(function () {
+            App.init();
+            App.initScrollBar();
+            App.initParallaxBg();
+            //OwlCarousel.initOwlCarousel();
+            //RevolutionSlider.initRSfullWidth();
+            //StyleSwitcher.initStyleSwitcher();
+        });
+
+    </script>
+    <!--[if lt IE 9]>
+        <script src="assets/plugins/respond.js"></script>
+        <script src="assets/plugins/html5shiv.js"></script>
+        <script src="assets/js/plugins/placeholder-IE-fixes.js"></script>
+        <![endif]-->
+
+    <script language="javascript" src="http://api.pop800.com/800.js?n=237760&t=3&l=cn"></script>
+    <div style="display:none;"><a href="http://www.zeuspark.com">在线客服</a></div>
+</body>
+</html>

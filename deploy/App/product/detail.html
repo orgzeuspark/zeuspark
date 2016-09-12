@@ -1,0 +1,300 @@
+		<!--=== Shop Product ===-->
+		<div class="shop-product">
+			<!-- Breadcrumbs v5 -->
+			<div class="container">
+				<ul class="breadcrumb-v5">
+					<li><a href="#"><i class="fa fa-home"></i></a></li>
+					<li><a href="#">产品</a></li>
+					<li class="active">{{::prodData.data.Name}}</li>
+				</ul>
+			</div>
+			<!-- End Breadcrumbs v5 -->
+
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6 md-margin-bottom-50">
+						<div class="ms-showcase2-template">
+							<!-- Master Slider -->
+							<div class="master-slider ms-skin-default" id="masterslider">
+								<div class="ms-slide">
+									<img class="ms-brd" ng-src="{{prodData.data.MainImageUrl}}" ng-attr-data-src="{{prodData.data.MainImageUrl}}" alt="lorem ipsum dolor sit">
+									<img class="ms-thumb" ng-src="{{prodData.data.MainImageUrl}}" alt="thumb">
+								</div>
+								<div class="ms-slide">
+									<img ng-src="{{prodData.data.MainImageUrl2}}" ng-attr-data-src="{{prodData.data.MainImageUrl2}}" alt="lorem ipsum dolor sit">
+									<img class="ms-thumb" ng-src="{{prodData.data.MainImageUrl2}}" alt="thumb">
+								</div>
+								<div class="ms-slide">
+									<img ng-src="{{prodData.data.MainImageUrl3}}" ng-attr-data-src="{{prodData.data.MainImageUrl3}}" alt="lorem ipsum dolor sit">
+									<img class="ms-thumb" ng-src="{{prodData.data.MainImageUrl3}}" alt="thumb">
+								</div>
+							</div>
+							<!-- End Master Slider -->
+						</div>
+					</div>
+
+					<div class="col-md-6 ct-product">
+						<div class="shop-product-heading">
+							<h2 class="ct-product-title">{{::prodData.data.Name}}</h2>
+							<!-- JiaThis Button BEGIN -->
+							<div class="jiathis_style_32x32 list-inline shop-product-social">
+								<a class="jiathis_button_weixin"></a>
+								<a class="jiathis_button_tsina"></a>
+								<a class="jiathis_button_fb"></a>
+							</div>
+							<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+							<!-- JiaThis Button END -->
+						</div><!--/end shop product social-->
+
+						<ul class="list-inline product-ratings margin-bottom-30">
+							<li><i class="rating-selected fa fa-star"></i></li>
+							<li><i class="rating-selected fa fa-star"></i></li>
+							<li><i class="rating-selected fa fa-star"></i></li>
+							<li><i class="rating fa fa-star"></i></li>
+							<li><i class="rating fa fa-star"></i></li>
+							<li class="product-review-list">
+								<span>(1) <a href="#">Review</a> | <a href="#"> Add Review</a></span>
+							</li>
+						</ul><!--/end shop product ratings-->
+
+						<p>{{::prodData.data.Description}}</p><br>
+
+						<ul class="list-inline shop-product-prices margin-bottom-30">
+							<li class="shop-red ct-product-price" ng-show="price > 0">¥{{price}}</li>
+							<li class="line-through" ng-show="orgprice > price">¥{{orgprice}}</li>
+							<li><small class="shop-bg-red time-day-left" ng-show="price > 0">库存：{{quantity}}</small></li>
+						</ul><!--/end shop product prices-->
+
+						<h3 class="shop-product-title">规格 （尺寸 & 颜色）</h3>
+						<ul class="list-inline-size product-size margin-bottom-30" ng-show="price > 0">
+							<li ng-repeat="sku in prodData.data.SkuInfoList">
+								<input type="radio" id="size-{{$index}}" name="size" ng-click="switchStyle($index)" ng-checked="$first" ng-disabled="sku.Quantity==0">
+								<label ng-if="sku.Quantity>0" for="size-{{$index}}" style="width:13em">{{sku.Size}} {{sku.Color}} </label> 
+								<label ng-if="sku.Quantity==0" for="size-{{$index}}" style="width:13em">{{sku.Size}} {{sku.Color}} 无库存</label> 
+							</li>
+						</ul><!--/end product size-->
+
+						<h3 class="shop-product-title">数量</h3>
+						<div class="margin-bottom-40">
+							<ngcart-addtocart id="{{prodData.data.ProductID}}" name="{{ prodData.data.Name + ', 规格:' + style}}" price="{{ price }}" quantity="1" quantity-max="30" data="prodData.data"><i class="fa fa-shopping-cart"></i>加入购物车</ngcart-addtocart>
+						</div><!--/end product quantity-->
+
+						<ul class="list-inline add-to-wishlist add-to-wishlist-brd">
+							<li class="wishlist-in">
+								<i class="fa fa-heart"></i>
+								<a href="#">加入收藏夹</a>
+							</li>
+							<li class="compare-in">
+								<i class="fa fa-exchange"></i>
+								<a href="#">加入对比</a>
+							</li>
+						</ul>
+						<p class="wishlist-category"><strong>品牌&标签:</strong> {{prodData.data.Label}}</p>
+					</div>
+				</div><!--/end row-->
+			</div>
+		</div>
+		<!--=== End Shop Product ===-->
+
+		<!--=== Content Medium ===-->
+		<div class="content-md container" ng-init="tab = 1">
+			<div class="tab-v6">
+				<ul class="nav nav-tabs" role="tablist">
+					<li class="active"><a role="tab" data-toggle="tab" ng-click="descriptionTab()">产品描述</a></li>
+					<li><a role="tab" data-toggle="tab" ng-click="commentTab()">产品评论</a></li>
+					<li><a role="tab" data-toggle="tab" ng-click="questionTab()">产品咨询</a></li>
+				</ul>
+
+				<div class="tab-content">
+					<!-- Description -->
+					<div class="tab-pane fade in active" id="description" ng-show="tab === 1">
+						<div class="row">
+							<div ng-bind-html="prodData.data.DetailHtml" class="center-block"></div>
+						</div>
+					</div>
+					<!-- End Description -->
+
+					<!-- Reviews -->
+					<div class="tab-pane fade in active" id="reviews" ng-show="tab === 2">
+						<div class="product-comment margin-bottom-40" ng-repeat="comment in commentlist">
+							<div class="product-comment-in">
+								<img class="product-comment-img rounded-x" src="assets/img/team/01.jpg" alt="">
+								<div class="product-comment-dtl">
+									<h4>{{comment.SubmitBy}} <small>{{comment.SubmitTime}}</small></h4>
+									<p>{{comment.Content}}</p>
+									<ul class="list-inline product-ratings">
+										<li class="pull-right">
+											<ul class="list-inline">
+												<li><i class="rating-selected fa fa-star"></i></li>
+												<li><i class="rating-selected fa fa-star"></i></li>
+												<li><i class="rating-selected fa fa-star"></i></li>
+												<li><i class="rating fa fa-star"></i></li>
+												<li><i class="rating fa fa-star"></i></li>
+											</ul>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- End Reviews -->
+
+					<div class="tab-pane fade in active" id="question" ng-show="tab === 3">
+						<div class="product-comment margin-bottom-40" ng-repeat="quesiton in questionlist">
+							<div class="product-comment-in">
+								<img class="product-comment-img rounded-x" src="assets/img/team/01.jpg" alt="">
+								<div class="product-comment-dtl">
+									<p>问题：{{quesiton.Question}}</p>
+									<p style="color: #FF6500;">回答：{{quesiton.Answer}}</p>
+								</div>
+							</div>
+						</div>
+						<h3 class="heading-md margin-bottom-30">提出问题</h3>
+						<form action="assets/php/demo-contacts-process.php" method="post" id="sky-form3" class="sky-form sky-changes-4">
+							<fieldset>
+								<div class="margin-bottom-30">
+									<label class="label-v2">问题内容</label>
+									<label class="textarea">
+										<textarea rows="7" name="message" id="message" ng-model="newquestion"></textarea>
+									</label>
+								</div>
+							</fieldset>
+							<footer class="review-submit">
+								<button type="button" class="btn-u btn-u-sea-shop btn-u-sm pull-right" ng-click="submitQuestion()" style="margin-top:10px">提  交</button>
+							</footer>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div><!--/end container-->
+		<!--=== End Content Medium ===-->
+
+		<!--=== Illustration v2 ===-->
+		<div class="container">
+			<div class="heading heading-v1 margin-bottom-20">
+				<h2>Product you may like</h2>
+				<p></p>
+			</div>
+
+			<div class="illustration-v2 margin-bottom-60">
+				<div class="customNavigation margin-bottom-25">
+					<a class="owl-btn prev rounded-x"><i class="fa fa-angle-left"></i></a>
+					<a class="owl-btn next rounded-x"><i class="fa fa-angle-right"></i></a>
+				</div>
+
+				<ul class="list-inline owl-slider-v4">
+					<li class="item">
+						<a href="/#/proddetail/549"><img class="img-responsive" src="http://asset.zeuspark.com/newhome/top1.jpg" alt=""></a>
+						<div class="product-description-v2">
+							<div class="margin-bottom-5">
+								<h4 class="title-price"><a href="/#/proddetail/549">Zuny 河马书档</a></h4>
+								<span class="title-price">¥395.00</span>
+							</div>
+							<ul class="list-inline product-ratings">
+								<li><i class="rating-selected fa fa-star"></i></li>
+								<li><i class="rating-selected fa fa-star"></i></li>
+								<li><i class="rating-selected fa fa-star"></i></li>
+								<li><i class="rating fa fa-star"></i></li>
+								<li><i class="rating fa fa-star"></i></li>
+							</ul>
+						</div>
+					</li>
+					<li class="item">
+						<a href="/#/proddetail/554"><img class="img-responsive" src="http://asset.zeuspark.com/newhome/top4.jpg" alt=""></a>
+						<div class="product-description-v2">
+							<div class="margin-bottom-5">
+								<h4 class="title-price"><a href="/#/proddetail/554">Zuny 新款马 书挡</a></h4>
+								<span class="title-price">¥455.00</span>
+							</div>
+							<ul class="list-inline product-ratings">
+								<li><i class="rating-selected fa fa-star"></i></li>
+								<li><i class="rating-selected fa fa-star"></i></li>
+								<li><i class="rating-selected fa fa-star"></i></li>
+								<li><i class="rating fa fa-star"></i></li>
+								<li><i class="rating fa fa-star"></i></li>
+							</ul>
+						</div>
+					</li>
+					<li class="item">
+						<a href="/#/proddetail/553"><img class="img-responsive" src="http://asset.zeuspark.com/newhome/top3.JPG" alt=""></a>
+						<div class="product-description-v2">
+							<div class="margin-bottom-5">
+								<h4 class="title-price"><a href="/#/proddetail/553">Zuny 法国斗牛犬书档</a></h4>
+								<span class="title-price">¥455.00</span>
+							</div>
+							<ul class="list-inline product-ratings">
+								<li><i class="rating-selected fa fa-star"></i></li>
+								<li><i class="rating-selected fa fa-star"></i></li>
+								<li><i class="rating-selected fa fa-star"></i></li>
+								<li><i class="rating fa fa-star"></i></li>
+								<li><i class="rating fa fa-star"></i></li>
+							</ul>
+						</div>
+					</li>
+					<li class="item">
+						<a href="/#/proddetail/551"><img class="img-responsive" src="http://asset.zeuspark.com/newhome/top6.jpg" alt=""></a>
+						<div class="product-description-v2">
+							<div class="margin-bottom-5">
+								<h4 class="title-price"><a href="/#/proddetail/551">Zuny 恐龙 书档</a></h4>
+								<span class="title-price">¥455.00</span>
+							</div>
+							<ul class="list-inline product-ratings">
+								<li><i class="rating-selected fa fa-star"></i></li>
+								<li><i class="rating-selected fa fa-star"></i></li>
+								<li><i class="rating-selected fa fa-star"></i></li>
+								<li><i class="rating fa fa-star"></i></li>
+								<li><i class="rating fa fa-star"></i></li>
+							</ul>
+						</div>
+					</li>
+					<li class="item">
+						<a href="/#/proddetail/555"><img class="img-responsive" src="http://asset.zeuspark.com/newhome/top7.jpg" alt=""></a>
+						<div class="product-description-v2">
+							<div class="margin-bottom-5">
+								<h4 class="title-price"><a href="/#/proddetail/555">Zuny 西伯利亚野牛 书挡</a></h4>
+								<span class="title-price">¥455.00</span>
+							</div>
+							<ul class="list-inline product-ratings">
+								<li><i class="rating-selected fa fa-star"></i></li>
+								<li><i class="rating-selected fa fa-star"></i></li>
+								<li><i class="rating-selected fa fa-star"></i></li>
+								<li><i class="rating fa fa-star"></i></li>
+								<li><i class="rating fa fa-star"></i></li>
+							</ul>
+						</div>
+					</li>
+					<li class="item">
+						<a href="/#/proddetail/552"><img class="img-responsive" src="http://asset.zeuspark.com/newhome/top8.jpg" alt=""></a>
+						<div class="product-description-v2">
+							<div class="margin-bottom-5">
+								<h4 class="title-price"><a href="/#/proddetail/552">Zuny 老鼠 书档</a></h4>
+								<span class="title-price">¥455.00</span>
+							</div>
+							<ul class="list-inline product-ratings">
+								<li><i class="rating-selected fa fa-star"></i></li>
+								<li><i class="rating-selected fa fa-star"></i></li>
+								<li><i class="rating-selected fa fa-star"></i></li>
+								<li><i class="rating fa fa-star"></i></li>
+								<li><i class="rating fa fa-star"></i></li>
+							</ul>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!--=== End Illustration v2 ===-->
+<script type="text/javascript">
+var jiathis_config = {
+    shareImg:{
+        "showType":"ALL",
+        "bgColor":"",
+        "txtColor":"",
+        "text":"",
+        "services":"",
+        "position":"",
+        "imgwidth":"",
+        "imgheight":"",
+        "divname":"jiathisid"
+    }
+}
+</script>

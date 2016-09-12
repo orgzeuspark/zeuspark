@@ -69,6 +69,7 @@ namespace ZeusPark.Service.Admin
 
                 prod.BuyLimit = productVM.BuyLimit;                
                 prod.Deleted = false;
+                prod.Label = productVM.Label;
 
                 if (isUpdate)
                 {
@@ -107,7 +108,12 @@ namespace ZeusPark.Service.Admin
                 prod.ExtentionAttributeID = null;
                 prod.LastUpdateTime = DateTime.Now;
                 prod.MainImageUrl = productVM.MainImageUrl;
+                prod.MainImageUrl2 = productVM.MainImageUrl2;
+                prod.MainImageUrl3 = productVM.MainImageUrl3;
+                prod.Label = productVM.Label;
                 prod.Name = productVM.Name;
+                prod.Description = productVM.Description;
+                prod.Label = productVM.Label;
                 prod.Status = productVM.Status;
 
                 if (!isUpdate)
@@ -131,7 +137,9 @@ namespace ZeusPark.Service.Admin
                             Price = skuVM.Price,
                             ProductCode = skuVM.ProductCode,
                             Quantity = skuVM.Quantity,
-                            SkuID = skuVM.skuId
+                            SkuID = skuVM.skuId,
+                            Color = skuVM.Color,
+                            Size = skuVM.Size
                         });
                     }
                 }

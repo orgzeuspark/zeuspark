@@ -1,0 +1,17 @@
+<div ng-hide="attrs.id">
+    <a class="btn btn-lg btn-primary" ng-disabled="true" ng-transclude></a>
+
+</div>
+<div ng-show="attrs.id">
+    <div>
+        <form name="f1" class="product-quantity sm-margin-bottom-20">
+                    <button type='button' class="quantity-button" name='subtract' ng-click="subtractQty()">-</button>
+                    <input type='text' class="quantity-field" name='quantity' value="1" id='quantity' ng-model="q"/>
+                    <button type='button' class="quantity-button" name='add' ng-click="addQty()" >+</button>
+        </form>
+        <button type="button" class="btn-u btn-u-sea-shop btn-u-lg" ng-click="ngCart.addItem(id, name, price, q, data)" ng-transclude ng-disabled="price == 0">
+    </div>
+    <mark  ng-show="inCart()">
+        <a ng-click="ngCart.removeItemById(id)" style="cursor: pointer;">从购物车中移除</a>
+    </mark>
+</div>

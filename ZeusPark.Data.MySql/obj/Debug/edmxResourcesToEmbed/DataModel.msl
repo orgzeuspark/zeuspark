@@ -56,6 +56,10 @@
           <ScalarProperty Name="Name" ColumnName="Name" />
           <ScalarProperty Name="DetailHtml" ColumnName="DetailHtml" />
           <ScalarProperty Name="MainImageUrl" ColumnName="MainImageUrl" />
+          <ScalarProperty Name="MainImageUrl2" ColumnName="MainImageUrl2" />
+          <ScalarProperty Name="MainImageUrl3" ColumnName="MainImageUrl3" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Label" ColumnName="Label" />
           <ScalarProperty Name="BuyLimit" ColumnName="BuyLimit" />
           <ScalarProperty Name="DeliveryInfoID" ColumnName="DeliveryInfoID" />
           <ScalarProperty Name="ExtentionAttributeID" ColumnName="ExtentionAttributeID" />
@@ -147,6 +151,8 @@
           <ScalarProperty Name="Price" ColumnName="Price" />
           <ScalarProperty Name="ProductCode" ColumnName="ProductCode" />
           <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="Color" ColumnName="Color" />
+          <ScalarProperty Name="Size" ColumnName="Size" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -184,6 +190,27 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="discounts">
+      <EntityTypeMapping TypeName="zeusparkModel.discount">
+        <MappingFragment StoreEntitySet="discount">
+          <ScalarProperty Name="DiscountID" ColumnName="DiscountID" />
+          <ScalarProperty Name="BeginDate" ColumnName="BeginDate" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+          <ScalarProperty Name="CodeID" ColumnName="CodeID" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="CodeType" ColumnName="CodeType" />
+          <ScalarProperty Name="Brand" ColumnName="Brand" />
+          <ScalarProperty Name="Notice" ColumnName="Notice" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="TotalQuantity" ColumnName="TotalQuantity" />
+          <ScalarProperty Name="DiscountNum" ColumnName="DiscountNum" />
+          <ScalarProperty Name="ConditionNum" ColumnName="ConditionNum" />
+          <ScalarProperty Name="Percentage" ColumnName="Percentage" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="CanShare" ColumnName="CanShare" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="publishers">
       <EntityTypeMapping TypeName="zeusparkModel.publisher">
         <MappingFragment StoreEntitySet="publisher">
@@ -198,6 +225,58 @@
           <ScalarProperty Name="IdentityType" ColumnName="IdentityType" />
           <ScalarProperty Name="UserID" ColumnName="UserID" />
           <ScalarProperty Name="PublisherID" ColumnName="PublisherID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="orders">
+      <EntityTypeMapping TypeName="zeusparkModel.order">
+        <MappingFragment StoreEntitySet="order">
+          <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+          <ScalarProperty Name="OrderUnique" ColumnName="OrderUnique" />
+          <ScalarProperty Name="OrderUserId" ColumnName="OrderUserId" />
+          <ScalarProperty Name="OrderAmount" ColumnName="OrderAmount" />
+          <ScalarProperty Name="DiscountAmount" ColumnName="DiscountAmount" />
+          <ScalarProperty Name="OrderImg" ColumnName="OrderImg" />
+          <ScalarProperty Name="ProdIds" ColumnName="ProdIds" />
+          <ScalarProperty Name="DiscountCode" ColumnName="DiscountCode" />
+          <ScalarProperty Name="OrderDetail" ColumnName="OrderDetail" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Contactor" ColumnName="Contactor" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="PostCode" ColumnName="PostCode" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="LastUpdateTime" ColumnName="LastUpdateTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="questions">
+      <EntityTypeMapping TypeName="zeusparkModel.question">
+        <MappingFragment StoreEntitySet="question">
+          <ScalarProperty Name="QuestionId" ColumnName="QuestionId" />
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="Question" ColumnName="Question" />
+          <ScalarProperty Name="Answer" ColumnName="Answer" />
+          <ScalarProperty Name="SubmitTime" ColumnName="SubmitTime" />
+          <ScalarProperty Name="SubmitBy" ColumnName="SubmitBy" />
+          <ScalarProperty Name="AnswerTime" ColumnName="AnswerTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="comments">
+      <EntityTypeMapping TypeName="zeusparkModel.comment">
+        <MappingFragment StoreEntitySet="comment">
+          <ScalarProperty Name="CommentID" ColumnName="CommentID" />
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="Content" ColumnName="Content" />
+          <ScalarProperty Name="Reply" ColumnName="Reply" />
+          <ScalarProperty Name="SubmitTime" ColumnName="SubmitTime" />
+          <ScalarProperty Name="SubmitBy" ColumnName="SubmitBy" />
+          <ScalarProperty Name="Star" ColumnName="Star" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

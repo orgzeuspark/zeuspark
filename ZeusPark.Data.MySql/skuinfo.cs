@@ -22,6 +22,8 @@ namespace ZeusPark.Data.MySql
         public double Price { get; set; }
         public string ProductCode { get; set; }
         public Nullable<int> Quantity { get; set; }
+        public string Color { get; set; }
+        public string Size { get; set; }
     
         public virtual product product { get; set; }
     }

@@ -1,0 +1,200 @@
+
+		<!--=== Breadcrumbs v4 ===-->
+		<div class="breadcrumbs-v4">
+			<div class="container">
+				<span class="page-name">上传产品</span>
+				<h1>属于<span class="shop-green">您の</span>精致生活</h1>
+				<ul class="breadcrumb-v4-in">
+					<li><a href="index.html">主页</a></li>
+					<li><a href="">我的ZEUS</a></li>
+					<li class="active">上传产品</li>
+				</ul>
+			</div><!--/end container-->
+		</div>
+		<!--=== End Breadcrumbs v4 ===-->
+        
+<!--=== Registre ===-->
+		<div class="log-reg-v3 content-md margin-bottom-30">
+			
+			<div class="container">
+				<div class="row">
+                    <div class="col-md-4 md-margin-bottom-50 hidden-xs hidden-sm">
+						<h2 class="welcome-title">上传产品到ZEUSPARK</h2>
+						<br/>
+						<p style="margin-left:25px"> - 上传说明 - </p>
+						<p><ul style="color: #888;">
+							<li>填写带*的必填内容,没有*的字段选填</li>
+								<ul>
+									<li>产品名称 - 必填*</li>
+									<li>品牌标签 - 必填*</li>
+									<li>产品简介 - 必填*</li>
+									<li>产品售价 - 必填*</li>
+									<li>产品标价 - 选填</li>
+									<li>库存数量 - 必填*</li>
+									<li>产品类型 - 必填*</li>
+								</ul>
+							<li>如果为多规格产品（多种尺寸和颜色），请选择‘多规格’选项</li>
+							<li>产品售价为在平台出售价格，标价可以不填。如果填写标价，标价应大于平台出售价</li>
+							<li>上传3张jpg格式产品主图片，建议每张图片不超过1M, 推荐图片尺寸 550 * 725 像素</li>
+							<li>上传产品其他信息图片，最少1张，最多20张，建议每张图片不超过1M</li>
+							<li>确认没有页面上没有错误提示信息，点击“上传产品”进行上传</li>
+							<li>上传成功后会得到确认消息。平台工作会进行后续审核与上架工作</li>
+							<li>可以在“我的上传”中查看上传记录与审核进展</li>
+						</ul>
+						</p>
+						<br/>
+						<div class="members-number">
+							<h3>我们已经有超过 <span class="shop-green">30</span> 个世界各地供应商上传产品到我们的平台</h3>
+							<img class="img-responsive" src="assets/img/map.png" alt="">
+						</div>
+					</div>
+
+					<div class="col-md-8 md-margin-10">
+						<form id="sky-form4" name="uploadform" kendo-validator="validator" novalidate class="log-reg-block sky-form" style="padding:20px"  ng-submit="submitForm($event)">
+							<h2>上传 产品</h2>
+
+							<div class="login-input reg-input">
+								<section>
+									<label class="input">
+										<input type="text" required ng-model="prodName" id="prodName" name="prodName" placeholder="产品名称 (*必填 应少于20个字)" maxlength="20" class="form-control" validationmessage="请输入产品名称,并应少于20个字">
+										<span class="k-invalid-msg" data-for="prodName"></span>
+										</label>
+								</section>
+								<section>
+									<label class="input">
+										<input type="text" ng-model="keyword" id="keyword" name="keyword" placeholder="品牌或标签 (*必填，应少于20个字，以‘,’分割多个标签)"  class="form-control" maxlength="20" required validationmessage="请输入产品品牌或标签 (应少于20个字，以‘,’分割多个标签)">
+										<span class="k-invalid-msg" data-for="quantity"></span>
+									</label>
+								</section>
+                                <section>
+									<label class="input">
+												<input type="text" required ng-model="simpleDesc" id="simpleDesc" name="simpleDesc" placeholder="产品简介 (*必填 应少于80个字)" maxlength="80" class="form-control" validationmessage="请输入产品简介，并应少于80个字">
+												<span class="k-invalid-msg" data-for="simpleDesc"></span>
+											</label>
+                                </section>
+								<section>
+									<div class="inline-group">
+										<label class="label">产品规格</label>
+										<label class="radio"><input type="radio" name="radio-inline" ng-checked="isOneStyle" ng-click="onestyle()"><i class="rounded-x"></i>统一规格</label>
+										<label class="radio"><input type="radio" name="radio-inline" ng-click="multistyle()"><i class="rounded-x"></i>多规格</label>
+									</div>
+								</section>
+								<section ng-show="isOneStyle">
+									<label class="input">
+										<input type="number" ng-required="isOneStyle" ng-model="price" id="price" name="price" placeholder="产品售价 (*必填。产品在平台出售价格，RMB 1.00)" class="form-control" validationmessage="请输入产品售价，并且是RMB数字" min="0">
+										<span class="k-invalid-msg" data-for="price"></span>
+									</label>
+								</section>
+								<section ng-show="isOneStyle">
+									<label class="input">
+										<input type="number" ng-model="orgprice" id="orgprice" name="orgprice" placeholder="产品标价 (挂牌标价，选填属性。如填写，标价应大于等售价)" class="form-control" min="0">
+									</label>
+								</section>
+								<section ng-show="isOneStyle">
+									<label class="input">
+										<input type="text" ng-required="isOneStyle" ng-model="quantity" id="quantity" name="quantity" placeholder="库存数量 (*必填 1-9999)" pattern="[0-9]*" class="form-control" validationmessage="请输入产品库存数量，并是1-9999整数">
+										<span class="k-invalid-msg" data-for="quantity"></span>
+									</label>
+								</section>
+								<section ng-hide="isOneStyle">
+									<kendo-grid options="multiStyleGridOptions" id="multiStyleGrid" k-scope-field="multiStyleGrid">
+                                    </kendo-grid>
+									<span class="k-invalid-msg" data-for="multiStyleGrid"></span>
+								</section>
+								<section>
+								<label class="select margin-bottom-15">
+									<select name="pinlei" id="pinlei" class="form-control" ng-model="selectedgroup" required data-required-msg="请选择产品类型">
+										<option value="">请选择产品类型 （*必选）</option>
+                                        <option value="200707038">居家装饰</option>
+										<option value="200707059">婴童专属</option>
+                                        <option value="201058503">轻奢家具</option>
+										<option value="210000005">时尚厨房</option>
+										<option value="210000007">智能家电</option>
+                                        <option value="200707046">精选杂货</option>
+										<option value="210000008">进口食品</option>
+                                        <option value="200594229">油画</option>
+										<option value="200596195">丙烯</option>
+										<option value="200642398">水墨</option>
+										<option value="200641975">水彩</option>
+										<option value="200594230">铅笔画</option>
+										<option value="200613598">粉笔</option>
+										<option value="200601451">雕塑</option>
+										<option value="200659093">综合材料</option>
+										<option value="200596251">陶瓷</option>
+										<option value="201592342">原作版画</option>
+										<option value="210000001">商业空间设计</option>
+										<option value="210000006">居住空间设计</option>
+										<option value="210000002">影像服务</option>
+										<option value="210000003">活动策划</option>
+                                        <option value="210000004">其他</option>
+									</select>
+									<span class="k-invalid-msg" data-for="pinlei"></span>
+								</label>
+								</section>
+								<section>
+									<label>
+										产品详情 (文字描述)
+									</label>
+									<textarea kendo-editor k-ng-model="detailDesc"></textarea>
+								</section>
+								<section>
+									<label class="input">
+										选择产品主图 （*必填， 请上传 3 张 jpg 格式产品主图）
+									</label>
+									<label class="input">
+										<input name="mainfiles" id="mainfiles" 
+											type="file"
+											kendo-upload ="mainfiles"
+											k-async="{ saveUrl: '/api/ImageUpload', removeUrl: '/api/ImageUpload/remove',  autoUpload: true }"
+											k-upload="addMorePostParameters"
+											k-select="onMainSelect"
+										/>
+										<span class="k-invalid-msg" data-for="mainfiles"></span>
+									</label>
+								</section>
+								<section>
+									<label class="input">
+										选择产品其他图片 （*必填， 请上传 1 ~ 20 张 jpg 格式产品其他图片）
+									</label>
+									<label class="input">
+										<input name="otherfiles" id="otherfiles"
+											type="file"
+											kendo-upload="otherfiles"
+											k-async="{ saveUrl: '/api/ImageUpload', removeUrl: '/api/ImageUpload/remove', autoUpload: true }"
+											k-upload="addMorePostParameters"
+											k-select="onOtherSelect"
+										/>
+									</label>
+								</section>
+							</div>
+<div kendo-window="winupload" k-title="'ZEUSPARK相关条款'"
+            k-width="800" k-height="600" k-visible="false"
+            k-content="{ url: '/App/product/upload-instruction.html' }"></div>
+							<label class="checkbox margin-bottom-10">
+								<input type="checkbox" name="agree" required validationmessage="请勾选同意ZEUSPARK条款" checked/> 
+								<i></i>
+								我同意 <a id="itemlink" ng-click="winupload.open()">ZEUSPARK相关条款</a>
+
+								<span class="k-invalid-msg" data-for="agree"></span>
+							</label>
+									
+							<button class="btn-u btn-u-sea-shop btn-block margin-bottom-20" type="submit">上传 产品</button>
+						</form>
+
+						<div class="margin-bottom-20"></div>
+					</div>
+
+                    
+				</div><!--/end row-->
+			</div><!--/end container-->
+		</div>
+		<!--=== End Registre ===-->
+
+<div id="divProcessing" role="dialog" ng-show="displaywaiting"
+     style="margin: 0px; padding: 0px; position: fixed; right: 0px;
+             top: 0px; width: 100%; height: 100%; background-color: #fdfdfd;
+             opacity: .8; filter: alpha(opacity=70);z-index:111111; ">
+    <div style="position: absolute; left: 40%; top:50%;  z-index:70008; ">
+        <p><strong>Uploading, please wait . . . </strong><i class="fa fa-spinner fa-spin fa-5x fa-fw"></i></p>
+    </div>
+</div>

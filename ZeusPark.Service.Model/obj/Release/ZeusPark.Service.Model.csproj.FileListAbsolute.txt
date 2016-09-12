@@ -16,3 +16,10 @@ C:\GitHub\zeuspark\ZeusPark.Service.Model\bin\Release\ZeusPark.Service.Model.pdb
 C:\GitHub\zeuspark\ZeusPark.Service.Model\obj\Release\ZeusPark.Service.Model.csprojResolveAssemblyReference.cache
 C:\GitHub\zeuspark\ZeusPark.Service.Model\obj\Release\ZeusPark.Service.Model.dll
 C:\GitHub\zeuspark\ZeusPark.Service.Model\obj\Release\ZeusPark.Service.Model.pdb
+C:\MyWork\ZeusParkSite\ZeusPark.Service.Model\bin\Release\ZeusPark.Service.Model.dll
+C:\MyWork\ZeusParkSite\ZeusPark.Service.Model\bin\Release\ZeusPark.Service.Model.pdb
+C:\MyWork\ZeusParkSite\ZeusPark.Service.Model\bin\Release\Newtonsoft.Json.dll
+C:\MyWork\ZeusParkSite\ZeusPark.Service.Model\bin\Release\Newtonsoft.Json.xml
+C:\MyWork\ZeusParkSite\ZeusPark.Service.Model\obj\Release\ZeusPark.Service.Model.csprojResolveAssemblyReference.cache
+C:\MyWork\ZeusParkSite\ZeusPark.Service.Model\obj\Release\ZeusPark.Service.Model.dll
+C:\MyWork\ZeusParkSite\ZeusPark.Service.Model\obj\Release\ZeusPark.Service.Model.pdb

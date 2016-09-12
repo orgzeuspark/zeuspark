@@ -17,6 +17,10 @@
     <EntitySet Name="skuinfo" EntityType="zeusparkModel.Store.skuinfo" store:Type="Tables" Schema="zeuspark" />
     <EntitySet Name="uploadhistory" EntityType="zeusparkModel.Store.uploadhistory" store:Type="Tables" Schema="zeuspark" />
     <EntitySet Name="useraccount" EntityType="zeusparkModel.Store.useraccount" store:Type="Tables" Schema="zeuspark" />
+    <EntitySet Name="discount" EntityType="zeusparkModel.Store.discount" store:Type="Tables" Schema="zeuspark" />
+    <EntitySet Name="order" EntityType="zeusparkModel.Store.order" store:Type="Tables" Schema="zeuspark" />
+    <EntitySet Name="question" EntityType="zeusparkModel.Store.question" store:Type="Tables" Schema="zeuspark" />
+    <EntitySet Name="comment" EntityType="zeusparkModel.Store.comment" store:Type="Tables" Schema="zeuspark" />
   </EntityContainer>
   <EntityType Name="category">
     <Key>
@@ -70,6 +74,10 @@
     <Property Name="Name" Type="text" Nullable="false" />
     <Property Name="DetailHtml" Type="longtext" />
     <Property Name="MainImageUrl" Type="varchar" MaxLength="2000" />
+    <Property Name="MainImageUrl2" Type="varchar" MaxLength="2000" />
+    <Property Name="MainImageUrl3" Type="varchar" MaxLength="2000" />
+    <Property Name="Description" Type="varchar" MaxLength="200" />
+    <Property Name="Label" Type="text" Nullable="true" />
     <Property Name="BuyLimit" Type="int" />
     <Property Name="DeliveryInfoID" Type="int" />
     <Property Name="ExtentionAttributeID" Type="int" />
@@ -169,6 +177,8 @@
     <Property Name="Price" Type="double" Nullable="false" />
     <Property Name="ProductCode" Type="varchar" MaxLength="255" />
     <Property Name="Quantity" Type="int" />
+    <Property Name="Color" Type="varchar" />
+    <Property Name="Size" Type="varchar" />
   </EntityType>
   <EntityType Name="uploadhistory">
     <Key>
@@ -186,6 +196,51 @@
     <Property Name="ProductUnique" Type="varchar" MaxLength="255" />
     <Property Name="GroupID" Type="int" />
   </EntityType>
+  <EntityType Name="discount">
+    <Key>
+      <PropertyRef Name="DiscountID" />
+    </Key>
+    <Property Name="DiscountID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="BeginDate" Type="datetime" Nullable="true" />
+    <Property Name="EndDate" Type="datetime" Nullable="true" />
+    <Property Name="CodeID" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Title" Type="varchar" MaxLength="200" Nullable="true" />
+    <Property Name="CodeType" Type="int" Nullable="false" />
+    <Property Name="Brand" Type="varchar" MaxLength="100" Nullable="true" />
+    <Property Name="Notice" Type="varchar" MaxLength="500" Nullable="true" />
+    <Property Name="Quantity" Type="int" Nullable="false" />
+    <Property Name="TotalQuantity" Type="int" Nullable="false" />
+    <Property Name="DiscountNum" Type="decimal" Nullable="true" />
+    <Property Name="ConditionNum" Type="decimal" Nullable="false" />
+    <Property Name="Percentage" Type="double" Nullable="true" />
+    <Property Name="Status" Type="int" Nullable="false" />
+    <Property Name="CanShare" Type="bool" Nullable="true" />
+  </EntityType>
+  <EntityType Name="order">
+    <Key>
+      <PropertyRef Name="OrderId" />
+    </Key>
+    <Property Name="OrderId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="OrderUnique" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="OrderUserId" Type="int" Nullable="false" />
+    <Property Name="OrderAmount" Type="decimal" Nullable="false" />
+    <Property Name="DiscountAmount" Type="decimal" Nullable="true" />
+    <Property Name="DiscountCode" Type="varchar" Nullable="true" />
+    <Property Name="OrderImg" Type="varchar" Nullable="true" />
+    <Property Name="ProdIds" Type="varchar" Nullable="true" />
+    <Property Name="OrderDetail" Type="varchar" MaxLength="2000" Nullable="false" />
+    <Property Name="Status" Type="int" Nullable="false" />
+    <Property Name="Contactor" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Mobile" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Email" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Telephone" Type="varchar" MaxLength="50" Nullable="true" />
+    <Property Name="City" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="PostCode" Type="varchar" MaxLength="50" Nullable="true" />
+    <Property Name="Address" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="Note" Type="varchar" MaxLength="200" Nullable="true" />
+    <Property Name="CreateTime" Type="datetime" Nullable="false" />
+    <Property Name="LastUpdateTime" Type="datetime" Nullable="false" />
+  </EntityType>
   <EntityType Name="useraccount">
     <Key>
       <PropertyRef Name="UserID" />
@@ -201,5 +256,29 @@
     <Property Name="OpenID" Type="varchar" MaxLength="255" />
     <Property Name="HeadImgUrl" Type="varchar" MaxLength="500" />
     <Property Name="UnionId" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="question">
+    <Key>
+      <PropertyRef Name="QuestionId" />
+    </Key>
+    <Property Name="QuestionId" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ProductID" Type="int" Nullable="false" />
+    <Property Name="Question" Type="varchar" MaxLength="1000" Nullable="false" />
+    <Property Name="Answer" Type="varchar" MaxLength="1000" Nullable="true" />
+    <Property Name="SubmitTime" Type="datetime" Nullable="false" />
+    <Property Name="SubmitBy" Type="varchar" MaxLength="50" Nullable="true" />
+    <Property Name="AnswerTime" Type="datetime" Nullable="true" />
+  </EntityType>
+  <EntityType Name="comment">
+    <Key>
+      <PropertyRef Name="CommentID" />
+    </Key>
+    <Property Name="CommentID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ProductID" Type="int" Nullable="false" />
+    <Property Name="Content" Type="varchar" MaxLength="2000" Nullable="false" />
+    <Property Name="SubmitTime" Type="datetime" Nullable="false" />
+    <Property Name="SubmitBy" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Reply" Type="varchar" MaxLength="1000" Nullable="true" />
+    <Property Name="Star" Type="int" Nullable="true" />
   </EntityType>
 </Schema>

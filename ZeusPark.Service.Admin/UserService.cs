@@ -33,19 +33,35 @@ namespace ZeusPark.Service.Admin
             }
         }
 
-        public int IsValidAccount(string name, string password, out string username)
+        public bool IsAccountExist(UserAccount user)
         {
             using (zeusparkEntities entity = new zeusparkEntities())
             {
-                var acc = entity.useraccounts.Where(x => (x.Telephone == name || x.Mail == name) && x.Password == password).FirstOrDefault();
+                var acc = entity.useraccounts.FirstOrDefault(x => x.AccountName == user.AccountName || x.Mail == user.Mail || x.Telephone == user.Telephone);
+                if (null != acc)
+                {
+                    return true;
+                }
+
+                return false;
+            }
+        }
+
+        public int IsValidAccount(string name, string password, out string username, out int accType)
+        {
+            using (zeusparkEntities entity = new zeusparkEntities())
+            {
+                var acc = entity.useraccounts.Where(x => (x.AccountName == name || x.Telephone == name || x.Mail == name) && x.Password == password).FirstOrDefault();
 
                 if (null != acc)
                 {
                     username = acc.UserName;
+                    accType = acc.AccountType;
                     return acc.UserID;
                 }
                 else
                 {
+                    accType = 0;
                     username = string.Empty;
                 }
             }
@@ -79,7 +95,7 @@ namespace ZeusPark.Service.Admin
             return userid;
         }
 
-        public bool IsWeChatAccountExist(string openId, out int userid)
+        public bool IsWeChatAccountExist(string openId, out int userid, out int accType)
         {
             using (zeusparkEntities entity = new zeusparkEntities())
             {
@@ -87,10 +103,12 @@ namespace ZeusPark.Service.Admin
                 if (null == account)
                 {
                     userid = 0;
+                    accType = 0;
                     return false;
                 }
                 else
                 {
+                    accType = account.AccountType;
                     userid = account.UserID;
                 }
             }

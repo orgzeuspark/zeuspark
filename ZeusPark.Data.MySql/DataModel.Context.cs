@@ -41,5 +41,9 @@ namespace ZeusPark.Data.MySql
         public DbSet<useraccount> useraccounts { get; set; }
         public DbSet<uploadhistory> uploadhistories { get; set; }
         public DbSet<publisher> publishers { get; set; }
+        public DbSet<discount> discounts { get; set; }
+        public DbSet<order> orders { get; set; }
+        public DbSet<question> questions { get; set; }
+        public DbSet<comment> comments { get; set; }
     }
 }

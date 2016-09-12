@@ -22,3 +22,7 @@ C:\GitHub\zeuspark\ZeusPark.Service.Interface\bin\Debug\ZeusPark.Service.Interfa
 C:\GitHub\zeuspark\ZeusPark.Service.Interface\bin\Debug\ZeusPark.Service.Interface.pdb
 C:\GitHub\zeuspark\ZeusPark.Service.Interface\obj\Debug\ZeusPark.Service.Interface.dll
 C:\GitHub\zeuspark\ZeusPark.Service.Interface\obj\Debug\ZeusPark.Service.Interface.pdb
+C:\MyWork\ZeusParkSite\ZeusPark.Service.Interface\bin\Debug\ZeusPark.Service.Interface.dll
+C:\MyWork\ZeusParkSite\ZeusPark.Service.Interface\bin\Debug\ZeusPark.Service.Interface.pdb
+C:\MyWork\ZeusParkSite\ZeusPark.Service.Interface\obj\Debug\ZeusPark.Service.Interface.dll
+C:\MyWork\ZeusParkSite\ZeusPark.Service.Interface\obj\Debug\ZeusPark.Service.Interface.pdb
