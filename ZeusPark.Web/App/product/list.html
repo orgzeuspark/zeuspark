@@ -93,8 +93,8 @@
  					<div class="filter-results">
  						<div class="row illustration-v2 margin-bottom-30">
  							<div class="col-md-4 ct-product" ng-repeat="prod in prodData.data.Products | filter: {'Label' : query}">
- 								<div class="product-img product-img-brd">
- 									<a ng-href="/#/proddetail/{{::prod.ProductID}}"><img class="full-width img-responsive" ng-src="{{prod.MainImageUrl}}" style="height: 255px;"></a>
+ 								<div class="product-img product-img-brd" style="width:100%; height:255px;overflow:hidden">
+ 									<a ng-href="/#/proddetail/{{::prod.ProductID}}"><img class="full-width img-responsive" ng-src="{{prod.MainImageUrl}}"></a>
  									<a class="product-review" ng-href="/#/proddetail/{{::prod.ProductID}}">详细信息</a>
  									<a href="" class="add-to-cart ct-product-button" ><i class="fa fa-shopping-cart"></i>加入购物车</a>
  								</div>
@@ -114,7 +114,7 @@
  										<li><i class="rating-selected fa fa-star"></i></li>
  										<li><i class="rating fa fa-star"></i></li>
  										<li><i class="rating fa fa-star"></i></li>
- 										<li class="like-icon"><a data-original-title="Add to wishlist" data-toggle="tooltip" data-placement="left" class="tooltips" href="#">{{prod.Label}}</li>
+ 										<li class="like-icon"><a data-original-title="Add to wishlist" data-toggle="tooltip" data-placement="left" class="tooltips" href="#" style="font-size: 12px;">{{prod.Label}}</li>
  									</ul>
  								</div>
  							</div>

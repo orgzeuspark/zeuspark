@@ -17,7 +17,7 @@
 <div class="content container">
     <div class="row">
         <div class="col-md-3 filter-by-block md-margin-bottom-60">
-            <h1>Filter By</h1>
+            <h1>筛选</h1>
             <div class="panel-group" id="accordion">
                 <div class="panel panel-default">
                     <div class="panel-heading">
@@ -142,11 +142,13 @@
                                     <li>
                                         订单状态：
                                     </li>
-                                    <li><span class="gender text-uppercase">正在发货</span></li>
+                                    <li><span class="gender text-uppercase">{{::order.StatusDisplay}}</span></li>
                                 </ul>
                                 <p class="margin-bottom-20">{{::order.OrderDetail}}</p>
                                 <p class="margin-bottom-20">{{::order.Address}}</p>
-                                <button type="button" class="btn-u btn-u-sea-shop">确认收货</button>
+                                <button type="button" class="btn-u btn-u-sea-shop" ng-if="order.Status == 3">确认收货</button>
+                                <button type="button" class="btn-u btn-u-sea-shop" ng-if="order.Status == 1" ng-click="payorder(order.OrderID)">支付</button>
+                                <button type="button" class="btn-u btn-u-sea-shop" ng-if="order.Status == 1" ng-click="cancelorder(order.OrderID)">取消订单</button>
                             </div>
                         </div>
                     </div>

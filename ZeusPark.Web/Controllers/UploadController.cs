@@ -28,7 +28,7 @@ namespace ZeusPark.Web.Controllers
                 prod.ProductUnique = Guid.NewGuid().ToString();
                 prod.Name = newproduct.prodName;
                 prod.Status = 2;
-                prod.BuyLimit = 10;
+                prod.BuyLimit = 1;
 
                 AliService aliservice = new AliService();
 

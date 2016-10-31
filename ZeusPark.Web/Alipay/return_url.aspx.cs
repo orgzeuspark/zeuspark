@@ -5,6 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using ZeusPark.Service.Product;
 
 namespace ZeusParkNew
 {
@@ -59,6 +60,8 @@ namespace ZeusParkNew
                         //判断该笔订单是否在商户网站中已经做过处理
                         //如果没有做过处理，根据订单号（out_trade_no）在商户网站的订单系统中查到该笔订单的详细，并执行商户的业务程序
                         //如果有做过处理，不执行商户的业务程序
+                        PayService service = new PayService();
+                        service.FinishPayment(out_trade_no);
                     }
                     else
                     {
@@ -66,10 +69,14 @@ namespace ZeusParkNew
                     }
 
                     //打印页面
-                    Response.Write("验证成功!!!<br /> "
+                    /*Response.Write("验证成功!!!<br /> "
                         + "商户订单号   : " + out_trade_no + "<br />"
                         + "支付宝交易号 : " + trade_no + "<br />"
-                        + "交易状态     : " + trade_status);
+                        + "交易状态     : " + trade_status);*/
+                    theLabel.Text = "验证成功!!!<br /> "
+                        + "商户订单号   : " + out_trade_no + "<br />"
+                        + "支付宝交易号 : " + trade_no + "<br />"
+                        + "交易状态     : " + trade_status;
 
                     //——请根据您的业务逻辑来编写程序（以上代码仅作参考）——
 
@@ -77,12 +84,14 @@ namespace ZeusParkNew
                 }
                 else//验证失败
                 {
-                    Response.Write("验证失败");
+                    //Response.Write("验证失败");
+                    theLabel.Text = "验证失败";
                 }
             }
             else
             {
-                Response.Write("无返回参数");
+                //Response.Write("无返回参数");
+                theLabel.Text = "无返回参数";
             }
         }
 

@@ -17,12 +17,12 @@ namespace ZeusPark.Web.Controllers
             return new string[] { "value1", "value2" };
         }
 
-        public IEnumerable<OrderVM> Get(int userid)
+        public OrderVM Get(int id)
         {
-            //OrderService service = new OrderService();
-            //var result = service.GetOrdersByUser(userid);
-            //return result;
-            return null;
+            OrderService service = new OrderService();
+            var result = service.GetOrder(id);
+            return result;
+            
         }
 
         // POST: api/ProdDetail

@@ -48,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DeliveryInfoVM.cs" />
+    <Compile Include="EnumUtil.cs" />
     <Compile Include="ExtentionAttributeVM.cs" />
     <Compile Include="DiscountVM .cs" />
     <Compile Include="OrderVM.cs" />

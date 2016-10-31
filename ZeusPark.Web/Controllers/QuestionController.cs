@@ -12,9 +12,11 @@ namespace ZeusPark.Web.Controllers
     public class QuestionController : ApiController
     {
 
-        public IEnumerable<string> Get()
+        public IEnumerable<QuestionVM> Get()
         {
-            return new string[] { "value1", "value2" };
+            CommentService service = new CommentService();
+            var result = service.GetNotAnswerQuestion();
+            return result;
         }
 
         public IEnumerable<QuestionVM> Get(int id)

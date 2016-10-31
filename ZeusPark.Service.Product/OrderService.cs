@@ -55,18 +55,86 @@ namespace ZeusPark.Service.Product
             List<OrderVM> ordervmlist = new List<OrderVM>();
             using (zeusparkEntities entity = new zeusparkEntities())
             {
-                var orders = entity.orders.Where(x => x.OrderUserId == userid).ToList();
+                var orders = entity.orders.Where(x => x.OrderUserId == userid).OrderByDescending(x => x.LastUpdateTime).ToList();
                 foreach(var order in orders)
                 {
                     OrderVM vm = new OrderVM();
                     vm.OrderID = order.OrderId;
                     vm.OrderUnique = order.OrderUnique;
                     vm.Status = order.Status;
+                    vm.StatusDisplay = EnumUtil.GetOrderStatus(order.Status);
                     vm.OrderAmount = order.OrderAmount;
-                    vm.OrderDetail = order.OrderDetail;
+                    vm.OrderDetail = order.OrderDetail.Replace("null", "").Replace("##", "<br>");
                     vm.Address = order.Address;
                     vm.Contactor = order.Contactor;
                     vm.Mobile = order.Mobile;
+                    vm.Note = order.Note;
+                    vm.OrderImg = order.OrderImg;
+                    vm.OrderUserId = order.OrderUserId;
+
+                    ordervmlist.Add(vm);
+                }
+            }
+
+            return ordervmlist;
+        }
+
+        public OrderVM GetOrder(int orderid)
+        {
+            using (zeusparkEntities entity = new zeusparkEntities())
+            {
+                var order = entity.orders.FirstOrDefault(x => x.OrderId == orderid);
+                OrderVM vm = new OrderVM();
+                vm.OrderID = order.OrderId;
+                vm.OrderUnique = order.OrderUnique;
+                vm.Status = order.Status;
+                vm.StatusDisplay = EnumUtil.GetOrderStatus(order.Status);
+                vm.OrderAmount = order.OrderAmount;
+                vm.OrderDetail = order.OrderDetail.Replace("null", "").Replace("##", "<br>");
+                vm.Address = order.Address;
+                vm.Contactor = order.Contactor;
+                vm.Mobile = order.Mobile;
+                vm.Note = order.Note;
+                vm.OrderImg = order.OrderImg;
+                vm.OrderUserId = order.OrderUserId;
+
+                return vm;
+            }
+        }
+
+        public void UpdateOrderStatus(int orderid, int status)
+        {
+            using (zeusparkEntities entity = new zeusparkEntities())
+            {
+                var order = entity.orders.FirstOrDefault(x => x.OrderId == orderid);
+                if (null != order)
+                {
+                    order.Status = status;
+                    order.LastUpdateTime = DateTime.Now;
+                    entity.SaveChanges();
+                }
+            }
+        }
+
+        public List<OrderVM> GetActiveOrders()
+        {
+            List<OrderVM> ordervmlist = new List<OrderVM>();
+            using (zeusparkEntities entity = new zeusparkEntities())
+            {
+                var orders = entity.orders.Where(x => x.Status > 0).OrderByDescending(x => x.LastUpdateTime).ToList();
+                foreach (var order in orders)
+                {
+                    OrderVM vm = new OrderVM();
+                    vm.OrderID = order.OrderId;
+                    vm.OrderUnique = order.OrderUnique;
+                    vm.Status = order.Status;
+                    vm.StatusDisplay = EnumUtil.GetOrderStatus(order.Status);
+                    vm.OrderAmount = order.OrderAmount;
+                    vm.OrderDetail = order.OrderDetail.Replace("null","").Replace("##", "<br>");
+                    vm.Address = order.Address;
+                    vm.Contactor = order.Contactor;
+                    vm.Mobile = order.Mobile;
+                    vm.Telephone = order.Telephone;
                     vm.Note = order.Note;
                     vm.OrderImg = order.OrderImg;
                     vm.OrderUserId = order.OrderUserId;

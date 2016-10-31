@@ -13,8 +13,8 @@
             $scope.price = $scope.prodData.data.SkuInfoList[index].Price /100;
             $scope.orgprice = $scope.prodData.data.SkuInfoList[index].OrgPrice /100;
             $scope.quantity = $scope.prodData.data.SkuInfoList[index].Quantity;
-            $scope.style = response.data.SkuInfoList[index].Size + " " + response.data.SkuInfoList[index].Color;
-            $scope.infoID = response.data.SkuInfoList[index].infoID;
+            $scope.style = $scope.prodData.data.SkuInfoList[index].Size + " " + $scope.prodData.data.SkuInfoList[index].Color;
+            $scope.infoID = $scope.prodData.data.SkuInfoList[index].infoID;
         };
 
         $scope.descriptionTab = function() {

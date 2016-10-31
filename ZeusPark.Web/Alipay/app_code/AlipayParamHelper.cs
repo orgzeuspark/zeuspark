@@ -7,10 +7,11 @@ namespace ZeusParkNew
 {
     public class AlipayParamHelper
     {
-        public static string BuildParamters(string strSubject, string strFee)
+        public static string BuildParamters(string strSubject, string strFee, string orderid)
         {
             // id
-            string tradeNo = AlipayOrder.GetID();
+            //string tradeNo = AlipayOrder.GetID();
+            string tradeNo = orderid;
             // subject
             string subject = strSubject; //"测试订单";
 

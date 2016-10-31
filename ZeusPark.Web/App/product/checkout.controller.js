@@ -35,9 +35,16 @@
 
     function CheckoutCtrl($scope,$http,$state,$cookies,ngCart) {
 
+        var userid = $cookies.get('userid');
+        if (userid == undefined) {
+            $state.go('login');
+        };
+        
+
         $scope.ngCart = ngCart;
         $scope.discount = 0;
         $scope.orderid = generateOrderID();
+        $scope.displaydiscount = false;
 
         function _arrayBufferToBase64( buffer ) {
             var binary = '';
@@ -56,7 +63,17 @@
             return (S4() + S4() + S4() + S4() + S4()).toLowerCase(); 
         };
 
-        $scope.stepChanging = function(){
+        $scope.stepChanging = function(event, currentIndex, newIndex){
+            if (newIndex == 0) {
+                $scope.displaydiscount = false;
+                $scope.discount = 0;
+                $scope.discountTitle = "";
+                $scope.code = "";
+            }
+            else if (newIndex > 0) {
+                $scope.displaydiscount = true;
+            };
+            $scope.$digest();
         };
 
         $scope.finished = function() {
@@ -119,6 +136,7 @@
 
             $http.post('/api/Order', order).then(function(response){
                 $scope.displayaliorder = true;
+                ngCart.empty(true);
             });
 
         };

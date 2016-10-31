@@ -67,7 +67,7 @@ namespace ZeusPark.Service.Product
                     {
                         prodVM.Images.Add(new ImageVM() { ImageUrl = img.ImageUrl });
                     }
-                    var pSkuInfos = prod.skuinfoes.ToList();
+                    var pSkuInfos = prod.skuinfoes.OrderBy(x => x.InfoID).ToList();
                     foreach (var sku in pSkuInfos)
                     {
                         if (pSkuInfos.Count == 1 && string.IsNullOrEmpty(sku.Size))

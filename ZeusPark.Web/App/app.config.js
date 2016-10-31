@@ -55,10 +55,37 @@
             templateUrl: 'App/user/myorder.html',
             controller: 'MyOrderCtrl'
         })
+        .state('payorder',{
+            url: '/payorder/{orderid}',
+            templateUrl: 'App/product/payorder.html',
+            controller: 'PayOrderCtrl'
+        })
         .state('uploadshelf',{
             url: '/uploadshelf',
             templateUrl: 'App/product/upload-shelf.html',
             controller: 'UploadShelfCtrl'
+        })
+        .state('orderlist',{
+            url: '/orderlist',
+            templateUrl: 'App/admin/order-list.html',
+            controller: 'OrderListCtrl'
+        })
+        .state('question',{
+            url: '/question',
+            templateUrl: 'App/user/question.html',
+            controller: 'QuestionCtrl'
+        })
+        .state('aboutsend',{
+            url: '/aboutsend',
+            templateUrl: 'App/about/send.html'
+        })
+        .state('aboutpay',{
+            url: '/aboutpay',
+            templateUrl: 'App/about/pay.html'
+        })
+        .state('aboutservice',{
+            url: '/aboutservice',
+            templateUrl: 'App/about/service.html'
         });
 
     });

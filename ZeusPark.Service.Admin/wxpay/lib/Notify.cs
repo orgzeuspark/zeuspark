@@ -45,7 +45,9 @@ namespace WxPayAPI
             WxPayData data = new WxPayData();
             try
             {
+                
                 data.FromXml(builder.ToString());
+                //System.IO.File.WriteAllText("test.txt", builder.ToString());
             }
             catch(WxPayException ex)
             {

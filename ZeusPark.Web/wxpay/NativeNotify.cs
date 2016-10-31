@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using ZeusPark.Service.Product;
 
 namespace WxPayAPI
 {
@@ -35,7 +36,7 @@ namespace WxPayAPI
             //调统一下单接口，获得下单结果
             string openid = notifyData.GetValue("openid").ToString();
             string product_id = notifyData.GetValue("product_id").ToString();
-            WxPayData unifiedOrderResult = new WxPayData();
+            /*WxPayData unifiedOrderResult = new WxPayData();
             try
             {
                 unifiedOrderResult = UnifiedOrder(openid, product_id);
@@ -59,16 +60,19 @@ namespace WxPayAPI
                 Log.Error(this.GetType().ToString(), "UnifiedOrder failure : " + res.ToXml());
                 page.Response.Write(res.ToXml());
                 page.Response.End();
-            }
+            }*/
 
             //统一下单成功,则返回成功结果给微信支付后台
+            PayService service = new PayService();
+            service.FinishPayment(product_id);
+
             WxPayData data = new WxPayData();
             data.SetValue("return_code", "SUCCESS");
             data.SetValue("return_msg", "OK");
             data.SetValue("appid", WxPayConfig.APPID);
             data.SetValue("mch_id", WxPayConfig.MCHID);
             data.SetValue("nonce_str", WxPayApi.GenerateNonceStr());
-            data.SetValue("prepay_id", unifiedOrderResult.GetValue("prepay_id"));
+            //data.SetValue("prepay_id", unifiedOrderResult.GetValue("prepay_id"));
             data.SetValue("result_code", "SUCCESS");
             data.SetValue("err_code_des", "OK");
             data.SetValue("sign", data.MakeSign());

@@ -17,15 +17,15 @@ using ZeusParkNew;
 namespace ZeusPark.Web.Controllers
 {
 
-    public class AliPayController : ApiController
+    public class AliPayFinishController : ApiController
     {
 
-        public HttpResponseMessage Get(string subject, string totalFee, string orderid)
+        public HttpResponseMessage Get(string subject, string totalFee)
         {
-            var result = AlipayParamHelper.BuildParamters(subject, totalFee, orderid);
+            //var result = AlipayParamHelper.BuildParamters(subject, totalFee);
 
             HttpResponseMessage response = new HttpResponseMessage(HttpStatusCode.OK);
-            response.Content = new StringContent(result);// new ByteArrayContent(ms.GetBuffer());
+            //response.Content = new StringContent(result);// new ByteArrayContent(ms.GetBuffer());
             response.Content.Headers.ContentType = new MediaTypeHeaderValue("text/html");
             return response;
         }

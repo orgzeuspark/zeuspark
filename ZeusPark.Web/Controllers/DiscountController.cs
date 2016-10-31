@@ -43,7 +43,27 @@ namespace ZeusPark.Web.Controllers
                         
                         if (totalFloat > disc.ConditionNum)
                         {
-                            disc.IsValid = true;
+                            if (disc.EndDate != null && disc.EndDate.Value > DateTime.Now.Date)
+                            {
+                                disc.IsValid = false;
+                                disc.Message = "优惠券已经过期";
+                            }
+                            else if (disc.Quantity > 0)
+                            {
+                                disc.IsValid = false;
+                                disc.Message = "优惠券数额已经用完";
+                            }
+                            else if (disc.Status != 1)
+                            {
+                                disc.IsValid = false;
+                                disc.Message = "优惠券已经失效";
+                            }
+                            else
+                            {
+                                disc.IsValid = true;
+                            }
+
+
                         }
                         else
                         {
@@ -70,7 +90,27 @@ namespace ZeusPark.Web.Controllers
                         {
                             disc.DiscountNum = totalFloat;
                         }
-                        disc.IsValid = true;
+
+                        if (disc.EndDate != null && disc.EndDate.Value > DateTime.Now.Date)
+                        {
+                            disc.IsValid = false;
+                            disc.Message = "优惠券已经过期";
+                        }
+                        else if (disc.Quantity > 0)
+                        {
+                            disc.IsValid = false;
+                            disc.Message = "优惠券已经被使用";
+                        }
+                        else if (disc.Status != 1)
+                        {
+                            disc.IsValid = false;
+                            disc.Message = "优惠券已经失效";
+                        }
+                        else
+                        {
+                            disc.IsValid = true;
+                        }
+
                     }
                     else
                     {

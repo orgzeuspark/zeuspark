@@ -13,6 +13,7 @@
 
         $scope.ValidateAccount = function () {
                 $scope.LoginFail = false;
+                $scope.displaywaiting = true;
                 event.preventDefault();
                 if (!$scope.validator.validate()) {
                     return;
@@ -24,6 +25,7 @@
                     header: {'Content-Type': 'application/json; charset=utf-8'}
                 })
                 .success(function (data, status) {
+                    $scope.displaywaiting = false;
                     if (data == 'OK') {
                         var id = $cookies.get('userid');
                         var name = $cookies.get('username');

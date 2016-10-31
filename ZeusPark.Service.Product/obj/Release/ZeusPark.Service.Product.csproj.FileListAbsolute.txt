@@ -77,3 +77,5 @@ C:\MyWork\ZeusParkSite\ZeusPark.Service.Product\bin\Release\Newtonsoft.Json.xml
 C:\MyWork\ZeusParkSite\ZeusPark.Service.Product\obj\Release\ZeusPark.Service.Product.csprojResolveAssemblyReference.cache
 C:\MyWork\ZeusParkSite\ZeusPark.Service.Product\obj\Release\ZeusPark.Service.Product.dll
 C:\MyWork\ZeusParkSite\ZeusPark.Service.Product\obj\Release\ZeusPark.Service.Product.pdb
+C:\GitHub\zeuspark\ZeusPark.Service.Product\bin\Release\Newtonsoft.Json.dll
+C:\GitHub\zeuspark\ZeusPark.Service.Product\bin\Release\Newtonsoft.Json.xml

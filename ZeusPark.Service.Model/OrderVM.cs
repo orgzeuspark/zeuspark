@@ -32,6 +32,8 @@ namespace ZeusPark.Service.Model
 
         public int Status { get; set; }
 
+        public string StatusDisplay { get; set; }
+
         public string Contactor { get; set; }
 
         public string Mobile { get; set; }

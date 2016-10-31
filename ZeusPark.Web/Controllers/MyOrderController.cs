@@ -19,5 +19,12 @@ namespace ZeusPark.Web.Controllers
             return result;
         }
 
+        public void Put(int id, [FromBody]int value)
+        {
+            OrderService service = new OrderService();
+            service.UpdateOrderStatus(id, value);
+        }
+
+
     }
 }

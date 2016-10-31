@@ -1,12 +1,12 @@
 <!--=== Breadcrumbs v4 ===-->
 		<div class="breadcrumbs-v4">
 			<div class="container">
-				<span class="page-name">Check Out</span>
+				<span class="page-name">购物车 结算</span>
 				<h1>属于<span class="shop-green">您の</span>精致生活</h1>
 				<ul class="breadcrumb-v4-in">
 					<li><a href="index.html">主页</a></li>
 					<li><a href="">产品</a></li>
-					<li class="active">购物车</li>
+					<li class="active">购物车 结算</li>
 				</ul>
 			</div><!--/end container-->
 		</div>
@@ -70,7 +70,7 @@
 						</div>
                     <section>
 						<div class="row">
-							<div class="col-sm-6">
+							<div class="col-sm-6" style="text-align:center;">
 							<img src="http://asset.zeuspark.com/newsitepic/wxpay1.jpg" alt="ALT">
 							<p>点击“微信支付二维码”，使用微信扫码并支付，付款完成点击“完成订单”。</p>
 							<!--<ngcart-checkout service="http" settings="{ url:'/checkout' }"></ngcart-checkout>-->
@@ -80,11 +80,11 @@
 							<img data-ng-src="data:image/JPEG;base64,{{image}}" class="wxpaypic">
 							<p ng-show="displaywxorder">已确认ZEUSPARK订单：{{orderid}}，请付款</p>
 							</div>
-							<div class="col-sm-6">
+							<div class="col-sm-6" style="text-align:center;">
 								<img src="http://asset.zeuspark.com/newsitepic/alipay1.jpg" alt="ALT">
 								<p>点击“支付宝付款”，付款完成点击“完成订单”。</p>
 								<p>
-								<a class="btn btn-primary btn-u btn-u-sea-shop" target="_blank" ng-click="payali()" ng-disabled="!ngCart.getTotalItems()" ng-href="/api/AliPay?subject=ZEUSPARK订单-{{orderid}}&totalFee={{ngCart.totalCost() - discount}}">
+								<a class="btn btn-primary btn-u btn-u-sea-shop" ng-click="payali()" ng-disabled="!ngCart.getTotalItems()" ng-href="/api/AliPay?subject=ZEUSPARK订单-{{orderid}}&totalFee={{ngCart.totalCost() - discount}}&orderid={{orderid}}">
 								确认订单,支付宝付款</a>
 								</p>
 								<p ng-show="displayaliorder"><br/>已确认ZEUSPARK订单：{{orderid}}，请付款</p>
@@ -94,14 +94,16 @@
                     </section>
                     <div class="coupon-code">
 							<div class="row">
-								<div class="col-sm-4 sm-margin-bottom-30">
+								<div class="col-sm-4 sm-margin-bottom-30" style="margin-top:20px">
+									<div ng-show="displaydiscount" style="padding-left:15px">
 									<h3>优惠券</h3>
-									<p>输入10位，12位或16位 '优惠券码', 然后点击‘使用优惠券’</p>
+									<p>输入10,12或16位'优惠券码', 然后点击‘使用优惠券’</p>
 									<input class="form-control margin-bottom-10" name="code" type="text" ng-model="code">
 									<button type="button" class="btn-u btn-u-sea-shop" ng-click="verifyDiscount()">使用优惠券</button>
 									<p>{{discountTitle}}</p>
+									</div> 
 								</div>
-								<div class="col-sm-3 col-sm-offset-5">
+								<div class="col-sm-3 col-sm-offset-5" style="margin-top:20px">
 									<ul class="list-inline total-result">
 										<li>
 											<h4>订单总价:</h4>

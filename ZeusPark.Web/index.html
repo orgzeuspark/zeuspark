@@ -14,29 +14,28 @@
     <!-- Favicon -->
     <link rel="shortcut icon" href="http://asset.zeuspark.com/home/zfavicon.ico">
     <!-- CSS Global Compulsory -->
-    <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">
-    <link href="bower_components/kendo-ui/styles/kendo.common.min.css" rel="stylesheet" />
-    <link href="bower_components/kendo-ui/styles/kendo.bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="http://asset.zeuspark.com/assets/plugins/bootstrap/css/bootstrap.min.css">
+    <link href="http://asset.zeuspark.com/bower_components/kendo-ui/styles/kendo.common.min.css" rel="stylesheet" />
+    <link href="http://asset.zeuspark.com/bower_components/kendo-ui/styles/kendo.bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="assets/css/shop.style.css">
     <!-- CSS Header and Footer -->
-    <link rel="stylesheet" href="assets/css/headers/header-v5.css">
-    <link rel="stylesheet" href="assets/css/footers/footer-v4.css">
+    <link rel="stylesheet" href="http://asset.zeuspark.com/assets/css/headers/header-v5.css">
+    <link rel="stylesheet" href="http://asset.zeuspark.com/assets/css/footers/footer-v4.css">
     <!-- CSS Implementing Plugins -->
-    <link rel="stylesheet" href="assets/plugins/animate.css">
-    <link rel="stylesheet" href="assets/plugins/line-icons/line-icons.css">
-    <link rel="stylesheet" href="assets/plugins/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="assets/plugins/scrollbar/css/jquery.mCustomScrollbar.css">
-    <link rel="stylesheet" href="assets/plugins/owl-carousel/owl-carousel/owl.carousel.css">
-    <link rel="stylesheet" href="assets/plugins/revolution-slider/rs-plugin/css/settings.css">
-    <link rel="stylesheet" href="assets/plugins/sky-forms-pro/skyforms/css/sky-forms.css">
-	<link rel="stylesheet" href="assets/plugins/sky-forms-pro/skyforms/custom/custom-sky-forms.css">
-    <link rel="stylesheet" href="assets/plugins/jquery-steps/css/custom-jquery.steps.css">
-	<link rel="stylesheet" href="assets/plugins/master-slider/masterslider/style/masterslider.css">
-	<link rel='stylesheet' href="assets/plugins/master-slider/masterslider/skins/default/style.css">
+    <link rel="stylesheet" href="http://asset.zeuspark.com/assets/plugins/animate.css">
+    <link rel="stylesheet" href="http://asset.zeuspark.com/assets/plugins/line-icons/line-icons.css">
+    <link rel="stylesheet" href="http://asset.zeuspark.com/assets/plugins/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="http://asset.zeuspark.com/assets/plugins/scrollbar/css/jquery.mCustomScrollbar.css">
+    <link rel="stylesheet" href="http://asset.zeuspark.com/assets/plugins/owl-carousel/owl-carousel/owl.carousel.css">
+    <link rel="stylesheet" href="http://asset.zeuspark.com/assets/plugins/revolution-slider/rs-plugin/css/settings.css">
+    <link rel="stylesheet" href="http://asset.zeuspark.com/assets/plugins/sky-forms-pro/skyforms/css/sky-forms.css">
+	<link rel="stylesheet" href="http://asset.zeuspark.com/assets/plugins/sky-forms-pro/skyforms/custom/custom-sky-forms.css">
+    <link rel="stylesheet" href="http://asset.zeuspark.com/assets/plugins/jquery-steps/css/custom-jquery.steps.css">
+	<link rel="stylesheet" href="http://asset.zeuspark.com/assets/plugins/master-slider/masterslider/style/masterslider.css">
+	<link rel='stylesheet' href="http://asset.zeuspark.com/assets/plugins/master-slider/masterslider/skins/default/style.css">
     <!-- CSS Theme -->
-    <link rel="stylesheet" href="assets/css/theme-colors/red.css" id="style_color">
+    <link rel="stylesheet" href="http://asset.zeuspark.com/assets/css/theme-colors/red.css" id="style_color">
     <!-- CSS Customization -->
-    <link rel="stylesheet" href="assets/css/custom.css">
     <link rel="stylesheet" href="content/css/style.css">
 </head>
 <body class="header-fixed" ng-app="zeusApp">
@@ -185,6 +184,7 @@
 										<a href="javascript:void(0);">艺术衍生</a>
 										<ul class="dropdown-menu">
 											<li><a href="/#/prodlist/201592342">原作版画</a></li>
+                                            <li><a href="/#/prodlist/200601842">摄影</a></li>
 										</ul>
 									</li>
 								</ul>
@@ -218,6 +218,7 @@
                                     <li><a ui-sref="checkout">我的购物车</a></li>
                                     <li><a ui-sref="myorder">我的订单</a></li>
                                     <li><a ui-sref="prodUpload">上传产品</a></li>
+                                    <!--<li><a ui-sref="question">产品问答</a></li>-->
                                 </ul>
                             </li>
                             <!-- End 会员管理 -->
@@ -228,6 +229,8 @@
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li><a ui-sref="uploadshelf">产品上下架</a></li>
+                                    <li><a ui-sref="orderlist">订单管理</a></li>
+                                    <li><a href="http://www.pop800.com/login.jsp" target="_blank">客服系统</a></li>
                                 </ul>
                             </li>
                             <!-- End 管理员 -->
@@ -265,17 +268,17 @@
                                 <div class="col-sm-12 col-xs-6">
                                     <h2 class="thumb-headline">ZEUS VIP</h2>
                                     <ul class="list-unstyled simple-list margin-bottom-20">
-                                        <li><a href="#">会员政策</a></li>
-                                        <li><a href="#">常见问题</a></li>
-                                        <li><a href="#">集团采购</a></li>
+                                        <li><a ui-sref="aboutservice">会员政策</a></li>
+                                        <li><a ui-sref="aboutservice">常见问题</a></li>
+                                        <li><a ui-sref="aboutservice">集团采购</a></li>
                                     </ul>
                                 </div>
                                 <div class="col-sm-12 col-xs-6">
                                     <h2 class="thumb-headline">配送方式</h2>
                                     <ul class="list-unstyled simple-list">
-                                        <li><a href="#">配送时间</a></li>
-                                        <li><a href="#">配送范围</a></li>
-                                        <li><a href="#">收费标准</a></li>
+                                        <li><a ui-sref="aboutsend">配送时间</a></li>
+                                        <li><a ui-sref="aboutsend">配送范围</a></li>
+                                        <li><a ui-sref="aboutsend">收费标准</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -285,17 +288,17 @@
                                 <div class="col-sm-12 col-xs-6">
                                     <h2 class="thumb-headline">支付方式</h2>
                                     <ul class="list-unstyled simple-list margin-bottom-20">
-                                        <li><a href="#">支付宝</a></li>
-                                        <li><a href="#">微信支付</a></li>
-                                        <li><a href="#">优惠券使用</a></li>
+                                        <li><a ui-sref="aboutpay">支付宝</a></li>
+                                        <li><a ui-sref="aboutpay">微信支付</a></li>
+                                        <li><a ui-sref="aboutpay">优惠券使用</a></li>
                                     </ul>
                                 </div>
                                 <div class="col-sm-12 col-xs-6">
                                     <h2 class="thumb-headline">售后服务</h2>
                                     <ul class="list-unstyled simple-list">
-                                        <li><a href="#">退换货政策</a></li>
-                                        <li><a href="#">退换货流程</a></li>
-                                        <li><a href="#">退款流程</a></li>
+                                        <li><a ui-sref="aboutservice">退换货政策</a></li>
+                                        <li><a ui-sref="aboutservice">退换货流程</a></li>
+                                        <li><a ui-sref="aboutservice">退款流程</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -353,20 +356,20 @@
     </div>
     <!-- End Wait Block -->
     <!-- JS Global Compulsory -->
-    <script src="assets/plugins/jquery/jquery.min.js"></script>
-    <script src="assets/plugins/jquery/jquery-migrate.min.js"></script>
-    <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="http://asset.zeuspark.com/assets/plugins/jquery/jquery.min.js"></script>
+    <script src="http://asset.zeuspark.com/assets/plugins/jquery/jquery-migrate.min.js"></script>
+    <script src="http://asset.zeuspark.com/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
 
     <!-- JS Angular Lib -->
-    <script src="bower_components/angular/angular.min.js"></script>
-    <script src="bower_components/angular-animate/angular-animate.min.js"></script>
-    <script src="bower_components/angular-route/angular-route.min.js"></script>
-    <script src="bower_components/angular-cookies/angular-cookies.min.js"></script>
-    <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
-    <script src="bower_components/angular-sanitize/angular-sanitize.min.js"></script>
+    <script src="http://asset.zeuspark.com/bower_components/angular/angular.min.js"></script>
+    <script src="http://asset.zeuspark.com/bower_components/angular-animate/angular-animate.min.js"></script>
+    <script src="http://asset.zeuspark.com/bower_components/angular-route/angular-route.min.js"></script>
+    <script src="http://asset.zeuspark.com/bower_components/angular-cookies/angular-cookies.min.js"></script>
+    <script src="http://asset.zeuspark.com/bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="http://asset.zeuspark.com/bower_components/angular-sanitize/angular-sanitize.min.js"></script>
 
     <!-- Kendo UI -->
-    <script src="bower_components/kendo-ui/js/kendo.all.min.js"></script>
+    <script src="http://asset.zeuspark.com/bower_components/kendo-ui/js/kendo.all.min.js"></script>
 
     <!-- JS Angular-->
     <script src="App/app.module.js"></script>
@@ -383,31 +386,34 @@
     <script src="App/product/upload.controller.js"></script>
     <script src="App/product/checkout.controller.js"></script>
     <script src="App/product/upload-shelf.controller.js"></script>
+    <script src="App/product/payorder.controller.js"></script>
+    <script src="App/admin/order-list.controller.js"></script>
+    <script src="App/user/question.controller.js"></script>
     
     <!-- JS Implementing Plugins -->
-    <script src="assets/plugins/back-to-top.js"></script>
+    <script src="http://asset.zeuspark.com/assets/plugins/back-to-top.js"></script>
     
-    <script src="assets/plugins/jquery.parallax.js"></script>
-    <script src="assets/plugins/owl-carousel/owl-carousel/owl.carousel.js"></script>
-    <script src="assets/plugins/scrollbar/js/jquery.mCustomScrollbar.concat.min.js"></script>
-    <script src="assets/plugins/revolution-slider/rs-plugin/js/jquery.themepunch.tools.min.js"></script>
-    <script src="assets/plugins/revolution-slider/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
-    <script src="assets/plugins/jquery-steps/build/jquery.steps.js"></script>
-    <script src="assets/plugins/sky-forms-pro/skyforms/js/jquery.validate.min.js"></script>
+    <script src="http://asset.zeuspark.com/assets/plugins/jquery.parallax.js"></script>
+    <script src="http://asset.zeuspark.com/assets/plugins/owl-carousel/owl-carousel/owl.carousel.min.js"></script>
+    <script src="http://asset.zeuspark.com/assets/plugins/scrollbar/js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="http://asset.zeuspark.com/assets/plugins/revolution-slider/rs-plugin/js/jquery.themepunch.tools.min.js"></script>
+    <script src="http://asset.zeuspark.com/assets/plugins/revolution-slider/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
+    <script src="http://asset.zeuspark.com/assets/plugins/jquery-steps/build/jquery.steps.js"></script>
+    <script src="http://asset.zeuspark.com/assets/plugins/sky-forms-pro/skyforms/js/jquery.validate.min.js"></script>
     <!-- Master Slider -->
-	<script src="assets/plugins/master-slider/masterslider/masterslider.js"></script>
-	<script src="assets/plugins/master-slider/masterslider/jquery.easing.min.js"></script>
+	<script src="http://asset.zeuspark.com/assets/plugins/master-slider/masterslider/masterslider.js"></script>
+	<script src="http://asset.zeuspark.com/assets/plugins/master-slider/masterslider/jquery.easing.min.js"></script>
     <!-- JS Customization -->
-    <script src="assets/js/custom.js"></script>
+    <script src="http://asset.zeuspark.com/assets/js/custom.js"></script>
     <script src="bower_components/ngCart/dist/ngCart.js"></script>
     <!-- JS Page Level -->
-    <script src="assets/js/shop.app.js"></script>
-    <script src="assets/js/plugins/owl-carousel.js"></script>
-    <script src="assets/js/plugins/revolution-slider.js"></script>
-    <script src="assets/js/plugins/master-slider.js"></script>
-	<script src="assets/js/forms/product-quantity.js"></script>
-    <script src="assets/js/plugins/style-switcher.js"></script>
-    <script src="assets/js/plugins/stepWizard.js"></script>
+    <script src="http://asset.zeuspark.com/assets/js/shop.app.js"></script>
+    <script src="http://asset.zeuspark.com/assets/js/plugins/owl-carousel.js"></script>
+    <script src="http://asset.zeuspark.com/assets/js/plugins/revolution-slider.js"></script>
+    <script src="http://asset.zeuspark.com/assets/js/plugins/master-slider.js"></script>
+	<script src="http://asset.zeuspark.com/assets/js/forms/product-quantity.js"></script>
+    <script src="http://asset.zeuspark.com/assets/js/plugins/style-switcher.js"></script>
+    <script src="http://asset.zeuspark.com/assets/js/plugins/stepWizard.js"></script>
 
     <script src="http://res.wx.qq.com/connect/zh_CN/htmledition/js/wxLogin.js"></script>
 

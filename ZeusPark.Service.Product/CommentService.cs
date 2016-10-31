@@ -43,6 +43,46 @@ namespace ZeusPark.Service.Product
             return questionlist;
         }
 
+        public List<QuestionVM> GetNotAnswerQuestion()
+        {
+            List<QuestionVM> questionlist = new List<QuestionVM>();
+            using (zeusparkEntities entity = new zeusparkEntities())
+            {
+                var query = from q in entity.questions
+                            join p in entity.products on q.ProductID equals p.ProductID
+                            where q.Answer == null
+                            orderby q.SubmitTime descending
+                            select new
+                            {
+                                q.QuestionId,
+                                q.ProductID,
+                                q.Question,
+                                q.SubmitTime,
+                                q.SubmitBy,
+                                p.Name,
+                                p.Label
+                            };
+
+                foreach (var ques in query)
+                {
+                    QuestionVM vm = new QuestionVM()
+                    {
+                        QuestionID = ques.QuestionId,
+                        ProductID = ques.ProductID,
+                        Question = ques.Question,
+                        SubmitTime = ques.SubmitTime,
+                        SubmitBy = ques.SubmitBy,
+                        ProductName = ques.Name,
+                        Label = ques.Label
+                    };
+
+                    questionlist.Add(vm);
+                }
+            }
+
+            return questionlist;
+        }
+
         public void AddQuestion(QuestionVM questionvm)
         {
             using (zeusparkEntities entity = new zeusparkEntities())

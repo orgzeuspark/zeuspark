@@ -79,7 +79,6 @@
     <Compile Include="wxpay\lib\Log.cs" />
     <Compile Include="wxpay\lib\Notify.cs" />
     <Compile Include="wxpay\lib\WxPayApi.cs" />
-    <Compile Include="wxpay\NativeNotify.cs" />
     <Compile Include="wxpay\NativePay.cs" />
   </ItemGroup>
   <ItemGroup>

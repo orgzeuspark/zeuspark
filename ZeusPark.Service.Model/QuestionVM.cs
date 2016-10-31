@@ -10,6 +10,11 @@ namespace ZeusPark.Service.Model
         public long QuestionID { get; set; }
 
         public int ProductID { get; set; }
+
+        public string ProductName { get; set; }
+
+        public string Label { get; set; }
+
         public string Question { get; set; }
         public string Answer { get; set; }
         public DateTime SubmitTime { get; set; }

@@ -59,3 +59,7 @@ C:\MyWork\ZeusParkSite\ZeusPark.Service.Admin\bin\Release\Newtonsoft.Json.xml
 C:\MyWork\ZeusParkSite\ZeusPark.Service.Admin\obj\Release\ZeusPark.Service.Admin.csprojResolveAssemblyReference.cache
 C:\MyWork\ZeusParkSite\ZeusPark.Service.Admin\obj\Release\ZeusPark.Service.Admin.dll
 C:\MyWork\ZeusParkSite\ZeusPark.Service.Admin\obj\Release\ZeusPark.Service.Admin.pdb
+C:\GitHub\zeuspark\ZeusPark.Service.Admin\bin\Release\LitJson.dll
+C:\GitHub\zeuspark\ZeusPark.Service.Admin\bin\Release\Newtonsoft.Json.dll
+C:\GitHub\zeuspark\ZeusPark.Service.Admin\bin\Release\ThoughtWorks.QRCode.dll
+C:\GitHub\zeuspark\ZeusPark.Service.Admin\bin\Release\Newtonsoft.Json.xml

@@ -33,5 +33,7 @@ namespace ZeusPark.Service.Model
         public string Message { get; set; }
 
         public bool IsValid { get; set; }
+
+        public DateTime? EndDate { get; set; }
     }
 }
